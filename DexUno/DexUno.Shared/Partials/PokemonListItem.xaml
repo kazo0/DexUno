@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="Dex.Uwp.Partials.PokemonListItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="using:Dex.Uwp.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:model="using:Dex.Core.Entities"
+             d:DataContext="{d:DesignInstance Type=model:Pokemon,
+                                              IsDesignTimeCreatable=False}"
+             d:DesignHeight="84"
+             d:DesignWidth="400"
+             mc:Ignorable="d">
+
+	<Border Height="84"
+			BorderBrush="{Binding Types[0], Converter={StaticResource PokemonTypeToColorConverter}}"
+			BorderThickness="0,0,0,2">
+		<RelativePanel Padding="12,4">
+
+			<Image Name="PokemonPicture"
+				   Margin="0,12,12,12"
+				   RelativePanel.AlignLeftWithPanel="True"
+				   RelativePanel.AlignVerticalCenterWithPanel="True"
+				   Source="{Binding DexNumber,
+                                            Converter={StaticResource PokemonDexNumberToPictureConverter}}" />
+			<StackPanel VerticalAlignment="Center"
+						Orientation="Vertical"
+						RelativePanel.AlignVerticalCenterWithPanel="True"
+						RelativePanel.RightOf="PokemonPicture">
+				<TextBlock x:Name="PokemonName"
+						   VerticalAlignment="Top"
+						   Style="{StaticResource BodyTextBlockStyle}"
+						   Text="{Binding Name,
+                                                  Converter={StaticResource StringCapitalizeFirstLetterConverter}}" />
+				<TextBlock Foreground="{StaticResource SystemChromeDisabledLowColorBrush}"
+						   Style="{StaticResource CaptionTextBlockStyle}"
+						   Text="{Binding DexNumber}" />
+			</StackPanel>
+
+			<ItemsControl Margin="0,0,0,-12"
+						  ItemsSource="{Binding Types}"
+						  RelativePanel.AlignRightWithPanel="True"
+						  RelativePanel.AlignVerticalCenterWithPanel="True">
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<controls:Badge Width="60"
+										Height="20"
+										Margin="0,0,0,12"
+										Background="{Binding Converter={StaticResource PokemonTypeToColorConverter}}"
+										Text="{Binding}" />
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</RelativePanel>
+	</Border>
+</UserControl>

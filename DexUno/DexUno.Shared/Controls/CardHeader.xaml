@@ -1,0 +1,20 @@
+﻿<ContentControl x:Class="Dex.Uwp.Controls.CardHeader"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:controls="using:Dex.Uwp.Controls"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                d:DesignHeight="100"
+                d:DesignWidth="400"
+                mc:Ignorable="d">
+
+    <ContentControl.Template>
+        <ControlTemplate>
+            <Border VerticalAlignment="Top"
+                    Background="{StaticResource SystemListLowColorBrush}"
+                    Padding="12">
+                <TextBlock Foreground="{StaticResource SystemChromeDisabledLowColorBrush}" Text="{Binding Title, RelativeSource={RelativeSource TemplatedParent}}" />
+            </Border>
+        </ControlTemplate>
+    </ContentControl.Template>
+</ContentControl>

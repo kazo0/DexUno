@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:vc="using:Dex.Uwp.ValueConverters">
+    <vc:StringCapitalizeFirstLetterConverter x:Key="StringCapitalizeFirstLetterConverter" />
+    <vc:StringAppenderFormatter x:Key="StringAppenderFormatter" />
+    <vc:NullOrEmptyToVisibilityConverter x:Key="NullOrEmptyToVisibilityConverter" />
+    <vc:PokemonTypeToColorConverter x:Key="PokemonTypeToColorConverter" />
+    <vc:PokemonDexNumberToPictureConverter x:Key="PokemonDexNumberToPictureConverter" />
+    <vc:PokemonUnknownTypeToVisibilityConverter x:Key="PokemonUnknownTypeToVisibilityConverter" />
+    <vc:NumberToItemsConverter x:Key="NumberToItemsConverter" />
+    <vc:VerticalTextConverter x:Key="VerticalTextConverter" />
+</ResourceDictionary>

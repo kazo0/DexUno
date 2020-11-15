@@ -1,0 +1,52 @@
+﻿<infra:PageBase x:Class="Dex.Uwp.Pages.TypeEffectivenessPage"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:cards="using:Dex.Uwp.Cards"
+                xmlns:controls="using:Dex.Uwp.Controls"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:infra="using:Dex.Uwp.Infrastructure"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:vm="using:Dex.Uwp.ViewModels"
+                x:Uid="Page_Types"
+                d:DataContext="{d:DesignInstance Type=vm:TypeEffectivenessViewModel,
+                                                 IsDesignTimeCreatable=False}"
+                mc:Ignorable="d">
+
+    <Grid>
+        <Pivot Style="{StaticResource TabsStylePivotStyle}">
+            <Pivot.Resources>
+                <ResourceDictionary>
+                    <ResourceDictionary.MergedDictionaries>
+                        <ResourceDictionary Source="/Theme/CustomPivotResources.xaml" />
+                    </ResourceDictionary.MergedDictionaries>
+                </ResourceDictionary>
+            </Pivot.Resources>
+            <Pivot.Transitions>
+                <TransitionCollection>
+                    <EntranceThemeTransition FromVerticalOffset="-48" />
+                </TransitionCollection>
+            </Pivot.Transitions>
+            <PivotItem>
+                <PivotItem.Header>
+                    <Border Width="96" Height="48">
+                        <controls:TabHeader Label="OVERVIEW" />
+                    </Border>
+                </PivotItem.Header>
+                <ListView ItemContainerStyle="{StaticResource CardBasedListItemStyle}" ItemsSource="{Binding EffectivenessData}" Style="{StaticResource CardBasedListStyle}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <cards:TypeEffectivenessCard />
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </PivotItem>
+            <!--<PivotItem >
+                <PivotItem.Header>
+                    <Border Width="96" Height="48">
+                        <controls:TabHeader Label="SIMULATOR" />
+                    </Border>
+                </PivotItem.Header>
+            </PivotItem>-->
+        </Pivot>
+    </Grid>
+</infra:PageBase>

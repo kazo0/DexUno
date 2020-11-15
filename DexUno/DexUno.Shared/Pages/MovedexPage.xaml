@@ -1,0 +1,65 @@
+﻿<infra:PageBase x:Class="Dex.Uwp.Pages.MovedexPage"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:controls="using:Dex.Uwp.Cards"
+                xmlns:ctrl="using:Dex.Uwp.Controls"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:infra="using:Dex.Uwp.Infrastructure"
+                xmlns:local="using:Dex.Uwp.Pages"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                xmlns:vm="using:Dex.Uwp.ViewModels"
+                x:Uid="Page_Movedex"
+                d:DataContext="{d:DesignInstance Type=vm:MovedexViewModel,
+                                                 IsDesignTimeCreatable=False}"
+                mc:Ignorable="d">
+
+    <infra:PageBase.Commands>
+        <infra:CommandsCollection>
+            <AppBarButton Command="{Binding ReverseOrderCommand}" Icon="Sort" />
+            <AppBarButton Icon="Find" />
+        </infra:CommandsCollection>
+    </infra:PageBase.Commands>
+
+    <Pivot Style="{StaticResource TabsStylePivotStyle}">
+        <Pivot.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="../Theme/CustomPivotResources.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Pivot.Resources>
+        <Pivot.Transitions>
+            <TransitionCollection>
+                <EntranceThemeTransition FromVerticalOffset="-48" />
+            </TransitionCollection>
+        </Pivot.Transitions>
+        <PivotItem>
+            <PivotItem.Header>
+                <Border Width="96" Height="48">
+                    <ctrl:TabHeader Label="QUICK MOVES" />
+                </Border>
+            </PivotItem.Header>
+            <ListView Name="QuickMovesList"
+                      IsItemClickEnabled="True"
+                      ItemContainerStyle="{StaticResource CardBasedListItemStyle}"
+                      ItemTemplate="{StaticResource MoveListItemTemplate}"
+                      ItemTemplateSelector="{StaticResource MovesTemplateSelector}"
+                      ItemsSource="{Binding AllQuickMovesById}"
+                      Style="{StaticResource CardBasedListStyle}" />
+        </PivotItem>
+        <PivotItem>
+            <PivotItem.Header>
+                <Border Width="96" Height="48">
+                    <ctrl:TabHeader Label="CHARGE MOVES" />
+                </Border>
+            </PivotItem.Header>
+            <ListView Name="ChargeMovesList"
+                      IsItemClickEnabled="True"
+                      ItemContainerStyle="{StaticResource CardBasedListItemStyle}"
+                      ItemTemplate="{StaticResource MoveListItemTemplate}"
+                      ItemTemplateSelector="{StaticResource MovesTemplateSelector}"
+                      ItemsSource="{Binding AllChargeMovesById}"
+                      Style="{StaticResource CardBasedListStyle}" />
+        </PivotItem>
+    </Pivot>
+</infra:PageBase>

@@ -1,0 +1,229 @@
+{
+    "fire": {
+        "strengths": [
+            "Steel",
+            "Bug",
+            "Ice",
+            "Grass"
+        ],
+        "weaknesses": [
+            "Fire",
+            "Rock",
+            "Water",
+            "Dragon"
+        ]
+    },
+    "water": {
+        "strengths": [
+            "Fire",
+            "Ground",
+            "Rock"
+        ],
+        "weaknesses": [
+            "Water",
+            "Grass",
+            "Dragon"
+        ]
+    },
+    "grass": {
+        "strengths": [
+            "Water",
+            "Ground",
+            "Rock"
+        ],
+        "weaknesses": [
+            "Flying",
+            "Poison",
+            "Bug",
+            "Fire",
+            "Steel",
+            "Dragon",
+            "Grass"
+        ]
+    },
+    "electric": {
+        "strengths": [
+            "Water",
+            "Flying"
+        ],
+        "weaknesses": [
+            "Ground",
+            "Grass",
+            "Electric",
+            "Dragon"
+        ]
+    },
+    "psychic": {
+        "strengths": [
+            "Fighting",
+            "Poison"
+        ],
+        "weaknesses": [
+            "Steel",
+            "Psychic",
+            "Dark"
+        ]
+    },
+    "ground": {
+        "strengths": [
+            "Fire",
+            "Electric",
+            "Poison",
+            "Rock",
+            "Steel"
+        ],
+        "weaknesses": [
+            "Bug",
+            "Grass",
+            "Flying"
+        ]
+    },
+    "poison": {
+        "strengths": [
+            "Grass",
+            "Fairy"
+        ],
+        "weaknesses": [
+            "Steel",
+            "Poison",
+            "Ground",
+            "Rock",
+            "Ghost"
+        ]
+    },
+    "fighting": {
+        "strengths": [
+            "Normal",
+            "Ice",
+            "Rock",
+            "Dark",
+            "Steel"
+        ],
+        "weaknesses": [
+            "Flying",
+            "Psychic",
+            "Fairy",
+            "Bug",
+            "Poison",
+            "Ghost"
+        ]
+    },
+    "rock": {
+        "strengths": [
+            "Fire",
+            "Ice",
+            "Flying",
+            "Bug"
+        ],
+        "weaknesses": [
+            "Steel",
+            "Ground",
+            "Fighting"
+        ]
+    },
+    "bug": {
+        "strengths": [
+            "Grass",
+            "Psychic",
+            "Dark"
+        ],
+        "weaknesses": [
+            "Fairy",
+            "Steel",
+            "Ghost",
+            "Flying",
+            "Poison",
+            "Fighting",
+            "Fire"
+        ]
+    },
+    "fairy": {
+        "strengths": [
+            "Fighting",
+            "Dragon",
+            "Dark"
+        ],
+        "weaknesses": [
+            "Steel",
+            "Poison",
+            "Fire"
+        ]
+    },
+    "ghost": {
+        "strengths": [
+            "Psychic",
+            "Ghost"
+        ],
+        "weaknesses": [
+            "Dark",
+            "Normal"
+        ]
+    },
+    "dragon": {
+        "strengths": [
+            "Dragon"
+        ],
+        "weaknesses": [
+            "Steel",
+            "Fairy"
+        ]
+    },
+    "ice": {
+        "strengths": [
+            "Grass",
+            "Ground",
+            "Flying",
+            "Dragon"
+        ],
+        "weaknesses": [
+            "Fire",
+            "Water",
+            "Ice",
+            "Steel"
+        ]
+    },
+    "flying": {
+        "strengths": [
+            "Grass",
+            "Fighting",
+            "Bug"
+        ],
+        "weaknesses": [
+            "Steel",
+            "Rock",
+            "Electric"
+        ]
+    },
+    "steel": {
+        "strengths": [
+            "Fairy",
+            "Ice",
+            "Rock"
+        ],
+        "weaknesses": [
+            "Steel",
+            "Electric",
+            "Water",
+            "Fire"
+        ]
+    },
+    "normal": {
+        "strengths": [],
+        "weaknesses": [
+            "Ghost",
+            "Rock",
+            "Steel"
+        ]
+    },
+    "dark": {
+        "strengths": [
+            "Psychic",
+            "Ghost"
+        ],
+        "weaknesses": [
+            "Fairy",
+            "Dark",
+            "Fighting"
+        ]
+    }
+}

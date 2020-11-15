@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="Dex.Uwp.Controls.RectangularGauge"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="using:Dex.Uwp.Cards"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sys="using:System"
+             xmlns:vc="using:Dex.Uwp.ValueConverters"
+             xmlns:vm="using:Dex.Uwp.ViewModels"
+             Name="CurrentControl"
+             d:DataContext="{d:DesignInstance Type=vm:CombatStatDataViewModel,
+                                              IsDesignTimeCreatable=False}"
+             d:DesignHeight="48"
+             d:DesignWidth="400"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <vc:PokemonPercentToGridLenghtConverter x:Key="PokemonPercentToGridLenghtConverter" />
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24" />
+            <RowDefinition Height="24" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="{Binding Percentage, Converter={StaticResource PokemonPercentToGridLenghtConverter}, ConverterParameter='0'}" />
+            <ColumnDefinition Width="{Binding Percentage, Converter={StaticResource PokemonPercentToGridLenghtConverter}, ConverterParameter='1'}" />
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Grid.Column="0"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Style="{StaticResource CaptionTextBlockStyle}">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="{ThemeResource SystemChromeDisabledLowColor}" />
+            </TextBlock.Foreground>
+            <Run Text="{Binding ElementName=CurrentControl, Path=Tag}" />
+            <Run Text="{Binding StatValue}" />
+        </TextBlock>
+
+        <TextBlock Grid.Row="0"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"
+                   Style="{StaticResource CaptionTextBlockStyle}"
+                   Text="{Binding MaxStatValue}">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="{ThemeResource SystemChromeDisabledLowColor}" />
+            </TextBlock.Foreground>
+        </TextBlock>
+
+        <Rectangle Grid.Row="1"
+                   Grid.Column="0"
+                   Grid.ColumnSpan="2">
+            <Rectangle.Style>
+                <Style TargetType="Rectangle">
+                    <Setter Property="Fill" Value="{StaticResource AppGreyColorLighter1}" />
+                </Style>
+            </Rectangle.Style>
+        </Rectangle>
+
+        <Rectangle Name="ValueRectangle"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Fill="{Binding ElementName=CurrentControl,
+                                  Path=Foreground}" />
+
+        <TextBlock Grid.Row="1"
+                   Grid.Column="0"
+                   Margin="0,0,4,0"
+                   HorizontalAlignment="Right"
+                   VerticalAlignment="Center"
+                   Style="{StaticResource CaptionTextBlockStyle}"
+                   Text="{Binding Percentage,
+                                  Converter={StaticResource StringAppenderFormatter},
+                                  ConverterParameter='%'}">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="{ThemeResource SystemAltHighColor}" />
+            </TextBlock.Foreground>
+        </TextBlock>
+    </Grid>
+</UserControl>

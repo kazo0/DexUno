@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="using:Dex.Uwp.Cards"
+                    xmlns:data="using:Dex.Core.Entities"
+                    xmlns:local="using:Dex.Uwp.Theme"
+                    xmlns:partials="using:Dex.Uwp.Partials">
+
+    <DataTemplate x:Key="QuickMoveDetailsDataTemplate">
+        <partials:QuickMoveDetailsControl />
+    </DataTemplate>
+
+    <DataTemplate x:Key="ChargeMoveDetailsDataTemplate">
+        <partials:ChargeMoveDetailsControl />
+    </DataTemplate>
+
+    <DataTemplate x:Key="PokemonListItemTemplate">
+        <partials:PokemonListItem />
+    </DataTemplate>
+
+    <DataTemplate x:Key="MoveListItemTemplate">
+        <partials:MoveListItem />
+    </DataTemplate>
+
+    <local:MoveDetailTemplateSelector x:Key="MovesTemplateSelector" />
+    <local:ListItemTemplateSelector x:Key="ListItemTemplateSelector" />
+
+    <DataTemplate x:Key="PokemonTypeTemplate">
+        <Border Width="{TemplateBinding Width}"
+                Height="{TemplateBinding Height}"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Center"
+                Background="{Binding Type,
+                                     Converter={StaticResource PokemonTypeToColorConverter}}"
+                CornerRadius="1">
+            <TextBlock HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="10"
+                       Text="{Binding Type}">
+                <TextBlock.Foreground>
+                    <SolidColorBrush Color="{ThemeResource SystemAltHighColor}" />
+                </TextBlock.Foreground>
+            </TextBlock>
+        </Border>
+    </DataTemplate>
+</ResourceDictionary>

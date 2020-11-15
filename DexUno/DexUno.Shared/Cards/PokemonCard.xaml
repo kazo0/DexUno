@@ -1,0 +1,172 @@
+﻿<UserControl x:Class="Dex.Uwp.Cards.PokemonCard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="using:Dex.Uwp.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:data="using:Dex.Core.Entities"
+             xmlns:local="using:Dex.Uwp.Cards"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             d:DesignHeight="500"
+             d:DesignWidth="400"
+             mc:Ignorable="d">
+
+	<RelativePanel>
+		<!--  Pokemon Picture  -->
+		<Image x:Name="PokemonPicture"
+			   Width="192"
+			   Height="192"
+			   RelativePanel.AlignHorizontalCenterWithPanel="True"
+			   Source="{Binding DexNumber,
+                                    Converter={StaticResource PokemonDexNumberToPictureConverter}}">
+			<Image.Transitions>
+				<TransitionCollection>
+					<EntranceThemeTransition FromVerticalOffset="-24" />
+				</TransitionCollection>
+			</Image.Transitions>
+		</Image>
+		<!--  Pokemon Name  -->
+		<TextBlock x:Name="PokemonName"
+				   Height="32"
+				   Margin="0,12,0,0"
+				   FontWeight="Bold"
+				   RelativePanel.AlignHorizontalCenterWithPanel="True"
+				   RelativePanel.Below="PokemonPicture"
+				   Style="{StaticResource TitleTextBlockStyle}"
+				   Text="{Binding Name,
+                                      Converter={StaticResource StringCapitalizeFirstLetterConverter}}" />
+
+		<!--  Pokemon Types  -->
+		<ItemsControl x:Name="PokemonTypes"
+					  Margin="0,12,-12,0"
+					  HorizontalAlignment="Center"
+					  ItemsSource="{Binding Types}"
+					  RelativePanel.AlignHorizontalCenterWithPanel="True"
+					  RelativePanel.Below="PokemonName">
+			<ItemsControl.ItemsPanel>
+				<ItemsPanelTemplate>
+					<StackPanel Orientation="Horizontal" />
+				</ItemsPanelTemplate>
+			</ItemsControl.ItemsPanel>
+			<ItemsControl.ItemTemplate>
+				<DataTemplate>
+					<controls:Badge Width="100"
+									Height="24"
+									Margin="0,0,12,0"
+									Background="{Binding Converter={StaticResource PokemonTypeToColorConverter}}"
+									Text="{Binding}" />
+				</DataTemplate>
+			</ItemsControl.ItemTemplate>
+		</ItemsControl>
+
+		<!--  Pokemon Stats  -->
+
+		<Grid Margin="-12,24,-12,-12"
+			  Background="{StaticResource SystemChormeLowColorBrush}"
+			  Padding="12"
+			  RelativePanel.AlignHorizontalCenterWithPanel="True"
+			  RelativePanel.AlignLeftWithPanel="True"
+			  RelativePanel.AlignRightWithPanel="True"
+			  RelativePanel.Below="PokemonTypes">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="1" />
+				<ColumnDefinition Width="*" />
+				<ColumnDefinition Width="1" />
+				<ColumnDefinition Width="*" />
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto" />
+				<RowDefinition Height="12" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+
+			<!--  Flee Stat  -->
+			<StackPanel Grid.Row="0"
+						Grid.Column="0">
+				<TextBlock Foreground="{StaticResource SystemChromeDisabledLowColorBrush}"
+						   Text="{Binding FleeRate, Converter={StaticResource StringAppenderFormatter}, ConverterParameter='%'}"
+						   TextAlignment="Center" />
+				<TextBlock FontSize="11"
+						   Text="Flee"
+						   TextAlignment="Center" />
+			</StackPanel>
+
+			<Border Grid.Row="0"
+					Grid.Column="1"
+					Margin="0,4"
+					BorderBrush="{StaticResource SubtleBorderDividerBrush}"
+					BorderThickness="1,0,0,0" />
+
+			<!--  Candies Stat  -->
+			<StackPanel Grid.Row="0"
+						Grid.Column="2">
+				<TextBlock Foreground="{StaticResource SystemChromeDisabledLowColorBrush}"
+						   Text="{Binding CandiesToEvolve}"
+						   TextAlignment="Center" />
+				<TextBlock FontSize="11"
+						   Text="Evolve"
+						   TextAlignment="Center" />
+			</StackPanel>
+			<Border Grid.Row="0"
+					Grid.Column="3"
+					Margin="0,4"
+					BorderBrush="{StaticResource SubtleBorderDividerBrush}"
+					BorderThickness="1,0,0,0" />
+
+			<!--  CP Stat  -->
+			<StackPanel Grid.Row="0"
+						Grid.Column="4">
+				<TextBlock Foreground="{StaticResource SystemChromeDisabledLowColorBrush}"
+						   Text="{Binding Cp.Max}"
+						   TextAlignment="Center" />
+				<TextBlock FontSize="11"
+						   Text="Max CP"
+						   TextAlignment="Center" />
+			</StackPanel>
+
+			<!--  Attack Stat  -->
+			<StackPanel Grid.Row="2"
+						Grid.Column="0">
+				<TextBlock Foreground="{StaticResource SystemChromeDisabledLowColorBrush}"
+						   Text="{Binding Attack.Value}"
+						   TextAlignment="Center" />
+				<TextBlock FontSize="11"
+						   Text="ATK"
+						   TextAlignment="Center" />
+			</StackPanel>
+
+			<Border Grid.Row="2"
+					Grid.Column="1"
+					Margin="0,4"
+					BorderBrush="{StaticResource SubtleBorderDividerBrush}"
+					BorderThickness="1,0,0,0" />
+
+			<!--  Defense Stat  -->
+			<StackPanel Grid.Row="2"
+						Grid.Column="2">
+				<TextBlock Foreground="{StaticResource SystemChromeDisabledLowColorBrush}"
+						   Text="{Binding Defense.Value}"
+						   TextAlignment="Center" />
+				<TextBlock FontSize="11"
+						   Text="DEF"
+						   TextAlignment="Center" />
+			</StackPanel>
+			<Border Grid.Row="2"
+					Grid.Column="3"
+					Margin="0,4"
+					BorderBrush="{StaticResource SubtleBorderDividerBrush}"
+					BorderThickness="1,0,0,0" />
+
+			<!--  Stamina Stat  -->
+			<StackPanel Grid.Row="2"
+						Grid.Column="4">
+				<TextBlock Foreground="{StaticResource SystemChromeDisabledLowColorBrush}"
+						   Text="{Binding Stamina.Value}"
+						   TextAlignment="Center" />
+				<TextBlock FontSize="11"
+						   Text="STM"
+						   TextAlignment="Center" />
+			</StackPanel>
+		</Grid>
+	</RelativePanel>
+</UserControl>

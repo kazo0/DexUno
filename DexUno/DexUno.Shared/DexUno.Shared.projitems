@@ -1,0 +1,482 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>6279c845-92f8-4333-ab99-3d213163593c</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>DexUno.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Cards\EvolutionLineCard.xaml.cs">
+      <DependentUpon>EvolutionLineCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Cards\MoveCard.xaml.cs">
+      <DependentUpon>MoveCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Cards\MoveRelatedPokemonsCard.xaml.cs">
+      <DependentUpon>MoveRelatedPokemonsCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Cards\MovesCard.xaml.cs">
+      <DependentUpon>MovesCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Cards\PokemonCard.xaml.cs">
+      <DependentUpon>PokemonCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Cards\StatsCard.xaml.cs">
+      <DependentUpon>StatsCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Cards\TypeEffectivenessCard.xaml.cs">
+      <DependentUpon>TypeEffectivenessCard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Badge.xaml.cs">
+      <DependentUpon>Badge.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\Card.xaml.cs">
+      <DependentUpon>Card.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\CardHeader.xaml.cs">
+      <DependentUpon>CardHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\HoverControl.xaml.cs">
+      <DependentUpon>HoverControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\PointerAppBarButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\RectangularGauge.xaml.cs">
+      <DependentUpon>RectangularGauge.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\TabHeader.xaml.cs">
+      <DependentUpon>TabHeader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Controls\UniformGrid.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataAccess\IPokePicturesSource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataAccess\IPokePicturesSourceProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DataAccess\LocalFileDataSource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ColorUtils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\ServiceCollectionExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\PageBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\RelayCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Infrastructure\ViewModelBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\MoveDetailPage.xaml.cs">
+      <DependentUpon>MoveDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\MoveDexPage.xaml.cs">
+      <DependentUpon>MovedexPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\PokedexPage.xaml.cs">
+      <DependentUpon>PokedexPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\PokemonDetailPage.xaml.cs">
+      <DependentUpon>PokemonDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\SearchPage.xaml.cs">
+      <DependentUpon>SearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Shell.xaml.cs">
+      <DependentUpon>Shell.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\SidePane.xaml.cs">
+      <DependentUpon>SidePane.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\TypeEffectivenessPage.xaml.cs">
+      <DependentUpon>TypeEffectivenessPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Partials\ChargeMoveDetailsControl.xaml.cs">
+      <DependentUpon>ChargeMoveDetailsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Partials\MoveListItem.xaml.cs">
+      <DependentUpon>MoveListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Partials\PokemonListItem.xaml.cs">
+      <DependentUpon>PokemonListItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Partials\QuickMoveDetailsControl.xaml.cs">
+      <DependentUpon>QuickMoveDetailsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IApplicationWindowManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IAppLifecycleManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\IJsonService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\INavigationService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\ISettingsService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\NavigationServiceException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Startup.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Theme\ListItemTemplateSelector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Theme\MoveDetailTemplateSelector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ValueConverters\EvolutionLineToGridLengthConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ValueConverters\NullOrEmptyToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ValueConverters\NumberToItemsConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ValueConverters\PokemonDexNumberToPictureConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ValueConverters\PokemonPercentToGridLenghtConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ValueConverters\PokemonType2TextFormatter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ValueConverters\PokemonTypeToColorConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ValueConverters\PokemonUnonwnTypeToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ValueConverters\StringAppenderFormatter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ValueConverters\StringCapitalizeFirstLetterConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ValueConverters\VerticalTextConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\AboutViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\CombatStatDataViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\EvolutionLineDataViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MoveDetailViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\MovedexViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PokedexViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PokemonDetailViewModel.Cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SearchViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\SettingsViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\TypeEffectivenessViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Cards\EvolutionLineCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Cards\MoveCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Cards\MoveRelatedPokemonsCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Cards\MovesCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Cards\PokemonCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Cards\StatsCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Cards\TypeEffectivenessCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\Badge.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\Card.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\CardHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\HoverControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\RectangularGauge.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Controls\TabHeader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Pages\AboutPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Pages\MoveDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Pages\MovedexPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Pages\PokedexPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Pages\PokemonDetailPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Pages\SearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Pages\SettingsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Pages\Shell.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Pages\SidePane.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Pages\TypeEffectivenessPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Partials\ChargeMoveDetailsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Partials\MoveListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Partials\PokemonListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Partials\QuickMoveDetailsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Theme\Brushes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Theme\Converters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Theme\CustomPivotResources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Theme\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)Theme\Templates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)Assets\SharedAssets.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="$(MSBuildThisFileDirectory)Strings\en\Resources.resw" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\1.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\10.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\100.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\101.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\102.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\103.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\104.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\105.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\106.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\107.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\108.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\109.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\11.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\110.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\111.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\112.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\113.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\114.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\115.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\116.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\117.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\118.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\119.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\12.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\120.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\121.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\122.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\123.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\124.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\125.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\126.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\127.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\128.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\129.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\13.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\130.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\131.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\132.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\133.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\134.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\135.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\136.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\137.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\138.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\139.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\14.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\140.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\141.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\142.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\143.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\144.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\145.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\146.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\147.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\148.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\149.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\15.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\150.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\151.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\16.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\17.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\18.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\19.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\2.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\20.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\21.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\22.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\23.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\24.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\25.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\26.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\27.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\28.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\29.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\3.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\30.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\31.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\32.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\33.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\34.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\35.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\36.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\37.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\38.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\39.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\4.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\40.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\41.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\42.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\43.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\44.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\45.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\46.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\47.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\48.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\49.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\5.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\50.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\51.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\52.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\53.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\54.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\55.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\56.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\57.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\58.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\59.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\6.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\60.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\61.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\62.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\63.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\64.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\65.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\66.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\67.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\68.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\69.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\7.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\70.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\71.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\72.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\73.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\74.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\75.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\76.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\77.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\78.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\79.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\8.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\80.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\81.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\82.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\83.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\84.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\85.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\86.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\87.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\88.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\89.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\9.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\90.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\91.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\92.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\93.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\94.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\95.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\96.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\97.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\98.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Flat\99.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\LargeTile.scale-100.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\LargeTile.scale-125.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\LargeTile.scale-150.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\LargeTile.scale-200.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\LargeTile.scale-400.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\SmallTile.scale-100.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\SmallTile.scale-125.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\SmallTile.scale-150.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\SmallTile.scale-200.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\SmallTile.scale-400.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\SplashScreen.scale-100.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\SplashScreen.scale-125.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\SplashScreen.scale-150.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\SplashScreen.scale-200.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\SplashScreen.scale-400.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Square150x150Logo.scale-100.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Square150x150Logo.scale-125.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Square150x150Logo.scale-150.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Square150x150Logo.scale-200.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Square150x150Logo.scale-400.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Square44x44Logo.altform-unplated_targetsize-16.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Square44x44Logo.altform-unplated_targetsize-24.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Square44x44Logo.altform-unplated_targetsize-256.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Square44x44Logo.altform-unplated_targetsize-32.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Square44x44Logo.altform-unplated_targetsize-48.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Square44x44Logo.scale-100.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Square44x44Logo.scale-125.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Square44x44Logo.scale-150.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Square44x44Logo.scale-200.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Square44x44Logo.scale-400.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Square44x44Logo.targetsize-16.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Square44x44Logo.targetsize-24.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Square44x44Logo.targetsize-256.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Square44x44Logo.targetsize-32.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Square44x44Logo.targetsize-48.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\StoreLogo.scale-100.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\StoreLogo.scale-125.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\StoreLogo.scale-150.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\StoreLogo.scale-200.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\StoreLogo.scale-400.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Wide310x150Logo.scale-100.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Wide310x150Logo.scale-125.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Wide310x150Logo.scale-150.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Wide310x150Logo.scale-200.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Assets\Uwp\Wide310x150Logo.scale-400.png" />
+    <Content Include="$(MSBuildThisFileDirectory)Data\evolutions.db.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Data\moves.db.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Data\pokemons.db.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Data\types.db.json" />
+    <Content Include="$(MSBuildThisFileDirectory)Properties\Default.rd.xml" />
+  </ItemGroup>
+</Project>

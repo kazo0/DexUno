@@ -1,0 +1,7875 @@
+[
+  {
+    "DexNumber": 1,
+    "Name": "bulbasaur",
+    "Types": [
+      "grass",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 118
+    },
+    "Defense": {
+      "BaseValue": 118
+    },
+    "Stamina": {
+      "BaseValue": 90
+    },
+    "CatchRate": 16,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "sludge-bomb",
+        "seed-bomb",
+        "power-whip"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "vine-whip"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 2,
+    "Name": "ivysaur",
+    "Types": [
+      "grass",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 151
+    },
+    "Defense": {
+      "BaseValue": 151
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 8,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "sludge-bomb",
+        "solar-beam",
+        "power-whip"
+      ],
+      "QuickMovesIds": [
+        "razor-leaf",
+        "vine-whip"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 3,
+    "Name": "venusaur",
+    "Types": [
+      "grass",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 198
+    },
+    "Defense": {
+      "BaseValue": 198
+    },
+    "Stamina": {
+      "BaseValue": 160
+    },
+    "CatchRate": 4,
+    "FleeRate": 5,
+    "Moves": {
+      "ChargeMovesIds": [
+        "sludge-bomb",
+        "solar-beam",
+        "petal-blizzard"
+      ],
+      "QuickMovesIds": [
+        "razor-leaf",
+        "vine-whip"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 4,
+    "Name": "charmander",
+    "Types": [
+      "fire"
+    ],
+    "Attack": {
+      "BaseValue": 116
+    },
+    "Defense": {
+      "BaseValue": 96
+    },
+    "Stamina": {
+      "BaseValue": 78
+    },
+    "CatchRate": 16,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "flame-burst",
+        "flamethrower",
+        "flame-charge"
+      ],
+      "QuickMovesIds": [
+        "ember",
+        "scratch"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 5,
+    "Name": "charmeleon",
+    "Types": [
+      "fire"
+    ],
+    "Attack": {
+      "BaseValue": 158
+    },
+    "Defense": {
+      "BaseValue": 129
+    },
+    "Stamina": {
+      "BaseValue": 116
+    },
+    "CatchRate": 8,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "flame-burst",
+        "flamethrower",
+        "fire-punch"
+      ],
+      "QuickMovesIds": [
+        "ember",
+        "fire-fang"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 6,
+    "Name": "charizard",
+    "Types": [
+      "fire",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 223
+    },
+    "Defense": {
+      "BaseValue": 176
+    },
+    "Stamina": {
+      "BaseValue": 156
+    },
+    "CatchRate": 4,
+    "FleeRate": 5,
+    "Moves": {
+      "ChargeMovesIds": [
+        "fire-blast",
+        "dragon-claw",
+        "overheat"
+      ],
+      "QuickMovesIds": [
+        "fire-spin",
+        "air-slash"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 7,
+    "Name": "squirtle",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 94
+    },
+    "Defense": {
+      "BaseValue": 122
+    },
+    "Stamina": {
+      "BaseValue": 88
+    },
+    "CatchRate": 16,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "aqua-jet",
+        "aqua-tail",
+        "water-pulse"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "bubble"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 8,
+    "Name": "wartortle",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 126
+    },
+    "Defense": {
+      "BaseValue": 155
+    },
+    "Stamina": {
+      "BaseValue": 118
+    },
+    "CatchRate": 8,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "aqua-jet",
+        "hydro-pump",
+        "ice-beam"
+      ],
+      "QuickMovesIds": [
+        "bite",
+        "water-gun"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 9,
+    "Name": "blastoise",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 171
+    },
+    "Defense": {
+      "BaseValue": 210
+    },
+    "Stamina": {
+      "BaseValue": 158
+    },
+    "CatchRate": 4,
+    "FleeRate": 5,
+    "Moves": {
+      "ChargeMovesIds": [
+        "ice-beam",
+        "hydro-pump",
+        "flash-cannon"
+      ],
+      "QuickMovesIds": [
+        "bite",
+        "water-gun"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 10,
+    "Name": "caterpie",
+    "Types": [
+      "bug"
+    ],
+    "Attack": {
+      "BaseValue": 55
+    },
+    "Defense": {
+      "BaseValue": 62
+    },
+    "Stamina": {
+      "BaseValue": 90
+    },
+    "CatchRate": 40,
+    "FleeRate": 20,
+    "Moves": {
+      "ChargeMovesIds": [
+        "struggle"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "bug-bite"
+      ]
+    },
+    "CandiesToEvolve": 12,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 11,
+    "Name": "metapod",
+    "Types": [
+      "bug"
+    ],
+    "Attack": {
+      "BaseValue": 45
+    },
+    "Defense": {
+      "BaseValue": 94
+    },
+    "Stamina": {
+      "BaseValue": 100
+    },
+    "CatchRate": 20,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "struggle"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "bug-bite"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 12,
+    "Name": "butterfree",
+    "Types": [
+      "bug",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 167
+    },
+    "Defense": {
+      "BaseValue": 151
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 10,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "psychic",
+        "bug-buzz",
+        "signal-beam"
+      ],
+      "QuickMovesIds": [
+        "struggle-bug",
+        "confusion"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 13,
+    "Name": "weedle",
+    "Types": [
+      "bug",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 63
+    },
+    "Defense": {
+      "BaseValue": 55
+    },
+    "Stamina": {
+      "BaseValue": 80
+    },
+    "CatchRate": 40,
+    "FleeRate": 20,
+    "Moves": {
+      "ChargeMovesIds": [
+        "struggle"
+      ],
+      "QuickMovesIds": [
+        "bug-bite",
+        "poison-sting"
+      ]
+    },
+    "CandiesToEvolve": 12,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 14,
+    "Name": "kakuna",
+    "Types": [
+      "bug",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 46
+    },
+    "Defense": {
+      "BaseValue": 86
+    },
+    "Stamina": {
+      "BaseValue": 90
+    },
+    "CatchRate": 20,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "struggle"
+      ],
+      "QuickMovesIds": [
+        "bug-bite",
+        "poison-sting"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 15,
+    "Name": "beedrill",
+    "Types": [
+      "bug",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 169
+    },
+    "Defense": {
+      "BaseValue": 150
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 10,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "aerial-ace",
+        "sludge-bomb",
+        "x-scissor"
+      ],
+      "QuickMovesIds": [
+        "infestation",
+        "poison-jab"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 16,
+    "Name": "pidgey",
+    "Types": [
+      "normal",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 85
+    },
+    "Defense": {
+      "BaseValue": 76
+    },
+    "Stamina": {
+      "BaseValue": 80
+    },
+    "CatchRate": 40,
+    "FleeRate": 20,
+    "Moves": {
+      "ChargeMovesIds": [
+        "twister",
+        "aerial-ace",
+        "air-cutter"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "quick-attack"
+      ]
+    },
+    "CandiesToEvolve": 12,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 17,
+    "Name": "pidgeotto",
+    "Types": [
+      "normal",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 117
+    },
+    "Defense": {
+      "BaseValue": 108
+    },
+    "Stamina": {
+      "BaseValue": 126
+    },
+    "CatchRate": 20,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "twister",
+        "aerial-ace",
+        "air-cutter"
+      ],
+      "QuickMovesIds": [
+        "wing-attack",
+        "steel-wing"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 18,
+    "Name": "pidgeot",
+    "Types": [
+      "normal",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 166
+    },
+    "Defense": {
+      "BaseValue": 157
+    },
+    "Stamina": {
+      "BaseValue": 166
+    },
+    "CatchRate": 10,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "hurricane",
+        "aerial-ace",
+        "brave-bird"
+      ],
+      "QuickMovesIds": [
+        "air-slash",
+        "steel-wing"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 19,
+    "Name": "rattata",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 103
+    },
+    "Defense": {
+      "BaseValue": 70
+    },
+    "Stamina": {
+      "BaseValue": 60
+    },
+    "CatchRate": 40,
+    "FleeRate": 20,
+    "Moves": {
+      "ChargeMovesIds": [
+        "dig",
+        "hyper-fang",
+        "body-slam"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "quick-attack"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 20,
+    "Name": "raticate",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 161
+    },
+    "Defense": {
+      "BaseValue": 144
+    },
+    "Stamina": {
+      "BaseValue": 110
+    },
+    "CatchRate": 16,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "dig",
+        "hyper-fang",
+        "hyper-beam"
+      ],
+      "QuickMovesIds": [
+        "bite",
+        "quick-attack"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 21,
+    "Name": "spearow",
+    "Types": [
+      "normal",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 112
+    },
+    "Defense": {
+      "BaseValue": 61
+    },
+    "Stamina": {
+      "BaseValue": 80
+    },
+    "CatchRate": 40,
+    "FleeRate": 15,
+    "Moves": {
+      "ChargeMovesIds": [
+        "aerial-ace",
+        "drill-peck",
+        "sky-attack"
+      ],
+      "QuickMovesIds": [
+        "quick-attack",
+        "peck"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 22,
+    "Name": "fearow",
+    "Types": [
+      "normal",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 182
+    },
+    "Defense": {
+      "BaseValue": 135
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 16,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "aerial-ace",
+        "drill-run",
+        "sky-attack"
+      ],
+      "QuickMovesIds": [
+        "steel-wing",
+        "peck"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 23,
+    "Name": "ekans",
+    "Types": [
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 110
+    },
+    "Defense": {
+      "BaseValue": 102
+    },
+    "Stamina": {
+      "BaseValue": 70
+    },
+    "CatchRate": 40,
+    "FleeRate": 15,
+    "Moves": {
+      "ChargeMovesIds": [
+        "wrap",
+        "poison-fang",
+        "sludge-bomb"
+      ],
+      "QuickMovesIds": [
+        "acid",
+        "poison-sting"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 24,
+    "Name": "arbok",
+    "Types": [
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 167
+    },
+    "Defense": {
+      "BaseValue": 158
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 16,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "dark-pulse",
+        "sludge-wave",
+        "gunk-shot"
+      ],
+      "QuickMovesIds": [
+        "acid",
+        "bite"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 25,
+    "Name": "pikachu",
+    "Types": [
+      "electric"
+    ],
+    "Attack": {
+      "BaseValue": 112
+    },
+    "Defense": {
+      "BaseValue": 101
+    },
+    "Stamina": {
+      "BaseValue": 70
+    },
+    "CatchRate": 16,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "discharge",
+        "thunderbolt",
+        "wild-charge"
+      ],
+      "QuickMovesIds": [
+        "thunder-shock",
+        "quick-attack"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 26,
+    "Name": "raichu",
+    "Types": [
+      "electric"
+    ],
+    "Attack": {
+      "BaseValue": 193
+    },
+    "Defense": {
+      "BaseValue": 165
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 8,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "brick-break",
+        "thunder-punch",
+        "wild-charge"
+      ],
+      "QuickMovesIds": [
+        "volt-switch",
+        "spark"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 27,
+    "Name": "sandshrew",
+    "Types": [
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 126
+    },
+    "Defense": {
+      "BaseValue": 145
+    },
+    "Stamina": {
+      "BaseValue": 100
+    },
+    "CatchRate": 40,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "dig",
+        "rock-slide",
+        "sand-tomb"
+      ],
+      "QuickMovesIds": [
+        "scratch",
+        "mud-shot"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 28,
+    "Name": "sandslash",
+    "Types": [
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 182
+    },
+    "Defense": {
+      "BaseValue": 202
+    },
+    "Stamina": {
+      "BaseValue": 150
+    },
+    "CatchRate": 16,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "rock-tomb",
+        "bulldoze",
+        "earthquake"
+      ],
+      "QuickMovesIds": [
+        "metal-claw",
+        "mud-shot"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 29,
+    "Name": "nidoran♀",
+    "Types": [
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 86
+    },
+    "Defense": {
+      "BaseValue": 94
+    },
+    "Stamina": {
+      "BaseValue": 110
+    },
+    "CatchRate": 40,
+    "FleeRate": 15,
+    "Moves": {
+      "ChargeMovesIds": [
+        "poison-fang",
+        "sludge-bomb",
+        "body-slam"
+      ],
+      "QuickMovesIds": [
+        "poison-sting",
+        "bite"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 30,
+    "Name": "nidorina",
+    "Types": [
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 117
+    },
+    "Defense": {
+      "BaseValue": 126
+    },
+    "Stamina": {
+      "BaseValue": 140
+    },
+    "CatchRate": 20,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "poison-fang",
+        "sludge-bomb",
+        "dig"
+      ],
+      "QuickMovesIds": [
+        "poison-sting",
+        "bite"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 31,
+    "Name": "nidoqueen",
+    "Types": [
+      "poison",
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 180
+    },
+    "Defense": {
+      "BaseValue": 174
+    },
+    "Stamina": {
+      "BaseValue": 180
+    },
+    "CatchRate": 10,
+    "FleeRate": 5,
+    "Moves": {
+      "ChargeMovesIds": [
+        "stone-edge",
+        "sludge-wave",
+        "earthquake"
+      ],
+      "QuickMovesIds": [
+        "poison-jab",
+        "bite"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 32,
+    "Name": "nidoran♂",
+    "Types": [
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 105
+    },
+    "Defense": {
+      "BaseValue": 76
+    },
+    "Stamina": {
+      "BaseValue": 92
+    },
+    "CatchRate": 40,
+    "FleeRate": 15,
+    "Moves": {
+      "ChargeMovesIds": [
+        "horn-attack",
+        "body-slam",
+        "sludge-bomb"
+      ],
+      "QuickMovesIds": [
+        "poison-sting",
+        "peck"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 33,
+    "Name": "nidorino",
+    "Types": [
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 137
+    },
+    "Defense": {
+      "BaseValue": 112
+    },
+    "Stamina": {
+      "BaseValue": 122
+    },
+    "CatchRate": 20,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "horn-attack",
+        "dig",
+        "sludge-bomb"
+      ],
+      "QuickMovesIds": [
+        "poison-jab",
+        "bite"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 34,
+    "Name": "nidoking",
+    "Types": [
+      "poison",
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 204
+    },
+    "Defense": {
+      "BaseValue": 157
+    },
+    "Stamina": {
+      "BaseValue": 162
+    },
+    "CatchRate": 10,
+    "FleeRate": 5,
+    "Moves": {
+      "ChargeMovesIds": [
+        "megahorn",
+        "earthquake",
+        "sludge-wave"
+      ],
+      "QuickMovesIds": [
+        "poison-jab",
+        "iron-tail"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 35,
+    "Name": "clefairy",
+    "Types": [
+      "fairy"
+    ],
+    "Attack": {
+      "BaseValue": 107
+    },
+    "Defense": {
+      "BaseValue": 116
+    },
+    "Stamina": {
+      "BaseValue": 140
+    },
+    "CatchRate": 24,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "body-slam",
+        "disarming-voice",
+        "moonblast"
+      ],
+      "QuickMovesIds": [
+        "pound",
+        "zen-headbutt"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 36,
+    "Name": "clefable",
+    "Types": [
+      "fairy"
+    ],
+    "Attack": {
+      "BaseValue": 178
+    },
+    "Defense": {
+      "BaseValue": 171
+    },
+    "Stamina": {
+      "BaseValue": 190
+    },
+    "CatchRate": 8,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "psychic",
+        "dazzling-gleam",
+        "moonblast"
+      ],
+      "QuickMovesIds": [
+        "charge-beam",
+        "zen-headbutt"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 37,
+    "Name": "vulpix",
+    "Types": [
+      "fire"
+    ],
+    "Attack": {
+      "BaseValue": 96
+    },
+    "Defense": {
+      "BaseValue": 122
+    },
+    "Stamina": {
+      "BaseValue": 76
+    },
+    "CatchRate": 24,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "body-slam",
+        "flamethrower",
+        "flame-charge"
+      ],
+      "QuickMovesIds": [
+        "quick-attack",
+        "ember"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 38,
+    "Name": "ninetales",
+    "Types": [
+      "fire"
+    ],
+    "Attack": {
+      "BaseValue": 169
+    },
+    "Defense": {
+      "BaseValue": 204
+    },
+    "Stamina": {
+      "BaseValue": 146
+    },
+    "CatchRate": 8,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "heat-wave",
+        "overhead",
+        "solar-beam"
+      ],
+      "QuickMovesIds": [
+        "feint-attack",
+        "fire-spin"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 39,
+    "Name": "jigglypuff",
+    "Types": [
+      "normal",
+      "fairy"
+    ],
+    "Attack": {
+      "BaseValue": 80
+    },
+    "Defense": {
+      "BaseValue": 44
+    },
+    "Stamina": {
+      "BaseValue": 230
+    },
+    "CatchRate": 40,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "disarming-voice",
+        "gyro-ball",
+        "dazzling-gleam"
+      ],
+      "QuickMovesIds": [
+        "feint-attack",
+        "pound"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 40,
+    "Name": "wigglytuff",
+    "Types": [
+      "normal",
+      "fairy"
+    ],
+    "Attack": {
+      "BaseValue": 156
+    },
+    "Defense": {
+      "BaseValue": 93
+    },
+    "Stamina": {
+      "BaseValue": 280
+    },
+    "CatchRate": 16,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "dazzling-gleam",
+        "hyper-beam",
+        "play-rough"
+      ],
+      "QuickMovesIds": [
+        "feint-attack",
+        "pound"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 41,
+    "Name": "zubat",
+    "Types": [
+      "poison",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 83
+    },
+    "Defense": {
+      "BaseValue": 76
+    },
+    "Stamina": {
+      "BaseValue": 80
+    },
+    "CatchRate": 40,
+    "FleeRate": 20,
+    "Moves": {
+      "ChargeMovesIds": [
+        "poison-fang",
+        "air-cutter",
+        "swift"
+      ],
+      "QuickMovesIds": [
+        "bite",
+        "quick-attack"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 42,
+    "Name": "golbat",
+    "Types": [
+      "poison",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 161
+    },
+    "Defense": {
+      "BaseValue": 153
+    },
+    "Stamina": {
+      "BaseValue": 150
+    },
+    "CatchRate": 16,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "shadow-ball",
+        "air-cutter",
+        "poison-fang"
+      ],
+      "QuickMovesIds": [
+        "bite",
+        "wing-attack"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 43,
+    "Name": "oddish",
+    "Types": [
+      "grass",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 131
+    },
+    "Defense": {
+      "BaseValue": 116
+    },
+    "Stamina": {
+      "BaseValue": 90
+    },
+    "CatchRate": 48,
+    "FleeRate": 15,
+    "Moves": {
+      "ChargeMovesIds": [
+        "moonblast",
+        "seed-bomb",
+        "sludge-bomb"
+      ],
+      "QuickMovesIds": [
+        "razor-leaf",
+        "acid"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 44,
+    "Name": "gloom",
+    "Types": [
+      "grass",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 153
+    },
+    "Defense": {
+      "BaseValue": 139
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 24,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "moonblast",
+        "petal-blizzard",
+        "sludge-bomb"
+      ],
+      "QuickMovesIds": [
+        "razor-leaf",
+        "acid"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 45,
+    "Name": "vileplume",
+    "Types": [
+      "grass",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 202
+    },
+    "Defense": {
+      "BaseValue": 170
+    },
+    "Stamina": {
+      "BaseValue": 150
+    },
+    "CatchRate": 12,
+    "FleeRate": 5,
+    "Moves": {
+      "ChargeMovesIds": [
+        "moonblast",
+        "petal-blizzard",
+        "solar-beam"
+      ],
+      "QuickMovesIds": [
+        "razor-leaf",
+        "acid"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 46,
+    "Name": "paras",
+    "Types": [
+      "bug",
+      "grass"
+    ],
+    "Attack": {
+      "BaseValue": 121
+    },
+    "Defense": {
+      "BaseValue": 99
+    },
+    "Stamina": {
+      "BaseValue": 70
+    },
+    "CatchRate": 32,
+    "FleeRate": 15,
+    "Moves": {
+      "ChargeMovesIds": [
+        "seed-bomb",
+        "x-scissor",
+        "cross-poison"
+      ],
+      "QuickMovesIds": [
+        "scratch",
+        "bug-bite"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 47,
+    "Name": "parasect",
+    "Types": [
+      "bug",
+      "grass"
+    ],
+    "Attack": {
+      "BaseValue": 165
+    },
+    "Defense": {
+      "BaseValue": 146
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 16,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "solar-beam",
+        "x-scissor",
+        "cross-poison"
+      ],
+      "QuickMovesIds": [
+        "strugle-bug",
+        "fury-cutter"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 48,
+    "Name": "venonat",
+    "Types": [
+      "bug",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 100
+    },
+    "Defense": {
+      "BaseValue": 102
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 40,
+    "FleeRate": 15,
+    "Moves": {
+      "ChargeMovesIds": [
+        "poison-fang",
+        "psybeam",
+        "signal-beam"
+      ],
+      "QuickMovesIds": [
+        "bug-bite",
+        "confusion"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 49,
+    "Name": "venomoth",
+    "Types": [
+      "bug",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 179
+    },
+    "Defense": {
+      "BaseValue": 150
+    },
+    "Stamina": {
+      "BaseValue": 140
+    },
+    "CatchRate": 16,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "silver-wind",
+        "psychic",
+        "bug-buzz"
+      ],
+      "QuickMovesIds": [
+        "infestation",
+        "confusion"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 50,
+    "Name": "diglett",
+    "Types": [
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 109
+    },
+    "Defense": {
+      "BaseValue": 88
+    },
+    "Stamina": {
+      "BaseValue": 20
+    },
+    "CatchRate": 40,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "rock-tomb",
+        "dig",
+        "mud-bomb"
+      ],
+      "QuickMovesIds": [
+        "scratch",
+        "mud-slap"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 51,
+    "Name": "dugtrio",
+    "Types": [
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 167
+    },
+    "Defense": {
+      "BaseValue": 147
+    },
+    "Stamina": {
+      "BaseValue": 70
+    },
+    "CatchRate": 16,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "stone-edge",
+        "earthquake",
+        "mud-bomb"
+      ],
+      "QuickMovesIds": [
+        "sucker-punch",
+        "mud-slap"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 52,
+    "Name": "meowth",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 92
+    },
+    "Defense": {
+      "BaseValue": 81
+    },
+    "Stamina": {
+      "BaseValue": 80
+    },
+    "CatchRate": 40,
+    "FleeRate": 15,
+    "Moves": {
+      "ChargeMovesIds": [
+        "night-slash",
+        "dark-pulse",
+        "foul-play"
+      ],
+      "QuickMovesIds": [
+        "scratch",
+        "bite"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 53,
+    "Name": "persian",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 150
+    },
+    "Defense": {
+      "BaseValue": 139
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 16,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "foul-play",
+        "power-gem",
+        "play-rough"
+      ],
+      "QuickMovesIds": [
+        "scratch",
+        "feint-attack"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 54,
+    "Name": "psyduck",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 122
+    },
+    "Defense": {
+      "BaseValue": 96
+    },
+    "Stamina": {
+      "BaseValue": 100
+    },
+    "CatchRate": 40,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "aqua-tail",
+        "cross-chop",
+        "psybeam"
+      ],
+      "QuickMovesIds": [
+        "zen-headbutt",
+        "water-gun"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 55,
+    "Name": "golduck",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 191
+    },
+    "Defense": {
+      "BaseValue": 163
+    },
+    "Stamina": {
+      "BaseValue": 160
+    },
+    "CatchRate": 16,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "hydro-pump",
+        "ice-beam",
+        "psychic"
+      ],
+      "QuickMovesIds": [
+        "confusion",
+        "water-gun"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 56,
+    "Name": "mankey",
+    "Types": [
+      "fighting"
+    ],
+    "Attack": {
+      "BaseValue": 148
+    },
+    "Defense": {
+      "BaseValue": 87
+    },
+    "Stamina": {
+      "BaseValue": 80
+    },
+    "CatchRate": 40,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "cross-chop",
+        "low-sweep",
+        "brick-break"
+      ],
+      "QuickMovesIds": [
+        "karate-chop",
+        "scratch"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 57,
+    "Name": "primeape",
+    "Types": [
+      "fighting"
+    ],
+    "Attack": {
+      "BaseValue": 207
+    },
+    "Defense": {
+      "BaseValue": 144
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 16,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "close-combat",
+        "low-sweep",
+        "night-slash"
+      ],
+      "QuickMovesIds": [
+        "low-kick",
+        "counter"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 58,
+    "Name": "growlithe",
+    "Types": [
+      "fire"
+    ],
+    "Attack": {
+      "BaseValue": 136
+    },
+    "Defense": {
+      "BaseValue": 96
+    },
+    "Stamina": {
+      "BaseValue": 110
+    },
+    "CatchRate": 24,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "flame-wheel",
+        "body-slam",
+        "flamethrower"
+      ],
+      "QuickMovesIds": [
+        "ember",
+        "bite"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 59,
+    "Name": "arcanine",
+    "Types": [
+      "fire"
+    ],
+    "Attack": {
+      "BaseValue": 227
+    },
+    "Defense": {
+      "BaseValue": 166
+    },
+    "Stamina": {
+      "BaseValue": 180
+    },
+    "CatchRate": 8,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "fire-blast",
+        "wild-charge",
+        "crunch"
+      ],
+      "QuickMovesIds": [
+        "fire-fang",
+        "snarl"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 60,
+    "Name": "poliwag",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 101
+    },
+    "Defense": {
+      "BaseValue": 82
+    },
+    "Stamina": {
+      "BaseValue": 80
+    },
+    "CatchRate": 40,
+    "FleeRate": 15,
+    "Moves": {
+      "ChargeMovesIds": [
+        "bubble-beam",
+        "mud-bomb",
+        "body-slam"
+      ],
+      "QuickMovesIds": [
+        "bubble",
+        "mud-shot"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 61,
+    "Name": "poliwhirl",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 130
+    },
+    "Defense": {
+      "BaseValue": 130
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 20,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "water-pulse",
+        "mud-bomb",
+        "bubble-beam"
+      ],
+      "QuickMovesIds": [
+        "bubble",
+        "mud-shot"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 62,
+    "Name": "poliwrath",
+    "Types": [
+      "water",
+      "fighting"
+    ],
+    "Attack": {
+      "BaseValue": 182
+    },
+    "Defense": {
+      "BaseValue": 187
+    },
+    "Stamina": {
+      "BaseValue": 180
+    },
+    "CatchRate": 10,
+    "FleeRate": 5,
+    "Moves": {
+      "ChargeMovesIds": [
+        "hydro-pump",
+        "dynamic-punch",
+        "ice-puncj"
+      ],
+      "QuickMovesIds": [
+        "bubble",
+        "rock-smash"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 63,
+    "Name": "abra",
+    "Types": [
+      "psychic"
+    ],
+    "Attack": {
+      "BaseValue": 195
+    },
+    "Defense": {
+      "BaseValue": 103
+    },
+    "Stamina": {
+      "BaseValue": 50
+    },
+    "CatchRate": 40,
+    "FleeRate": 99,
+    "Moves": {
+      "ChargeMovesIds": [
+        "shadow-ball",
+        "signal-beam",
+        "psyshock"
+      ],
+      "QuickMovesIds": [
+        "zen-headbutt",
+        "charge-beam"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 64,
+    "Name": "kadabra",
+    "Types": [
+      "psychic"
+    ],
+    "Attack": {
+      "BaseValue": 232
+    },
+    "Defense": {
+      "BaseValue": 138
+    },
+    "Stamina": {
+      "BaseValue": 80
+    },
+    "CatchRate": 20,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "shadow-ball",
+        "dazzling-gleam",
+        "psybeam"
+      ],
+      "QuickMovesIds": [
+        "confusion",
+        "psycho-cut"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 65,
+    "Name": "alakazam",
+    "Types": [
+      "psychic"
+    ],
+    "Attack": {
+      "BaseValue": 271
+    },
+    "Defense": {
+      "BaseValue": 194
+    },
+    "Stamina": {
+      "BaseValue": 110
+    },
+    "CatchRate": 10,
+    "FleeRate": 5,
+    "Moves": {
+      "ChargeMovesIds": [
+        "future-sight",
+        "focus-blast",
+        "shadow-ball"
+      ],
+      "QuickMovesIds": [
+        "confusion",
+        "psycho-cut"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 66,
+    "Name": "machop",
+    "Types": [
+      "fighting"
+    ],
+    "Attack": {
+      "BaseValue": 137
+    },
+    "Defense": {
+      "BaseValue": 88
+    },
+    "Stamina": {
+      "BaseValue": 140
+    },
+    "CatchRate": 40,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "low-sweep",
+        "brick-break",
+        "cross-chop"
+      ],
+      "QuickMovesIds": [
+        "rock-smash",
+        "karate-chop"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 67,
+    "Name": "machoke",
+    "Types": [
+      "fighting"
+    ],
+    "Attack": {
+      "BaseValue": 177
+    },
+    "Defense": {
+      "BaseValue": 130
+    },
+    "Stamina": {
+      "BaseValue": 160
+    },
+    "CatchRate": 20,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "submission",
+        "brick-break",
+        "dynamic-punch"
+      ],
+      "QuickMovesIds": [
+        "low-kick",
+        "karate-chop"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 68,
+    "Name": "machamp",
+    "Types": [
+      "fighting"
+    ],
+    "Attack": {
+      "BaseValue": 234
+    },
+    "Defense": {
+      "BaseValue": 162
+    },
+    "Stamina": {
+      "BaseValue": 180
+    },
+    "CatchRate": 10,
+    "FleeRate": 5,
+    "Moves": {
+      "ChargeMovesIds": [
+        "heavy-slam",
+        "dynamic-punch",
+        "close-combat"
+      ],
+      "QuickMovesIds": [
+        "bullet-punch",
+        "counter"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 69,
+    "Name": "bellsprout",
+    "Types": [
+      "grass",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 139
+    },
+    "Defense": {
+      "BaseValue": 64
+    },
+    "Stamina": {
+      "BaseValue": 100
+    },
+    "CatchRate": 40,
+    "FleeRate": 15,
+    "Moves": {
+      "ChargeMovesIds": [
+        "sludge-bomb",
+        "power-whip",
+        "wrap"
+      ],
+      "QuickMovesIds": [
+        "vine-whip",
+        "acid"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 70,
+    "Name": "weepinbell",
+    "Types": [
+      "grass",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 172
+    },
+    "Defense": {
+      "BaseValue": 95
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 20,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "sludge-bomb",
+        "power-whip",
+        "seed-bomb"
+      ],
+      "QuickMovesIds": [
+        "bullet-seed",
+        "acid"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 71,
+    "Name": "victreebel",
+    "Types": [
+      "grass",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 207
+    },
+    "Defense": {
+      "BaseValue": 138
+    },
+    "Stamina": {
+      "BaseValue": 160
+    },
+    "CatchRate": 10,
+    "FleeRate": 5,
+    "Moves": {
+      "ChargeMovesIds": [
+        "sludge-bomb",
+        "leaf-blade",
+        "solar-beam"
+      ],
+      "QuickMovesIds": [
+        "razor-leaf",
+        "acid"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 72,
+    "Name": "tentacool",
+    "Types": [
+      "water",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 97
+    },
+    "Defense": {
+      "BaseValue": 182
+    },
+    "Stamina": {
+      "BaseValue": 80
+    },
+    "CatchRate": 40,
+    "FleeRate": 15,
+    "Moves": {
+      "ChargeMovesIds": [
+        "bubble-beam",
+        "water-pulse",
+        "wrap"
+      ],
+      "QuickMovesIds": [
+        "bubble",
+        "poison-sting"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 73,
+    "Name": "tentacruel",
+    "Types": [
+      "water",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 166
+    },
+    "Defense": {
+      "BaseValue": 237
+    },
+    "Stamina": {
+      "BaseValue": 160
+    },
+    "CatchRate": 16,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "blizzard",
+        "hydro-pump",
+        "sludge-wave"
+      ],
+      "QuickMovesIds": [
+        "acid",
+        "poison-jab"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 74,
+    "Name": "geodude",
+    "Types": [
+      "rock",
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 132
+    },
+    "Defense": {
+      "BaseValue": 163
+    },
+    "Stamina": {
+      "BaseValue": 80
+    },
+    "CatchRate": 40,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "rock-slide",
+        "rock-tomb",
+        "dig"
+      ],
+      "QuickMovesIds": [
+        "rock-throw",
+        "tackle"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 75,
+    "Name": "graveler",
+    "Types": [
+      "rock",
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 164
+    },
+    "Defense": {
+      "BaseValue": 196
+    },
+    "Stamina": {
+      "BaseValue": 110
+    },
+    "CatchRate": 20,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "dig",
+        "stone-edge",
+        "rock-blast"
+      ],
+      "QuickMovesIds": [
+        "rock-throw",
+        "mud-slap"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 76,
+    "Name": "golem",
+    "Types": [
+      "rock",
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 211
+    },
+    "Defense": {
+      "BaseValue": 229
+    },
+    "Stamina": {
+      "BaseValue": 160
+    },
+    "CatchRate": 10,
+    "FleeRate": 5,
+    "Moves": {
+      "ChargeMovesIds": [
+        "stone-edge",
+        "rock-blast",
+        "earthquake"
+      ],
+      "QuickMovesIds": [
+        "rock-throw",
+        "mud-slap"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 77,
+    "Name": "ponyta",
+    "Types": [
+      "fire"
+    ],
+    "Attack": {
+      "BaseValue": 170
+    },
+    "Defense": {
+      "BaseValue": 132
+    },
+    "Stamina": {
+      "BaseValue": 100
+    },
+    "CatchRate": 32,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "flame-charge",
+        "flame-wheel",
+        "stomp"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "ember"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 78,
+    "Name": "rapidash",
+    "Types": [
+      "fire"
+    ],
+    "Attack": {
+      "BaseValue": 207
+    },
+    "Defense": {
+      "BaseValue": 167
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 12,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "fire-blast",
+        "drill-run",
+        "heat-wave"
+      ],
+      "QuickMovesIds": [
+        "low-kick",
+        "fire-spin"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 79,
+    "Name": "slowpoke",
+    "Types": [
+      "water",
+      "psychic"
+    ],
+    "Attack": {
+      "BaseValue": 109
+    },
+    "Defense": {
+      "BaseValue": 109
+    },
+    "Stamina": {
+      "BaseValue": 180
+    },
+    "CatchRate": 40,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "psychic",
+        "water-pulse",
+        "psyshock"
+      ],
+      "QuickMovesIds": [
+        "water-gun",
+        "confusion"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 80,
+    "Name": "slowbro",
+    "Types": [
+      "water",
+      "psychic"
+    ],
+    "Attack": {
+      "BaseValue": 177
+    },
+    "Defense": {
+      "BaseValue": 194
+    },
+    "Stamina": {
+      "BaseValue": 190
+    },
+    "CatchRate": 16,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "psychic",
+        "water-pulse",
+        "ice-beam"
+      ],
+      "QuickMovesIds": [
+        "water-gun",
+        "confusion"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 81,
+    "Name": "magnemite",
+    "Types": [
+      "electric",
+      "steel"
+    ],
+    "Attack": {
+      "BaseValue": 165
+    },
+    "Defense": {
+      "BaseValue": 128
+    },
+    "Stamina": {
+      "BaseValue": 50
+    },
+    "CatchRate": 40,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "discharge",
+        "magnet-bomb",
+        "thunderbolt"
+      ],
+      "QuickMovesIds": [
+        "spark",
+        "thunder-shock"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 82,
+    "Name": "magneton",
+    "Types": [
+      "electric",
+      "steel"
+    ],
+    "Attack": {
+      "BaseValue": 223
+    },
+    "Defense": {
+      "BaseValue": 182
+    },
+    "Stamina": {
+      "BaseValue": 100
+    },
+    "CatchRate": 16,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "zap-cannon",
+        "magnet-bomb",
+        "flash-cannon"
+      ],
+      "QuickMovesIds": [
+        "spark",
+        "charge-beam"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 83,
+    "Name": "farfetch'd",
+    "Types": [
+      "normal",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 124
+    },
+    "Defense": {
+      "BaseValue": 118
+    },
+    "Stamina": {
+      "BaseValue": 104
+    },
+    "CatchRate": 24,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "air-cutter",
+        "aerial-ace",
+        "leaf-blade"
+      ],
+      "QuickMovesIds": [
+        "air-slash",
+        "fury-cutter"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 84,
+    "Name": "doduo",
+    "Types": [
+      "normal",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 158
+    },
+    "Defense": {
+      "BaseValue": 88
+    },
+    "Stamina": {
+      "BaseValue": 70
+    },
+    "CatchRate": 40,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "drill-peck",
+        "aerial-ace",
+        "brave-bird"
+      ],
+      "QuickMovesIds": [
+        "peck",
+        "quick-attack"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 85,
+    "Name": "dodrio",
+    "Types": [
+      "normal",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 218
+    },
+    "Defense": {
+      "BaseValue": 145
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 16,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "drill-peck",
+        "aerial-ace",
+        "brave-bird"
+      ],
+      "QuickMovesIds": [
+        "steel-wing",
+        "feint-attack"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 86,
+    "Name": "seel",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 85
+    },
+    "Defense": {
+      "BaseValue": 128
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 40,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "aurora-beam",
+        "icy-wind",
+        "aqua-tail"
+      ],
+      "QuickMovesIds": [
+        "ice-shard",
+        "lick"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 87,
+    "Name": "dewgong",
+    "Types": [
+      "water",
+      "ice"
+    ],
+    "Attack": {
+      "BaseValue": 139
+    },
+    "Defense": {
+      "BaseValue": 184
+    },
+    "Stamina": {
+      "BaseValue": 180
+    },
+    "CatchRate": 16,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "aurora-beam",
+        "water-pulse",
+        "blizzard"
+      ],
+      "QuickMovesIds": [
+        "frost-breath",
+        "iron-tail"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 88,
+    "Name": "grimer",
+    "Types": [
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 135
+    },
+    "Defense": {
+      "BaseValue": 90
+    },
+    "Stamina": {
+      "BaseValue": 160
+    },
+    "CatchRate": 40,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "sludge",
+        "sludge-bomb",
+        "mud-bomb"
+      ],
+      "QuickMovesIds": [
+        "poison-jab",
+        "mud-slap"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 89,
+    "Name": "muk",
+    "Types": [
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 190
+    },
+    "Defense": {
+      "BaseValue": 184
+    },
+    "Stamina": {
+      "BaseValue": 210
+    },
+    "CatchRate": 16,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "sludge-wave",
+        "sludge-bomb",
+        "dark-pulse"
+      ],
+      "QuickMovesIds": [
+        "infestation",
+        "poison-jab"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 90,
+    "Name": "shellder",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 116
+    },
+    "Defense": {
+      "BaseValue": 168
+    },
+    "Stamina": {
+      "BaseValue": 60
+    },
+    "CatchRate": 40,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "icy-wind",
+        "water-pulse",
+        "bubble-beam"
+      ],
+      "QuickMovesIds": [
+        "ice-shard",
+        "tackle"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 91,
+    "Name": "cloyster",
+    "Types": [
+      "water",
+      "ice"
+    ],
+    "Attack": {
+      "BaseValue": 186
+    },
+    "Defense": {
+      "BaseValue": 323
+    },
+    "Stamina": {
+      "BaseValue": 100
+    },
+    "CatchRate": 16,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "aurora-beam",
+        "hydro-pump",
+        "avalanche"
+      ],
+      "QuickMovesIds": [
+        "ice-shard",
+        "frost-breath"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 92,
+    "Name": "gastly",
+    "Types": [
+      "ghost",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 186
+    },
+    "Defense": {
+      "BaseValue": 70
+    },
+    "Stamina": {
+      "BaseValue": 60
+    },
+    "CatchRate": 32,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "night-shade",
+        "dark-pulse",
+        "sludge-bomb"
+      ],
+      "QuickMovesIds": [
+        "lick",
+        "astonish"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 93,
+    "Name": "haunter",
+    "Types": [
+      "ghost",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 223
+    },
+    "Defense": {
+      "BaseValue": 112
+    },
+    "Stamina": {
+      "BaseValue": 90
+    },
+    "CatchRate": 16,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "shadow-punch",
+        "dark-pulse",
+        "sludge-bomb"
+      ],
+      "QuickMovesIds": [
+        "shadow-claw",
+        "astonish"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 94,
+    "Name": "gengar",
+    "Types": [
+      "ghost",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 261
+    },
+    "Defense": {
+      "BaseValue": 156
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 8,
+    "FleeRate": 5,
+    "Moves": {
+      "ChargeMovesIds": [
+        "shadow-ball",
+        "focus-blast",
+        "sludge-bomb"
+      ],
+      "QuickMovesIds": [
+        "sucker-punch",
+        "hex"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 95,
+    "Name": "onix",
+    "Types": [
+      "rock",
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 85
+    },
+    "Defense": {
+      "BaseValue": 288
+    },
+    "Stamina": {
+      "BaseValue": 70
+    },
+    "CatchRate": 16,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "sand-tomb",
+        "stone-edge",
+        "heavy-slam"
+      ],
+      "QuickMovesIds": [
+        "rock-throw",
+        "tackle"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 96,
+    "Name": "drowzee",
+    "Types": [
+      "psychic"
+    ],
+    "Attack": {
+      "BaseValue": 89
+    },
+    "Defense": {
+      "BaseValue": 158
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 40,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "psybeam",
+        "psyshock",
+        "psychic"
+      ],
+      "QuickMovesIds": [
+        "pound",
+        "confusion"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 97,
+    "Name": "hypno",
+    "Types": [
+      "psychic"
+    ],
+    "Attack": {
+      "BaseValue": 144
+    },
+    "Defense": {
+      "BaseValue": 215
+    },
+    "Stamina": {
+      "BaseValue": 170
+    },
+    "CatchRate": 16,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "future-sight",
+        "psychic",
+        "focus-blast"
+      ],
+      "QuickMovesIds": [
+        "zen-headbutt",
+        "confusion"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 98,
+    "Name": "krabby",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 181
+    },
+    "Defense": {
+      "BaseValue": 156
+    },
+    "Stamina": {
+      "BaseValue": 60
+    },
+    "CatchRate": 40,
+    "FleeRate": 15,
+    "Moves": {
+      "ChargeMovesIds": [
+        "vice-grip",
+        "water-pulse",
+        "bubble-beam"
+      ],
+      "QuickMovesIds": [
+        "bubble",
+        "mud-shot"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 99,
+    "Name": "kingler",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 240
+    },
+    "Defense": {
+      "BaseValue": 214
+    },
+    "Stamina": {
+      "BaseValue": 110
+    },
+    "CatchRate": 16,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "vice-grip",
+        "water-pulse",
+        "x-scissor"
+      ],
+      "QuickMovesIds": [
+        "bubble",
+        "metal-claw"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 100,
+    "Name": "voltorb",
+    "Types": [
+      "electric"
+    ],
+    "Attack": {
+      "BaseValue": 109
+    },
+    "Defense": {
+      "BaseValue": 114
+    },
+    "Stamina": {
+      "BaseValue": 80
+    },
+    "CatchRate": 40,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "discharge",
+        "thunderbolt",
+        "gyro-ball"
+      ],
+      "QuickMovesIds": [
+        "spark",
+        "tackle"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 101,
+    "Name": "electrode",
+    "Types": [
+      "electric"
+    ],
+    "Attack": {
+      "BaseValue": 173
+    },
+    "Defense": {
+      "BaseValue": 179
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 16,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "discharge",
+        "thunderbolt",
+        "hyper-beam"
+      ],
+      "QuickMovesIds": [
+        "spark",
+        "volt-switch"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 102,
+    "Name": "exeggcute",
+    "Types": [
+      "grass",
+      "psychic"
+    ],
+    "Attack": {
+      "BaseValue": 107
+    },
+    "Defense": {
+      "BaseValue": 140
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 40,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "psychic",
+        "seed-bomb",
+        "ancient-power"
+      ],
+      "QuickMovesIds": [
+        "confusion",
+        "bullet-seed"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 103,
+    "Name": "exeggutor",
+    "Types": [
+      "grass",
+      "psychic"
+    ],
+    "Attack": {
+      "BaseValue": 233
+    },
+    "Defense": {
+      "BaseValue": 158
+    },
+    "Stamina": {
+      "BaseValue": 190
+    },
+    "CatchRate": 16,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "psychic",
+        "seed-bomb",
+        "solar-beam"
+      ],
+      "QuickMovesIds": [
+        "bullet-seed",
+        "extrasensory"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 104,
+    "Name": "cubone",
+    "Types": [
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 90
+    },
+    "Defense": {
+      "BaseValue": 165
+    },
+    "Stamina": {
+      "BaseValue": 100
+    },
+    "CatchRate": 32,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "bone-club",
+        "dig",
+        "bulldoze"
+      ],
+      "QuickMovesIds": [
+        "rock-smash",
+        "mud-slap"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 105,
+    "Name": "marowak",
+    "Types": [
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 144
+    },
+    "Defense": {
+      "BaseValue": 200
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 12,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "bone-club",
+        "dig",
+        "earthquake"
+      ],
+      "QuickMovesIds": [
+        "rock-smash",
+        "mud-slap"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 106,
+    "Name": "hitmonlee",
+    "Types": [
+      "fighting"
+    ],
+    "Attack": {
+      "BaseValue": 224
+    },
+    "Defense": {
+      "BaseValue": 211
+    },
+    "Stamina": {
+      "BaseValue": 100
+    },
+    "CatchRate": 16,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "close-combat",
+        "low-sweep",
+        "stone-edge"
+      ],
+      "QuickMovesIds": [
+        "low-kick",
+        "rock-smash"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 107,
+    "Name": "hitmonchan",
+    "Types": [
+      "fighting"
+    ],
+    "Attack": {
+      "BaseValue": 193
+    },
+    "Defense": {
+      "BaseValue": 212
+    },
+    "Stamina": {
+      "BaseValue": 100
+    },
+    "CatchRate": 16,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "fire-punch",
+        "ice-punch",
+        "thunder-punch",
+        "close-combat"
+      ],
+      "QuickMovesIds": [
+        "bullet-punch",
+        "counter"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 108,
+    "Name": "lickitung",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 108
+    },
+    "Defense": {
+      "BaseValue": 137
+    },
+    "Stamina": {
+      "BaseValue": 180
+    },
+    "CatchRate": 16,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "hyper-beam",
+        "stomp",
+        "power-whip"
+      ],
+      "QuickMovesIds": [
+        "lick",
+        "zen-headbutt"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 109,
+    "Name": "koffing",
+    "Types": [
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 119
+    },
+    "Defense": {
+      "BaseValue": 164
+    },
+    "Stamina": {
+      "BaseValue": 80
+    },
+    "CatchRate": 40,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "dark-pulse",
+        "sludge",
+        "sludge-bomb"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "infestation"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 110,
+    "Name": "weezing",
+    "Types": [
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 174
+    },
+    "Defense": {
+      "BaseValue": 221
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 16,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "dark-pulse",
+        "shadow-ball",
+        "sludge-bomb"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "infestation"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 111,
+    "Name": "rhyhorn",
+    "Types": [
+      "ground",
+      "rock"
+    ],
+    "Attack": {
+      "BaseValue": 140
+    },
+    "Defense": {
+      "BaseValue": 157
+    },
+    "Stamina": {
+      "BaseValue": 160
+    },
+    "CatchRate": 40,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "bulldoze",
+        "stomp",
+        "horn-attack"
+      ],
+      "QuickMovesIds": [
+        "rock-smash",
+        "mud-slap"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 112,
+    "Name": "rhydon",
+    "Types": [
+      "ground",
+      "rock"
+    ],
+    "Attack": {
+      "BaseValue": 222
+    },
+    "Defense": {
+      "BaseValue": 206
+    },
+    "Stamina": {
+      "BaseValue": 210
+    },
+    "CatchRate": 16,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "earthquake",
+        "stone-edge",
+        "megahorn"
+      ],
+      "QuickMovesIds": [
+        "rock-smash",
+        "mud-slap"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 113,
+    "Name": "chansey",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 60
+    },
+    "Defense": {
+      "BaseValue": 176
+    },
+    "Stamina": {
+      "BaseValue": 500
+    },
+    "CatchRate": 16,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "dazzling-gleam",
+        "hyper-beam",
+        "psychic"
+      ],
+      "QuickMovesIds": [
+        "pound",
+        "zen-headbutt"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 10
+  },
+  {
+    "DexNumber": 114,
+    "Name": "tangela",
+    "Types": [
+      "grass"
+    ],
+    "Attack": {
+      "BaseValue": 183
+    },
+    "Defense": {
+      "BaseValue": 205
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 32,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "grass-knot",
+        "sludge-bomb",
+        "solar-beam"
+      ],
+      "QuickMovesIds": [
+        "vine-whip",
+        "infestation"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 115,
+    "Name": "kangaskhan",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 181
+    },
+    "Defense": {
+      "BaseValue": 165
+    },
+    "Stamina": {
+      "BaseValue": 210
+    },
+    "CatchRate": 16,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "crunch",
+        "earthquake",
+        "outrage"
+      ],
+      "QuickMovesIds": [
+        "low-kick",
+        "mud-slap"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 116,
+    "Name": "horsea",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 129
+    },
+    "Defense": {
+      "BaseValue": 125
+    },
+    "Stamina": {
+      "BaseValue": 60
+    },
+    "CatchRate": 40,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "bubble-beam",
+        "dragon-pulse",
+        "flash-cannon"
+      ],
+      "QuickMovesIds": [
+        "water-gun",
+        "bubble"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 117,
+    "Name": "seadra",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 187
+    },
+    "Defense": {
+      "BaseValue": 182
+    },
+    "Stamina": {
+      "BaseValue": 110
+    },
+    "CatchRate": 16,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "aurora-beam",
+        "dragon-pulse",
+        "hydro-pump"
+      ],
+      "QuickMovesIds": [
+        "water-gun",
+        "dragon-breath"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 118,
+    "Name": "goldeen",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 123
+    },
+    "Defense": {
+      "BaseValue": 115
+    },
+    "Stamina": {
+      "BaseValue": 90
+    },
+    "CatchRate": 40,
+    "FleeRate": 15,
+    "Moves": {
+      "ChargeMovesIds": [
+        "aqua-tail",
+        "horn-attack",
+        "water-pulse"
+      ],
+      "QuickMovesIds": [
+        "mud-shot",
+        "peck"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 119,
+    "Name": "seaking",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 175
+    },
+    "Defense": {
+      "BaseValue": 154
+    },
+    "Stamina": {
+      "BaseValue": 160
+    },
+    "CatchRate": 16,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "ice-beam",
+        "water-pulse",
+        "megahorn"
+      ],
+      "QuickMovesIds": [
+        "poison-jab",
+        "peck"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 120,
+    "Name": "staryu",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 137
+    },
+    "Defense": {
+      "BaseValue": 112
+    },
+    "Stamina": {
+      "BaseValue": 60
+    },
+    "CatchRate": 40,
+    "FleeRate": 15,
+    "Moves": {
+      "ChargeMovesIds": [
+        "bubble-beam",
+        "power-gem",
+        "swift"
+      ],
+      "QuickMovesIds": [
+        "water-gun",
+        "tackle"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 121,
+    "Name": "starmie",
+    "Types": [
+      "water",
+      "psychic"
+    ],
+    "Attack": {
+      "BaseValue": 210
+    },
+    "Defense": {
+      "BaseValue": 184
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 16,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "hydro-pump",
+        "power-gem",
+        "psychic"
+      ],
+      "QuickMovesIds": [
+        "hidden-power",
+        "water-gun"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 122,
+    "Name": "mr. mime",
+    "Types": [
+      "psychic",
+      "fairy"
+    ],
+    "Attack": {
+      "BaseValue": 192
+    },
+    "Defense": {
+      "BaseValue": 233
+    },
+    "Stamina": {
+      "BaseValue": 80
+    },
+    "CatchRate": 24,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "shadow-ball",
+        "psybeam",
+        "psychic"
+      ],
+      "QuickMovesIds": [
+        "confusion",
+        "zen-headbutt"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 123,
+    "Name": "scyther",
+    "Types": [
+      "bug",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 218
+    },
+    "Defense": {
+      "BaseValue": 170
+    },
+    "Stamina": {
+      "BaseValue": 140
+    },
+    "CatchRate": 24,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "night-slash",
+        "x-scissor",
+        "aerial-ace"
+      ],
+      "QuickMovesIds": [
+        "fury-cutter",
+        "air-slash"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 124,
+    "Name": "jynx",
+    "Types": [
+      "ice",
+      "psychic"
+    ],
+    "Attack": {
+      "BaseValue": 223
+    },
+    "Defense": {
+      "BaseValue": 182
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 24,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "draining-kiss",
+        "avalanche",
+        "psyshock"
+      ],
+      "QuickMovesIds": [
+        "frost-breath",
+        "confusion"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 125,
+    "Name": "electabuzz",
+    "Types": [
+      "electric"
+    ],
+    "Attack": {
+      "BaseValue": 198
+    },
+    "Defense": {
+      "BaseValue": 173
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 24,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "thunderbolt",
+        "thunder",
+        "thunder-punch"
+      ],
+      "QuickMovesIds": [
+        "low-kick",
+        "thunder-shock"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 126,
+    "Name": "magmar",
+    "Types": [
+      "fire"
+    ],
+    "Attack": {
+      "BaseValue": 206
+    },
+    "Defense": {
+      "BaseValue": 169
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 24,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "fire-blast",
+        "flamethrower",
+        "fire-punch"
+      ],
+      "QuickMovesIds": [
+        "karate-chop",
+        "ember"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 127,
+    "Name": "pinsir",
+    "Types": [
+      "bug"
+    ],
+    "Attack": {
+      "BaseValue": 238
+    },
+    "Defense": {
+      "BaseValue": 197
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 24,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "vice-grip",
+        "x-scissor",
+        "close-combat"
+      ],
+      "QuickMovesIds": [
+        "rock-smash",
+        "bug-bite"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 128,
+    "Name": "tauros",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 198
+    },
+    "Defense": {
+      "BaseValue": 197
+    },
+    "Stamina": {
+      "BaseValue": 150
+    },
+    "CatchRate": 24,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "earthquake",
+        "iron-head",
+        "horn-attack"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "zen-headbutt"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 129,
+    "Name": "magikarp",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 29
+    },
+    "Defense": {
+      "BaseValue": 102
+    },
+    "Stamina": {
+      "BaseValue": 40
+    },
+    "CatchRate": 56,
+    "FleeRate": 15,
+    "Moves": {
+      "ChargeMovesIds": [
+        "struggle"
+      ],
+      "QuickMovesIds": [
+        "splash"
+      ]
+    },
+    "CandiesToEvolve": 400,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 130,
+    "Name": "gyarados",
+    "Types": [
+      "water",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 237
+    },
+    "Defense": {
+      "BaseValue": 197
+    },
+    "Stamina": {
+      "BaseValue": 190
+    },
+    "CatchRate": 8,
+    "FleeRate": 7,
+    "Moves": {
+      "ChargeMovesIds": [
+        "hydro-pump",
+        "crunch",
+        "outrage"
+      ],
+      "QuickMovesIds": [
+        "bite",
+        "dragon-tail"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 131,
+    "Name": "lapras",
+    "Types": [
+      "water",
+      "ice"
+    ],
+    "Attack": {
+      "BaseValue": 180
+    },
+    "Defense": {
+      "BaseValue": 190
+    },
+    "Stamina": {
+      "BaseValue": 165
+    },
+    "CatchRate": 16,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "hydro-pump",
+        "ice-beam",
+        "blizzard"
+      ],
+      "QuickMovesIds": [
+        "frost-breath",
+        "water-gun"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 10
+  },
+  {
+    "DexNumber": 132,
+    "Name": "ditto",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 91
+    },
+    "Defense": {
+      "BaseValue": 91
+    },
+    "Stamina": {
+      "BaseValue": 96
+    },
+    "CatchRate": 16,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "struggle"
+      ],
+      "QuickMovesIds": [
+        "transform"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 133,
+    "Name": "eevee",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 104
+    },
+    "Defense": {
+      "BaseValue": 121
+    },
+    "Stamina": {
+      "BaseValue": 110
+    },
+    "CatchRate": 32,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "dig",
+        "swift"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "quick-attack"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 134,
+    "Name": "vaporeon",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 205
+    },
+    "Defense": {
+      "BaseValue": 177
+    },
+    "Stamina": {
+      "BaseValue": 260
+    },
+    "CatchRate": 12,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "water-pulse",
+        "hydro-pump",
+        "aqua-tail"
+      ],
+      "QuickMovesIds": [
+        "water-gun"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 135,
+    "Name": "jolteon",
+    "Types": [
+      "electric"
+    ],
+    "Attack": {
+      "BaseValue": 232
+    },
+    "Defense": {
+      "BaseValue": 201
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 12,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "thunderbolt",
+        "discharge",
+        "thunder"
+      ],
+      "QuickMovesIds": [
+        "thunder-shock",
+        "volt-switch"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 136,
+    "Name": "flareon",
+    "Types": [
+      "fire"
+    ],
+    "Attack": {
+      "BaseValue": 246
+    },
+    "Defense": {
+      "BaseValue": 204
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 12,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "fire-blast",
+        "flamethrower",
+        "overheat"
+      ],
+      "QuickMovesIds": [
+        "ember",
+        "fire-spin"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 137,
+    "Name": "porygon",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 153
+    },
+    "Defense": {
+      "BaseValue": 139
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 32,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "solar-beam",
+        "hyper-beam",
+        "zap-cannon"
+      ],
+      "QuickMovesIds": [
+        "charge-beam",
+        "hidden-power"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 138,
+    "Name": "omanyte",
+    "Types": [
+      "rock",
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 155
+    },
+    "Defense": {
+      "BaseValue": 174
+    },
+    "Stamina": {
+      "BaseValue": 70
+    },
+    "CatchRate": 32,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "ancient-power",
+        "bubble-beam",
+        "rock-blast"
+      ],
+      "QuickMovesIds": [
+        "water-gun",
+        "mud-shot"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 139,
+    "Name": "omastar",
+    "Types": [
+      "rock",
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 207
+    },
+    "Defense": {
+      "BaseValue": 227
+    },
+    "Stamina": {
+      "BaseValue": 140
+    },
+    "CatchRate": 12,
+    "FleeRate": 5,
+    "Moves": {
+      "ChargeMovesIds": [
+        "ancient-power",
+        "hydro-pump",
+        "rock-blast"
+      ],
+      "QuickMovesIds": [
+        "water-gun",
+        "mud-shot"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 140,
+    "Name": "kabuto",
+    "Types": [
+      "rock",
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 148
+    },
+    "Defense": {
+      "BaseValue": 162
+    },
+    "Stamina": {
+      "BaseValue": 60
+    },
+    "CatchRate": 32,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "aqua-jet",
+        "rock-tomb",
+        "ancient-power"
+      ],
+      "QuickMovesIds": [
+        "scratch",
+        "mud-shot"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 141,
+    "Name": "kabutops",
+    "Types": [
+      "rock",
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 220
+    },
+    "Defense": {
+      "BaseValue": 203
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 12,
+    "FleeRate": 5,
+    "Moves": {
+      "ChargeMovesIds": [
+        "water-pulse",
+        "stone-edge",
+        "ancient-power"
+      ],
+      "QuickMovesIds": [
+        "rock-smash",
+        "mud-shot"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 142,
+    "Name": "aerodactyl",
+    "Types": [
+      "rock",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 221
+    },
+    "Defense": {
+      "BaseValue": 164
+    },
+    "Stamina": {
+      "BaseValue": 160
+    },
+    "CatchRate": 16,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "iron-head",
+        "hyper-beam",
+        "ancient-power"
+      ],
+      "QuickMovesIds": [
+        "bite",
+        "steel-wing"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 10
+  },
+  {
+    "DexNumber": 143,
+    "Name": "snorlax",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 190
+    },
+    "Defense": {
+      "BaseValue": 190
+    },
+    "Stamina": {
+      "BaseValue": 320
+    },
+    "CatchRate": 16,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "heavy-slam",
+        "hyper-beam",
+        "earthquake"
+      ],
+      "QuickMovesIds": [
+        "lick",
+        "zen-headbutt"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 10
+  },
+  {
+    "DexNumber": 144,
+    "Name": "articuno",
+    "Types": [
+      "ice",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 192
+    },
+    "Defense": {
+      "BaseValue": 249
+    },
+    "Stamina": {
+      "BaseValue": 180
+    },
+    "CatchRate": 0,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "ice-beam",
+        "icy-wind",
+        "blizzard"
+      ],
+      "QuickMovesIds": [
+        "frost-breath"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 145,
+    "Name": "zapdos",
+    "Types": [
+      "electric",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 253
+    },
+    "Defense": {
+      "BaseValue": 188
+    },
+    "Stamina": {
+      "BaseValue": 180
+    },
+    "CatchRate": 0,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "zap-cannon",
+        "thunderbolt",
+        "thunder"
+      ],
+      "QuickMovesIds": [
+        "charge-beam"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 146,
+    "Name": "moltres",
+    "Types": [
+      "fire",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 251
+    },
+    "Defense": {
+      "BaseValue": 184
+    },
+    "Stamina": {
+      "BaseValue": 180
+    },
+    "CatchRate": 0,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "fire-blast",
+        "heat-wave",
+        "overheat"
+      ],
+      "QuickMovesIds": [
+        "fire-spin"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 147,
+    "Name": "dratini",
+    "Types": [
+      "dragon"
+    ],
+    "Attack": {
+      "BaseValue": 119
+    },
+    "Defense": {
+      "BaseValue": 94
+    },
+    "Stamina": {
+      "BaseValue": 82
+    },
+    "CatchRate": 32,
+    "FleeRate": 9,
+    "Moves": {
+      "ChargeMovesIds": [
+        "wrap",
+        "twister",
+        "aqua-tail"
+      ],
+      "QuickMovesIds": [
+        "dragon-breath",
+        "iron-tail"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 10
+  },
+  {
+    "DexNumber": 148,
+    "Name": "dragonair",
+    "Types": [
+      "dragon"
+    ],
+    "Attack": {
+      "BaseValue": 163
+    },
+    "Defense": {
+      "BaseValue": 138
+    },
+    "Stamina": {
+      "BaseValue": 122
+    },
+    "CatchRate": 8,
+    "FleeRate": 6,
+    "Moves": {
+      "ChargeMovesIds": [
+        "wrap",
+        "aqua-tail",
+        "dragon-pulse"
+      ],
+      "QuickMovesIds": [
+        "dragon-breath",
+        "iron-tail"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 149,
+    "Name": "dragonite",
+    "Types": [
+      "dragon",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 263
+    },
+    "Defense": {
+      "BaseValue": 201
+    },
+    "Stamina": {
+      "BaseValue": 182
+    },
+    "CatchRate": 4,
+    "FleeRate": 5,
+    "Moves": {
+      "ChargeMovesIds": [
+        "hurricane",
+        "hyper-beam",
+        "outrage"
+      ],
+      "QuickMovesIds": [
+        "dragon-tail",
+        "steel-wing"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 150,
+    "Name": "mewtwo",
+    "Types": [
+      "psychic"
+    ],
+    "Attack": {
+      "BaseValue": 330
+    },
+    "Defense": {
+      "BaseValue": 200
+    },
+    "Stamina": {
+      "BaseValue": 212
+    },
+    "CatchRate": 0,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "psychic",
+        "shadow-ball",
+        "hyper-beam",
+        "focus-blast"
+      ],
+      "QuickMovesIds": [
+        "confusion",
+        "psycho-cut"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 151,
+    "Name": "mew",
+    "Types": [
+      "psychic"
+    ],
+    "Attack": {
+      "BaseValue": 210
+    },
+    "Defense": {
+      "BaseValue": 210
+    },
+    "Stamina": {
+      "BaseValue": 200
+    },
+    "CatchRate": 0,
+    "FleeRate": 10,
+    "Moves": {
+      "ChargeMovesIds": [
+        "blizzard",
+        "earthquake",
+        "focus-blast",
+        "thunder",
+        "fire-blast",
+        "solar-beam",
+        "hyper-beam"
+      ],
+      "QuickMovesIds": [
+        "pound"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 152,
+    "Name": "chikorita",
+    "Types": [
+      "grass"
+    ],
+    "Attack": {
+      "BaseValue": 92
+    },
+    "Defense": {
+      "BaseValue": 122
+    },
+    "Stamina": {
+      "BaseValue": 90
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "energy-ball",
+        "grass-knot",
+        "body-slam"
+      ],
+      "QuickMovesIds": [
+        "vine-whip",
+        "tackle"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 153,
+    "Name": "bayleef",
+    "Types": [
+      "grass"
+    ],
+    "Attack": {
+      "BaseValue": 122
+    },
+    "Defense": {
+      "BaseValue": 155
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "energy-ball",
+        "grass-knot",
+        "ancient-power"
+      ],
+      "QuickMovesIds": [
+        "razor-leaf",
+        "tackle"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 154,
+    "Name": "meganium",
+    "Types": [
+      "grass"
+    ],
+    "Attack": {
+      "BaseValue": 168
+    },
+    "Defense": {
+      "BaseValue": 202
+    },
+    "Stamina": {
+      "BaseValue": 160
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "petal-blizzard",
+        "solar-beam",
+        "earthquake"
+      ],
+      "QuickMovesIds": [
+        "razor-leaf",
+        "vine-whip"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 155,
+    "Name": "cyndaquil",
+    "Types": [
+      "fire"
+    ],
+    "Attack": {
+      "BaseValue": 116
+    },
+    "Defense": {
+      "BaseValue": 96
+    },
+    "Stamina": {
+      "BaseValue": 78
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "flame-charge",
+        "swift",
+        "flamethrower"
+      ],
+      "QuickMovesIds": [
+        "ember",
+        "tackle"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 156,
+    "Name": "quilava",
+    "Types": [
+      "fire"
+    ],
+    "Attack": {
+      "BaseValue": 158
+    },
+    "Defense": {
+      "BaseValue": 129
+    },
+    "Stamina": {
+      "BaseValue": 116
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "flame-charge",
+        "dig",
+        "flamethrower"
+      ],
+      "QuickMovesIds": [
+        "ember",
+        "tackle"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 157,
+    "Name": "typhlosion",
+    "Types": [
+      "fire"
+    ],
+    "Attack": {
+      "BaseValue": 223
+    },
+    "Defense": {
+      "BaseValue": 176
+    },
+    "Stamina": {
+      "BaseValue": 156
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "fire-blast",
+        "overheat",
+        "solar-beam"
+      ],
+      "QuickMovesIds": [
+        "ember",
+        "shadow-claw"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 158,
+    "Name": "totodile",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 117
+    },
+    "Defense": {
+      "BaseValue": 116
+    },
+    "Stamina": {
+      "BaseValue": 100
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "crunch",
+        "aqua-jet",
+        "water-pulse"
+      ],
+      "QuickMovesIds": [
+        "water-gun",
+        "scratch"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 159,
+    "Name": "croconaw",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 150
+    },
+    "Defense": {
+      "BaseValue": 151
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "crunch",
+        "ice-punch",
+        "water-pulse"
+      ],
+      "QuickMovesIds": [
+        "water-gun",
+        "scratch"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 160,
+    "Name": "feraligatr",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 205
+    },
+    "Defense": {
+      "BaseValue": 197
+    },
+    "Stamina": {
+      "BaseValue": 170
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "crunch",
+        "hydro-pump",
+        "ice-beam"
+      ],
+      "QuickMovesIds": [
+        "water-gun",
+        "bite"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 161,
+    "Name": "sentret",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 79
+    },
+    "Defense": {
+      "BaseValue": 77
+    },
+    "Stamina": {
+      "BaseValue": 70
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "dig",
+        "brick-break",
+        "grass-knot"
+      ],
+      "QuickMovesIds": [
+        "scratch",
+        "quick-attack"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 162,
+    "Name": "furret",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 148
+    },
+    "Defense": {
+      "BaseValue": 130
+    },
+    "Stamina": {
+      "BaseValue": 170
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "dig",
+        "brick-break",
+        "hyper-beam"
+      ],
+      "QuickMovesIds": [
+        "quick-attack",
+        "sucker-punch"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 163,
+    "Name": "hoothoot",
+    "Types": [
+      "normal",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 67
+    },
+    "Defense": {
+      "BaseValue": 101
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "aerial-ace",
+        "sky-attack",
+        "night-shade"
+      ],
+      "QuickMovesIds": [
+        "feint-attack",
+        "peck"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 164,
+    "Name": "noctowl",
+    "Types": [
+      "normal",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 145
+    },
+    "Defense": {
+      "BaseValue": 179
+    },
+    "Stamina": {
+      "BaseValue": 200
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "psychic",
+        "sky-attack",
+        "night-shade"
+      ],
+      "QuickMovesIds": [
+        "wing-attack",
+        "extrasensory"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 165,
+    "Name": "ledyba",
+    "Types": [
+      "bug",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 72
+    },
+    "Defense": {
+      "BaseValue": 142
+    },
+    "Stamina": {
+      "BaseValue": 80
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "silver-wind",
+        "swift",
+        "aerial-ace"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "bug-bite"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 166,
+    "Name": "ledian",
+    "Types": [
+      "bug",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 107
+    },
+    "Defense": {
+      "BaseValue": 209
+    },
+    "Stamina": {
+      "BaseValue": 110
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "bug-buzz",
+        "silver-wind",
+        "aerial-ace"
+      ],
+      "QuickMovesIds": [
+        "struggle-bug",
+        "bug-bite"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 167,
+    "Name": "spinarak",
+    "Types": [
+      "bug",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 105
+    },
+    "Defense": {
+      "BaseValue": 73
+    },
+    "Stamina": {
+      "BaseValue": 80
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "night-slash",
+        "signal-beam",
+        "cross-poison"
+      ],
+      "QuickMovesIds": [
+        "poison-sting",
+        "bug-bite"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 168,
+    "Name": "ariados",
+    "Types": [
+      "bug",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 161
+    },
+    "Defense": {
+      "BaseValue": 128
+    },
+    "Stamina": {
+      "BaseValue": 140
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "shadow-sneak",
+        "megahorn",
+        "cross-poison"
+      ],
+      "QuickMovesIds": [
+        "poison-sting",
+        "infestation"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 169,
+    "Name": "crobat",
+    "Types": [
+      "poison",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 194
+    },
+    "Defense": {
+      "BaseValue": 178
+    },
+    "Stamina": {
+      "BaseValue": 170
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "shadow-ball",
+        "air-cutter",
+        "sludge-bomb"
+      ],
+      "QuickMovesIds": [
+        "air-slash",
+        "bite"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 170,
+    "Name": "chinchou",
+    "Types": [
+      "water",
+      "electric"
+    ],
+    "Attack": {
+      "BaseValue": 106
+    },
+    "Defense": {
+      "BaseValue": 106
+    },
+    "Stamina": {
+      "BaseValue": 150
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "water-pulse",
+        "thunderbolt",
+        "bubble-beam"
+      ],
+      "QuickMovesIds": [
+        "bubble",
+        "spark"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 171,
+    "Name": "lanturn",
+    "Types": [
+      "water",
+      "electric"
+    ],
+    "Attack": {
+      "BaseValue": 146
+    },
+    "Defense": {
+      "BaseValue": 146
+    },
+    "Stamina": {
+      "BaseValue": 250
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "hydro-pump",
+        "thunderbolt",
+        "thunder"
+      ],
+      "QuickMovesIds": [
+        "water-gun",
+        "charge-beam"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 172,
+    "Name": "pichu",
+    "Types": [
+      "electric"
+    ],
+    "Attack": {
+      "BaseValue": 77
+    },
+    "Defense": {
+      "BaseValue": 63
+    },
+    "Stamina": {
+      "BaseValue": 40
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "disarming-voice",
+        "thunder-punch",
+        "thunderbolt"
+      ],
+      "QuickMovesIds": [
+        "thunder-shock"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 173,
+    "Name": "cleffa",
+    "Types": [
+      "fairy"
+    ],
+    "Attack": {
+      "BaseValue": 75
+    },
+    "Defense": {
+      "BaseValue": 91
+    },
+    "Stamina": {
+      "BaseValue": 100
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "grass-knot",
+        "psyshock",
+        "signal-beam"
+      ],
+      "QuickMovesIds": [
+        "pound",
+        "zen-headbutt"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 174,
+    "Name": "igglybuff",
+    "Types": [
+      "normal",
+      "fairy"
+    ],
+    "Attack": {
+      "BaseValue": 69
+    },
+    "Defense": {
+      "BaseValue": 34
+    },
+    "Stamina": {
+      "BaseValue": 180
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "wild-charge",
+        "shadow-ball",
+        "psychic"
+      ],
+      "QuickMovesIds": [
+        "pound",
+        "feint-attack"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 175,
+    "Name": "togepi",
+    "Types": [
+      "fairy"
+    ],
+    "Attack": {
+      "BaseValue": 67
+    },
+    "Defense": {
+      "BaseValue": 116
+    },
+    "Stamina": {
+      "BaseValue": 70
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "ancient-power",
+        "psyshock",
+        "dazzling-gleam"
+      ],
+      "QuickMovesIds": [
+        "hidden-power",
+        "peck"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 176,
+    "Name": "togetic",
+    "Types": [
+      "fairy",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 140
+    },
+    "Defense": {
+      "BaseValue": 191
+    },
+    "Stamina": {
+      "BaseValue": 110
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "ancient-power",
+        "dazzling-gleam",
+        "aerial-ace"
+      ],
+      "QuickMovesIds": [
+        "extrasensory",
+        "hidden-power"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 177,
+    "Name": "natu",
+    "Types": [
+      "psychic",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 134
+    },
+    "Defense": {
+      "BaseValue": 89
+    },
+    "Stamina": {
+      "BaseValue": 80
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "night-shade",
+        "psyshock",
+        "drill-peck"
+      ],
+      "QuickMovesIds": [
+        "peck",
+        "quick-attack"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 178,
+    "Name": "xatu",
+    "Types": [
+      "psychic",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 192
+    },
+    "Defense": {
+      "BaseValue": 146
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "ominous-wind",
+        "futuresight",
+        "aerial-ace"
+      ],
+      "QuickMovesIds": [
+        "air-slash",
+        "feint-attack"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 179,
+    "Name": "mareep",
+    "Types": [
+      "electric"
+    ],
+    "Attack": {
+      "BaseValue": 114
+    },
+    "Defense": {
+      "BaseValue": 82
+    },
+    "Stamina": {
+      "BaseValue": 110
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "body-slam",
+        "thunderbolt",
+        "discharge"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "thunder-shock"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 10
+  },
+  {
+    "DexNumber": 180,
+    "Name": "flaaffy",
+    "Types": [
+      "electric"
+    ],
+    "Attack": {
+      "BaseValue": 145
+    },
+    "Defense": {
+      "BaseValue": 112
+    },
+    "Stamina": {
+      "BaseValue": 140
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "power-gem",
+        "thunderbolt",
+        "discharge"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "charge-beam"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 181,
+    "Name": "ampharos",
+    "Types": [
+      "electric"
+    ],
+    "Attack": {
+      "BaseValue": 211
+    },
+    "Defense": {
+      "BaseValue": 169
+    },
+    "Stamina": {
+      "BaseValue": 180
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "zap-cannon",
+        "focus-blast",
+        "thunder"
+      ],
+      "QuickMovesIds": [
+        "charge-beam",
+        "volt-switch"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 182,
+    "Name": "bellossom",
+    "Types": [
+      "grass"
+    ],
+    "Attack": {
+      "BaseValue": 169
+    },
+    "Defense": {
+      "BaseValue": 186
+    },
+    "Stamina": {
+      "BaseValue": 150
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "leaf-blade",
+        "petal-blizzard",
+        "dazzling-gleam"
+      ],
+      "QuickMovesIds": [
+        "razor-leaf",
+        "acid"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 183,
+    "Name": "marill",
+    "Types": [
+      "water",
+      "fairy"
+    ],
+    "Attack": {
+      "BaseValue": 37
+    },
+    "Defense": {
+      "BaseValue": 93
+    },
+    "Stamina": {
+      "BaseValue": 140
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "bubble-beam",
+        "aqua-tail",
+        "body-slam"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "bubble"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 184,
+    "Name": "azumarill",
+    "Types": [
+      "water",
+      "fairy"
+    ],
+    "Attack": {
+      "BaseValue": 95
+    },
+    "Defense": {
+      "BaseValue": 152
+    },
+    "Stamina": {
+      "BaseValue": 200
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "play-rough",
+        "hydro-pump",
+        "ice-beam"
+      ],
+      "QuickMovesIds": [
+        "rock-smash",
+        "bubble"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 185,
+    "Name": "sudowoodo",
+    "Types": [
+      "rock"
+    ],
+    "Attack": {
+      "BaseValue": 167
+    },
+    "Defense": {
+      "BaseValue": 198
+    },
+    "Stamina": {
+      "BaseValue": 140
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "stone-edge",
+        "earthquake",
+        "rock-slide"
+      ],
+      "QuickMovesIds": [
+        "rock-throw",
+        "counter"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 10
+  },
+  {
+    "DexNumber": 186,
+    "Name": "politoed",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 174
+    },
+    "Defense": {
+      "BaseValue": 192
+    },
+    "Stamina": {
+      "BaseValue": 180
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "hydro-pump",
+        "blizzard",
+        "earthquake"
+      ],
+      "QuickMovesIds": [
+        "mud-shot",
+        "bubble"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 187,
+    "Name": "hoppip",
+    "Types": [
+      "grass",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 67
+    },
+    "Defense": {
+      "BaseValue": 101
+    },
+    "Stamina": {
+      "BaseValue": 70
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "grass-knot",
+        "dazzling-gleam",
+        "seed-bomb"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "bullet-seed"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 188,
+    "Name": "skiploom",
+    "Types": [
+      "grass",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 91
+    },
+    "Defense": {
+      "BaseValue": 127
+    },
+    "Stamina": {
+      "BaseValue": 110
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "grass-knot",
+        "dazzling-gleam",
+        "energy-ball"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "bullet-seed"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 189,
+    "Name": "jumpluff",
+    "Types": [
+      "grass",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 118
+    },
+    "Defense": {
+      "BaseValue": 178
+    },
+    "Stamina": {
+      "BaseValue": 150
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "energy-ball",
+        "dazzling-gleam",
+        "solar-beam"
+      ],
+      "QuickMovesIds": [
+        "infestation",
+        "bullet-seed"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 190,
+    "Name": "aipom",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 136
+    },
+    "Defense": {
+      "BaseValue": 112
+    },
+    "Stamina": {
+      "BaseValue": 110
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "low-sweep",
+        "swift",
+        "aerial-ace"
+      ],
+      "QuickMovesIds": [
+        "scratch",
+        "astonish"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 191,
+    "Name": "sunkern",
+    "Types": [
+      "grass"
+    ],
+    "Attack": {
+      "BaseValue": 55
+    },
+    "Defense": {
+      "BaseValue": 55
+    },
+    "Stamina": {
+      "BaseValue": 60
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "energy-ball",
+        "grass-knot",
+        "seed-bomb"
+      ],
+      "QuickMovesIds": [
+        "razor-leaf",
+        "cut"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 192,
+    "Name": "sunflora",
+    "Types": [
+      "grass"
+    ],
+    "Attack": {
+      "BaseValue": 185
+    },
+    "Defense": {
+      "BaseValue": 148
+    },
+    "Stamina": {
+      "BaseValue": 150
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "solar-beam",
+        "petal-blizzard",
+        "sludge-bomb"
+      ],
+      "QuickMovesIds": [
+        "razor-leaf",
+        "bullet-seed"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 193,
+    "Name": "yanma",
+    "Types": [
+      "bug",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 154
+    },
+    "Defense": {
+      "BaseValue": 94
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "ancient-power",
+        "aerial-ace",
+        "silver-wind"
+      ],
+      "QuickMovesIds": [
+        "quick-attack",
+        "wing-attack"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 194,
+    "Name": "wooper",
+    "Types": [
+      "water",
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 75
+    },
+    "Defense": {
+      "BaseValue": 75
+    },
+    "Stamina": {
+      "BaseValue": 110
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "mud-bomb",
+        "dig",
+        "body-slam"
+      ],
+      "QuickMovesIds": [
+        "water-gun",
+        "mud-shot"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 195,
+    "Name": "quagsire",
+    "Types": [
+      "water",
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 152
+    },
+    "Defense": {
+      "BaseValue": 152
+    },
+    "Stamina": {
+      "BaseValue": 190
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "sludge-bomb",
+        "earthquake",
+        "stone-edge"
+      ],
+      "QuickMovesIds": [
+        "water-gun",
+        "mud-shot"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 196,
+    "Name": "espeon",
+    "Types": [
+      "psychic"
+    ],
+    "Attack": {
+      "BaseValue": 261
+    },
+    "Defense": {
+      "BaseValue": 194
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "psybeam",
+        "psychic",
+        "futuresight"
+      ],
+      "QuickMovesIds": [
+        "confusion",
+        "zen-headbutt"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 197,
+    "Name": "umbreon",
+    "Types": [
+      "dark"
+    ],
+    "Attack": {
+      "BaseValue": 126
+    },
+    "Defense": {
+      "BaseValue": 250
+    },
+    "Stamina": {
+      "BaseValue": 190
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "dark-pulse",
+        "foul-play"
+      ],
+      "QuickMovesIds": [
+        "feint-attack",
+        "snarl"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 198,
+    "Name": "murkrow",
+    "Types": [
+      "dark",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 175
+    },
+    "Defense": {
+      "BaseValue": 87
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "drill-peck",
+        "foul-play",
+        "dark-pulse"
+      ],
+      "QuickMovesIds": [
+        "peck",
+        "feint-attack"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 199,
+    "Name": "slowking",
+    "Types": [
+      "water",
+      "psychic"
+    ],
+    "Attack": {
+      "BaseValue": 177
+    },
+    "Defense": {
+      "BaseValue": 194
+    },
+    "Stamina": {
+      "BaseValue": 190
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "blizzard",
+        "psychic",
+        "fire-blast"
+      ],
+      "QuickMovesIds": [
+        "water-gun",
+        "confusion"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 200,
+    "Name": "misdreavus",
+    "Types": [
+      "ghost"
+    ],
+    "Attack": {
+      "BaseValue": 167
+    },
+    "Defense": {
+      "BaseValue": 167
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "shadow-sneak",
+        "dark-pulse",
+        "ominous-wind"
+      ],
+      "QuickMovesIds": [
+        "astonish",
+        "hex"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 201,
+    "Name": "unown",
+    "Types": [
+      "psychic"
+    ],
+    "Attack": {
+      "BaseValue": 136
+    },
+    "Defense": {
+      "BaseValue": 91
+    },
+    "Stamina": {
+      "BaseValue": 96
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "struggle"
+      ],
+      "QuickMovesIds": [
+        "hidden-power"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 202,
+    "Name": "wobbuffet",
+    "Types": [
+      "psychic"
+    ],
+    "Attack": {
+      "BaseValue": 60
+    },
+    "Defense": {
+      "BaseValue": 106
+    },
+    "Stamina": {
+      "BaseValue": 380
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "mirror-coat"
+      ],
+      "QuickMovesIds": [
+        "counter",
+        "splash"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 203,
+    "Name": "girafarig",
+    "Types": [
+      "normal",
+      "psychic"
+    ],
+    "Attack": {
+      "BaseValue": 182
+    },
+    "Defense": {
+      "BaseValue": 133
+    },
+    "Stamina": {
+      "BaseValue": 140
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "psychic",
+        "thunderbolt",
+        "mirror-coat"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "confusion"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 204,
+    "Name": "pineco",
+    "Types": [
+      "bug"
+    ],
+    "Attack": {
+      "BaseValue": 108
+    },
+    "Defense": {
+      "BaseValue": 146
+    },
+    "Stamina": {
+      "BaseValue": 100
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "gyro-ball",
+        "rock-tomb",
+        "sand-tomb"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "bug-bite"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 10
+  },
+  {
+    "DexNumber": 205,
+    "Name": "forretress",
+    "Types": [
+      "bug",
+      "steel"
+    ],
+    "Attack": {
+      "BaseValue": 161
+    },
+    "Defense": {
+      "BaseValue": 242
+    },
+    "Stamina": {
+      "BaseValue": 150
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "heavy-slam",
+        "earthquake",
+        "rock-tomb"
+      ],
+      "QuickMovesIds": [
+        "bug-bite",
+        "struggle-bug"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 206,
+    "Name": "dunsparce",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 131
+    },
+    "Defense": {
+      "BaseValue": 131
+    },
+    "Stamina": {
+      "BaseValue": 200
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "dig",
+        "rock-slide",
+        "drill-run"
+      ],
+      "QuickMovesIds": [
+        "bite",
+        "astonish"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 207,
+    "Name": "gligar",
+    "Types": [
+      "ground",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 143
+    },
+    "Defense": {
+      "BaseValue": 204
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "dig",
+        "aerial-ace",
+        "night-slash"
+      ],
+      "QuickMovesIds": [
+        "fury-cutter",
+        "wing-attack"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 10
+  },
+  {
+    "DexNumber": 208,
+    "Name": "steelix",
+    "Types": [
+      "steel",
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 148
+    },
+    "Defense": {
+      "BaseValue": 333
+    },
+    "Stamina": {
+      "BaseValue": 150
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "earthquake",
+        "heavy-slam",
+        "crunch"
+      ],
+      "QuickMovesIds": [
+        "iron-tail",
+        "dragon-tail"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 209,
+    "Name": "snubbull",
+    "Types": [
+      "fairy"
+    ],
+    "Attack": {
+      "BaseValue": 137
+    },
+    "Defense": {
+      "BaseValue": 89
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "crunch",
+        "dazzling-gleam",
+        "brick-break"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "bite"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 210,
+    "Name": "granbull",
+    "Types": [
+      "fairy"
+    ],
+    "Attack": {
+      "BaseValue": 212
+    },
+    "Defense": {
+      "BaseValue": 137
+    },
+    "Stamina": {
+      "BaseValue": 180
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "crunch",
+        "play-rough",
+        "close-combat"
+      ],
+      "QuickMovesIds": [
+        "bite",
+        "snarl"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 211,
+    "Name": "qwilfish",
+    "Types": [
+      "water",
+      "poison"
+    ],
+    "Attack": {
+      "BaseValue": 184
+    },
+    "Defense": {
+      "BaseValue": 148
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "aqua-tail",
+        "ice-beam",
+        "sludge-wave"
+      ],
+      "QuickMovesIds": [
+        "poison-sting",
+        "water-gun"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 212,
+    "Name": "scizor",
+    "Types": [
+      "bug",
+      "steel"
+    ],
+    "Attack": {
+      "BaseValue": 236
+    },
+    "Defense": {
+      "BaseValue": 191
+    },
+    "Stamina": {
+      "BaseValue": 140
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "x-scissor",
+        "iron-head",
+        "night-slash"
+      ],
+      "QuickMovesIds": [
+        "bullet-punch",
+        "fury-cutter"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 213,
+    "Name": "shuckle",
+    "Types": [
+      "bug",
+      "rock"
+    ],
+    "Attack": {
+      "BaseValue": 17
+    },
+    "Defense": {
+      "BaseValue": 396
+    },
+    "Stamina": {
+      "BaseValue": 40
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "rock-blast",
+        "stone-edge",
+        "gyro-ball"
+      ],
+      "QuickMovesIds": [
+        "struggle-bug",
+        "rock-throw"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 214,
+    "Name": "heracross",
+    "Types": [
+      "bug",
+      "fighting"
+    ],
+    "Attack": {
+      "BaseValue": 234
+    },
+    "Defense": {
+      "BaseValue": 189
+    },
+    "Stamina": {
+      "BaseValue": 160
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "megahorn",
+        "close-combat",
+        "earthquake"
+      ],
+      "QuickMovesIds": [
+        "counter",
+        "struggle-bug"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 10
+  },
+  {
+    "DexNumber": 215,
+    "Name": "sneasel",
+    "Types": [
+      "dark",
+      "ice"
+    ],
+    "Attack": {
+      "BaseValue": 189
+    },
+    "Defense": {
+      "BaseValue": 157
+    },
+    "Stamina": {
+      "BaseValue": 110
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "avalanche",
+        "ice-punch",
+        "foul-play"
+      ],
+      "QuickMovesIds": [
+        "ice-shard",
+        "feint-attack"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 216,
+    "Name": "teddiursa",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 142
+    },
+    "Defense": {
+      "BaseValue": 93
+    },
+    "Stamina": {
+      "BaseValue": 120
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "cross-chop",
+        "crunch",
+        "play-rough"
+      ],
+      "QuickMovesIds": [
+        "scratch",
+        "lick"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 217,
+    "Name": "ursaring",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 236
+    },
+    "Defense": {
+      "BaseValue": 144
+    },
+    "Stamina": {
+      "BaseValue": 180
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "close-combat",
+        "hyper-beam",
+        "play-rough"
+      ],
+      "QuickMovesIds": [
+        "metal-claw",
+        "counter"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 218,
+    "Name": "slugma",
+    "Types": [
+      "fire"
+    ],
+    "Attack": {
+      "BaseValue": 118
+    },
+    "Defense": {
+      "BaseValue": 71
+    },
+    "Stamina": {
+      "BaseValue": 80
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "flame-burst",
+        "flame-charge",
+        "rock-slide"
+      ],
+      "QuickMovesIds": [
+        "ember",
+        "rock-throw"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 219,
+    "Name": "magcargo",
+    "Types": [
+      "fire",
+      "rock"
+    ],
+    "Attack": {
+      "BaseValue": 139
+    },
+    "Defense": {
+      "BaseValue": 209
+    },
+    "Stamina": {
+      "BaseValue": 100
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "heat-wave",
+        "overheat",
+        "stone-edge"
+      ],
+      "QuickMovesIds": [
+        "ember",
+        "rock-throw"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 220,
+    "Name": "swinub",
+    "Types": [
+      "ice",
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 90
+    },
+    "Defense": {
+      "BaseValue": 74
+    },
+    "Stamina": {
+      "BaseValue": 100
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "icy-wind",
+        "body-slam",
+        "rock-slide"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "powder-snow"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 221,
+    "Name": "piloswine",
+    "Types": [
+      "ice",
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 181
+    },
+    "Defense": {
+      "BaseValue": 147
+    },
+    "Stamina": {
+      "BaseValue": 200
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "avalanche",
+        "bulldoze",
+        "stone-edge"
+      ],
+      "QuickMovesIds": [
+        "ice-shard",
+        "powder-snow"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 222,
+    "Name": "corsola",
+    "Types": [
+      "water",
+      "rock"
+    ],
+    "Attack": {
+      "BaseValue": 118
+    },
+    "Defense": {
+      "BaseValue": 156
+    },
+    "Stamina": {
+      "BaseValue": 110
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "rock-blast",
+        "power-gem",
+        "bubble-beam"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "bubble"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 223,
+    "Name": "remoraid",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 127
+    },
+    "Defense": {
+      "BaseValue": 69
+    },
+    "Stamina": {
+      "BaseValue": 70
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "aurora-beam",
+        "water-pulse",
+        "rock-blast"
+      ],
+      "QuickMovesIds": [
+        "water-gun",
+        "mud-shot"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 2
+  },
+  {
+    "DexNumber": 224,
+    "Name": "octillery",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 197
+    },
+    "Defense": {
+      "BaseValue": 141
+    },
+    "Stamina": {
+      "BaseValue": 150
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "gunk-shot",
+        "water-pulse",
+        "aurora-beam"
+      ],
+      "QuickMovesIds": [
+        "water-gun",
+        "mud-shot"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 225,
+    "Name": "delibird",
+    "Types": [
+      "ice",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 128
+    },
+    "Defense": {
+      "BaseValue": 90
+    },
+    "Stamina": {
+      "BaseValue": 90
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "ice-punch",
+        "icy-wind",
+        "aerial-ace"
+      ],
+      "QuickMovesIds": [
+        "ice-shard",
+        "quick-attack"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 226,
+    "Name": "mantine",
+    "Types": [
+      "water",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 149
+    },
+    "Defense": {
+      "BaseValue": 260
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "water-pulse",
+        "ice-beam",
+        "aerial-ace"
+      ],
+      "QuickMovesIds": [
+        "bubble",
+        "wing-attack"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 10
+  },
+  {
+    "DexNumber": 227,
+    "Name": "skarmory",
+    "Types": [
+      "steel",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 149
+    },
+    "Defense": {
+      "BaseValue": 260
+    },
+    "Stamina": {
+      "BaseValue": 130
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "brave-bird",
+        "sky-attack",
+        "flash-cannon"
+      ],
+      "QuickMovesIds": [
+        "steel-wing",
+        "air-slash"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 10
+  },
+  {
+    "DexNumber": 228,
+    "Name": "houndour",
+    "Types": [
+      "dark",
+      "fire"
+    ],
+    "Attack": {
+      "BaseValue": 152
+    },
+    "Defense": {
+      "BaseValue": 93
+    },
+    "Stamina": {
+      "BaseValue": 90
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "crunch",
+        "flamethrower",
+        "dark-pulse"
+      ],
+      "QuickMovesIds": [
+        "feint-attack",
+        "ember"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 229,
+    "Name": "houndoom",
+    "Types": [
+      "dark",
+      "fire"
+    ],
+    "Attack": {
+      "BaseValue": 224
+    },
+    "Defense": {
+      "BaseValue": 159
+    },
+    "Stamina": {
+      "BaseValue": 150
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "crunch",
+        "fire-blast",
+        "foul-play"
+      ],
+      "QuickMovesIds": [
+        "snarl",
+        "fire-fang"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 230,
+    "Name": "kingdra",
+    "Types": [
+      "water",
+      "dragon"
+    ],
+    "Attack": {
+      "BaseValue": 194
+    },
+    "Defense": {
+      "BaseValue": 194
+    },
+    "Stamina": {
+      "BaseValue": 150
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "hydro-pump",
+        "blizzard",
+        "outrage"
+      ],
+      "QuickMovesIds": [
+        "water-gun",
+        "dragon-breath"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 231,
+    "Name": "phanpy",
+    "Types": [
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 107
+    },
+    "Defense": {
+      "BaseValue": 107
+    },
+    "Stamina": {
+      "BaseValue": 180
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "bulldoze",
+        "rock-slide",
+        "body-slam"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "rock-smash"
+      ]
+    },
+    "CandiesToEvolve": 50,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 232,
+    "Name": "donphan",
+    "Types": [
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 214
+    },
+    "Defense": {
+      "BaseValue": 214
+    },
+    "Stamina": {
+      "BaseValue": 180
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "earthquake",
+        "heavy-slam",
+        "play-rough"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "counter"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 233,
+    "Name": "porygon2",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 198
+    },
+    "Defense": {
+      "BaseValue": 183
+    },
+    "Stamina": {
+      "BaseValue": 170
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "solar-beam",
+        "hyper-beam",
+        "zap-cannon"
+      ],
+      "QuickMovesIds": [
+        "hidden-power",
+        "charge-beam"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 234,
+    "Name": "stantler",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 192
+    },
+    "Defense": {
+      "BaseValue": 132
+    },
+    "Stamina": {
+      "BaseValue": 146
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "stomp",
+        "wild-charge",
+        "megahorn"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "zen-headbutt"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 235,
+    "Name": "smeargle",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 40
+    },
+    "Defense": {
+      "BaseValue": 88
+    },
+    "Stamina": {
+      "BaseValue": 110
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "struggle"
+      ],
+      "QuickMovesIds": [
+        "tackle"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 236,
+    "Name": "tyrogue",
+    "Types": [
+      "fighting"
+    ],
+    "Attack": {
+      "BaseValue": 64
+    },
+    "Defense": {
+      "BaseValue": 64
+    },
+    "Stamina": {
+      "BaseValue": 70
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "brick-break",
+        "rock-slide",
+        "low-sweep"
+      ],
+      "QuickMovesIds": [
+        "rock-smash",
+        "tackle"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 237,
+    "Name": "hitmontop",
+    "Types": [
+      "fighting"
+    ],
+    "Attack": {
+      "BaseValue": 173
+    },
+    "Defense": {
+      "BaseValue": 214
+    },
+    "Stamina": {
+      "BaseValue": 100
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "close-combat",
+        "gyro-ball",
+        "stone-edge"
+      ],
+      "QuickMovesIds": [
+        "rock-smash",
+        "counter"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 238,
+    "Name": "smoochum",
+    "Types": [
+      "ice",
+      "psychic"
+    ],
+    "Attack": {
+      "BaseValue": 153
+    },
+    "Defense": {
+      "BaseValue": 116
+    },
+    "Stamina": {
+      "BaseValue": 90
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "ice-beam",
+        "ice-punch",
+        "psyshock"
+      ],
+      "QuickMovesIds": [
+        "powder-snow",
+        "pound"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 239,
+    "Name": "elekid",
+    "Types": [
+      "electric"
+    ],
+    "Attack": {
+      "BaseValue": 135
+    },
+    "Defense": {
+      "BaseValue": 110
+    },
+    "Stamina": {
+      "BaseValue": 90
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "thunder-punch",
+        "brick-break",
+        "discharge"
+      ],
+      "QuickMovesIds": [
+        "thunder-shock",
+        "low-kick"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 240,
+    "Name": "magby",
+    "Types": [
+      "fire"
+    ],
+    "Attack": {
+      "BaseValue": 151
+    },
+    "Defense": {
+      "BaseValue": 108
+    },
+    "Stamina": {
+      "BaseValue": 90
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "brick-break",
+        "fire-punch",
+        "flame-burst"
+      ],
+      "QuickMovesIds": [
+        "ember",
+        "karate-chop"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 5
+  },
+  {
+    "DexNumber": 241,
+    "Name": "miltank",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 158
+    },
+    "Defense": {
+      "BaseValue": 211
+    },
+    "Stamina": {
+      "BaseValue": 190
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "stomp",
+        "body-slam",
+        "gyro-ball"
+      ],
+      "QuickMovesIds": [
+        "tackle",
+        "zen-headbutt"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 10
+  },
+  {
+    "DexNumber": 242,
+    "Name": "blissey",
+    "Types": [
+      "normal"
+    ],
+    "Attack": {
+      "BaseValue": 129
+    },
+    "Defense": {
+      "BaseValue": 229
+    },
+    "Stamina": {
+      "BaseValue": 510
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "psychic",
+        "hyper-beam",
+        "dazzling-gleam"
+      ],
+      "QuickMovesIds": [
+        "pound",
+        "zen-headbutt"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 243,
+    "Name": "raikou",
+    "Types": [
+      "electric"
+    ],
+    "Attack": {
+      "BaseValue": 241
+    },
+    "Defense": {
+      "BaseValue": 210
+    },
+    "Stamina": {
+      "BaseValue": 180
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "thunder",
+        "thunderbolt",
+        "wild-charge"
+      ],
+      "QuickMovesIds": [
+        "thunder-shock",
+        "volt-switch"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 244,
+    "Name": "entei",
+    "Types": [
+      "fire"
+    ],
+    "Attack": {
+      "BaseValue": 235
+    },
+    "Defense": {
+      "BaseValue": 176
+    },
+    "Stamina": {
+      "BaseValue": 230
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "flamethrower",
+        "fire-blast",
+        "overheat"
+      ],
+      "QuickMovesIds": [
+        "fire-spin",
+        "fire-fang"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 245,
+    "Name": "suicune",
+    "Types": [
+      "water"
+    ],
+    "Attack": {
+      "BaseValue": 180
+    },
+    "Defense": {
+      "BaseValue": 235
+    },
+    "Stamina": {
+      "BaseValue": 200
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "hydro-pump",
+        "bubble-beam",
+        "water-pulse"
+      ],
+      "QuickMovesIds": [
+        "extrasensory",
+        "snarl"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 246,
+    "Name": "larvitar",
+    "Types": [
+      "rock",
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 115
+    },
+    "Defense": {
+      "BaseValue": 93
+    },
+    "Stamina": {
+      "BaseValue": 100
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "stomp",
+        "crunch",
+        "ancient-power"
+      ],
+      "QuickMovesIds": [
+        "bite",
+        "rock-smash"
+      ]
+    },
+    "CandiesToEvolve": 25,
+    "EggDistance": 10
+  },
+  {
+    "DexNumber": 247,
+    "Name": "pupitar",
+    "Types": [
+      "rock",
+      "ground"
+    ],
+    "Attack": {
+      "BaseValue": 155
+    },
+    "Defense": {
+      "BaseValue": 133
+    },
+    "Stamina": {
+      "BaseValue": 140
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "dig",
+        "crunch",
+        "ancient-power"
+      ],
+      "QuickMovesIds": [
+        "bite",
+        "rock-smash"
+      ]
+    },
+    "CandiesToEvolve": 100,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 248,
+    "Name": "tyranitar",
+    "Types": [
+      "rock",
+      "dark"
+    ],
+    "Attack": {
+      "BaseValue": 251
+    },
+    "Defense": {
+      "BaseValue": 212
+    },
+    "Stamina": {
+      "BaseValue": 200
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "fire-blast",
+        "crunch",
+        "stone-edge"
+      ],
+      "QuickMovesIds": [
+        "bite",
+        "iron-tail"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 249,
+    "Name": "lugia",
+    "Types": [
+      "psychic",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 193
+    },
+    "Defense": {
+      "BaseValue": 323
+    },
+    "Stamina": {
+      "BaseValue": 212
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "sky-attack",
+        "hydro-pump",
+        "futuresight"
+      ],
+      "QuickMovesIds": [
+        "extrasensory",
+        "dragon-tail"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 250,
+    "Name": "ho-oh",
+    "Types": [
+      "fire",
+      "flying"
+    ],
+    "Attack": {
+      "BaseValue": 263
+    },
+    "Defense": {
+      "BaseValue": 301
+    },
+    "Stamina": {
+      "BaseValue": 212
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "brave-bird",
+        "fire-blast",
+        "solar-beam"
+      ],
+      "QuickMovesIds": [
+        "extrasensory",
+        "steel-wing"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  },
+  {
+    "DexNumber": 251,
+    "Name": "celebi",
+    "Types": [
+      "psychic",
+      "grass"
+    ],
+    "Attack": {
+      "BaseValue": 210
+    },
+    "Defense": {
+      "BaseValue": 210
+    },
+    "Stamina": {
+      "BaseValue": 200
+    },
+    "CatchRate": 0,
+    "FleeRate": 0,
+    "Moves": {
+      "ChargeMovesIds": [
+        "hyper-beam",
+        "psychic",
+        "dazzling-gleam"
+      ],
+      "QuickMovesIds": [
+        "confusion",
+        "charge-beam"
+      ]
+    },
+    "CandiesToEvolve": 0,
+    "EggDistance": 0
+  }
+]

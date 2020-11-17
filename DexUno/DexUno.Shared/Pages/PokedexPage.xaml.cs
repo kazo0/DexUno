@@ -14,20 +14,10 @@ namespace Dex.Uwp.Pages
         public PokedexPage()
         {
             this.InitializeComponent();
-            AllPokemonsByDexNumberList.ItemClick += PokemonsList_ItemClick;
-            AllPokemonsByCpList.ItemClick += PokemonsList_ItemClick;
-            AllPokemonsByNameList.ItemClick += PokemonsList_ItemClick;
-            AllPokemonsByTypeList.ItemClick += PokemonsList_ItemClick;
-
             DataContextChanged += (a, b) =>
             {
                 vm = b.NewValue as PokedexViewModel;
             };
-        }
-
-        private void PokemonsList_ItemClick(object sender, Windows.UI.Xaml.Controls.ItemClickEventArgs e)
-        {
-            vm.OnSelectNewItem((Pokemon)e.ClickedItem);
         }
 	}
 }

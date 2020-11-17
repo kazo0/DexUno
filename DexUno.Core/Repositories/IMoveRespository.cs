@@ -14,7 +14,7 @@ namespace Dex.Core.Repositories
 
         Task<PokemonMoves> GetAllMovesByType(PokemonType moveType);
 
-        Move GetMoveById(string Id);
+        Task<Move> GetMoveById(string Id);
 
         Task<PokemonMoves> GetMovesById(IEnumerable<string> quickMovesIds, IEnumerable<string> chargeMovesIds);
     }
@@ -46,8 +46,9 @@ namespace Dex.Core.Repositories
             };
         }
 
-        public Move GetMoveById(string moveId)
+        public async Task<Move> GetMoveById(string moveId)
         {
+            await EnsureCacheIsValid();
             Move foundQuickMove = movesCache.QuickMoves.Where(move => move.MoveId == moveId).SingleOrDefault();
             Move foundChargeMove = movesCache.ChargeMoves.Where(move => move.MoveId == moveId).SingleOrDefault();
 
@@ -59,8 +60,8 @@ namespace Dex.Core.Repositories
             await EnsureCacheIsValid();
             return new PokemonMoves()
             {
-                QuickMoves = quickMovesIds.Select(id => GetMoveById(id)).Cast<QuickMove>(),
-                ChargeMoves = chargeMovesIds.Select(id => GetMoveById(id)).Cast<ChargeMove>()
+                QuickMoves = quickMovesIds.Select(async id => await GetMoveById(id)).Cast<QuickMove>(),
+                ChargeMoves = chargeMovesIds.Select(async id => await GetMoveById(id)).Cast<ChargeMove>()
             };
         }
 

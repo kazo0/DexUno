@@ -12,7 +12,7 @@ namespace Dex.Uwp.Pages
         {
             InitializeComponent();
             //DataContextChanged += (a, b) => vm = b.NewValue as PokemonDetailViewModel;
-            MovesCard.ItemClicked += MovesCard_ItemClicked;
+            //MovesCard.ItemClicked += MovesCard_ItemClicked;
         }
 
         private void MovesCard_ItemClicked(object sender, Windows.UI.Xaml.Controls.ItemClickEventArgs e)

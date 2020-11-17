@@ -13,17 +13,11 @@
                                                  IsDesignTimeCreatable=False}"
                 mc:Ignorable="d">
 
-    <Grid VerticalAlignment="Top">
-        <ListView ItemContainerStyle="{StaticResource CardBasedListItemStyle}" Style="{StaticResource CardBasedListStyle}">
-            <ListView.ItemContainerTransitions>
-                <TransitionCollection>
-                    <EntranceThemeTransition IsStaggeringEnabled="True" />
-                </TransitionCollection>
-            </ListView.ItemContainerTransitions>
-            <ListView.Items>
-                <controls:MoveCard DataContext="{Binding SelectedMove}" />
-                <controls:MoveRelatedPokemonsCard x:Name="UsedByCard" />
-            </ListView.Items>
-        </ListView>
-    </Grid>
+	<ScrollViewer VerticalAlignment="Top">
+		<StackPanel Margin="20">
+		    <controls:MoveCard DataContext="{Binding SelectedMove}" />
+		    <controls:MoveRelatedPokemonsCard x:Name="UsedByCard"
+										      DataContext="{Binding }" />
+		</StackPanel>
+	</ScrollViewer>
 </infra:PageBase>

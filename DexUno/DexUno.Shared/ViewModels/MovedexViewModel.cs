@@ -2,12 +2,15 @@
 using Dex.Core.Repositories;
 using Dex.Uwp.Infrastructure;
 using Dex.Uwp.Services;
+using DexUno.Shared;
+using DexUno.Shared.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
 
 namespace Dex.Uwp.ViewModels
@@ -18,6 +21,7 @@ namespace Dex.Uwp.ViewModels
         private readonly INavigationService navigationService;
         private IEnumerable<ChargeMove> allChargeMovesById;
         private PokemonMoves allMoves;
+        private MoveDetailViewModel detailVm;
 
         private IEnumerable<QuickMove> allQuickMovesById;
 
@@ -25,7 +29,15 @@ namespace Dex.Uwp.ViewModels
         {
             this.navigationService = navigationService;
             this.moveRepository = moveRepository;
+            this.detailVm = Startup.ServiceProvider.GetService<MoveDetailViewModel>();
             ReverseOrderCommand = new RelayCommand(() => OnReverseOrder());
+            SelectMoveCommand = new RelayCommand<ItemClickEventArgs>(async (args) => await SelectMove(args.ClickedItem as Move));
+        }
+        public ICommand SelectMoveCommand { get; }
+        public MoveDetailViewModel MovieDetailViewModel
+        {
+            get { return detailVm; }
+            private set { Set(ref detailVm, value); }
         }
 
         public IEnumerable<ChargeMove> AllChargeMovesById
@@ -46,6 +58,11 @@ namespace Dex.Uwp.ViewModels
         {
             navigationService.NavigateToMoveDetailsPage(selectedMove.MoveId);
         }
+
+        private async Task SelectMove(Move move)
+		{
+            await detailVm.SelectMove(move.MoveId);
+		}
 
         public async override Task OnNavigatedTo(NavigationEventArgs e)
         {

@@ -9,8 +9,12 @@
                 xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                 xmlns:model="using:Dex.Core.Entities"
                 xmlns:vm="using:Dex.Uwp.ViewModels"
+				xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+				xmlns:pages="using:Dex.Uwp.Pages"
                 x:Uid="Page_Pokedex"
-                d:DataContext="{d:DesignInstance Type=vm:PokedexViewModel,
+				xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+				xmlns:core="using:Microsoft.Xaml.Interactions.Core"
+				d:DataContext="{d:DesignInstance Type=vm:PokedexViewModel,
                                                  IsDesignTimeCreatable=False}"
                 NavigationCacheMode="Enabled"
                 mc:Ignorable="d">
@@ -28,72 +32,93 @@
     </Page.Transitions>-->
 
     <Grid>
-        <Pivot Style="{StaticResource TabsStylePivotStyle}">
-            <Pivot.Resources>
-                <ResourceDictionary>
-                    <ResourceDictionary.MergedDictionaries>
-                        <ResourceDictionary Source="../Theme/CustomPivotResources.xaml" />
-                    </ResourceDictionary.MergedDictionaries>
-                </ResourceDictionary>
-            </Pivot.Resources>
-            <Pivot.Transitions>
-                <TransitionCollection>
-                    <EntranceThemeTransition FromVerticalOffset="-48" />
-                </TransitionCollection>
-            </Pivot.Transitions>
-            <PivotItem>
-                <PivotItem.Header>
-                    <Border Width="96" Height="48">
-                        <ctrl:TabHeader Label="BY #" />
-                    </Border>
-                </PivotItem.Header>
-                <ListView Name="AllPokemonsByDexNumberList"
-                          IsItemClickEnabled="True"
-                          ItemContainerStyle="{StaticResource CardBasedListItemStyle}"
-                          ItemTemplate="{StaticResource PokemonListItemTemplate}"
-                          ItemsSource="{Binding AllPokemonsByDexNumber}"
-                          Style="{StaticResource CardBasedListStyle}" />
-            </PivotItem>
-            <PivotItem>
-                <PivotItem.Header>
-                    <Border Width="96" Height="48">
-                        <ctrl:TabHeader Label="BY NAME" />
-                    </Border>
-                </PivotItem.Header>
-                <ListView Name="AllPokemonsByNameList"
-                          IsItemClickEnabled="True"
-                          ItemContainerStyle="{StaticResource CardBasedListItemStyle}"
-                          ItemTemplate="{StaticResource PokemonListItemTemplate}"
-                          ItemsSource="{Binding AllPokemonsByName}"
-                          Style="{StaticResource CardBasedListStyle}" />
-            </PivotItem>
-            <PivotItem>
-                <PivotItem.Header>
-                    <Border Width="96" Height="48">
-                        <ctrl:TabHeader Label="BY TYPE" />
-                    </Border>
-                </PivotItem.Header>
-                <ListView Name="AllPokemonsByTypeList"
-                          IsItemClickEnabled="True"
-                          ItemContainerStyle="{StaticResource CardBasedListItemStyle}"
-                          ItemTemplate="{StaticResource PokemonListItemTemplate}"
-                          ItemsSource="{Binding AllPokemonsByType}"
-                          Style="{StaticResource CardBasedListStyle}" />
-            </PivotItem>
+		<muxc:TwoPaneView Pane1Length="0.5*"
+						  Pane2Length="0.5*"
+					 HorizontalAlignment="Stretch"
+					 VerticalAlignment="Stretch">
+			<muxc:TwoPaneView.Pane1>
+				<Pivot Style="{StaticResource TabsStylePivotStyle}">
+					<Pivot.Resources>
+						<ResourceDictionary>
+							<ResourceDictionary.MergedDictionaries>
+								<ResourceDictionary Source="../Theme/CustomPivotResources.xaml" />
+							</ResourceDictionary.MergedDictionaries>
+						</ResourceDictionary>
+					</Pivot.Resources>
+					<Pivot.Transitions>
+						<TransitionCollection>
+							<EntranceThemeTransition FromVerticalOffset="-48" />
+						</TransitionCollection>
+					</Pivot.Transitions>
+					<PivotItem>
+						<PivotItem.Header>
+							<Border Width="96"
+									Height="48">
+								<ctrl:TabHeader Label="BY #" />
+							</Border>
+						</PivotItem.Header>
+						<ListView Name="AllPokemonsByDexNumberList"
+								  IsItemClickEnabled="True"
+								  ItemContainerStyle="{StaticResource CardBasedListItemStyle}"
+								  ItemTemplate="{StaticResource PokemonListItemTemplate}"
+								  ItemsSource="{Binding AllPokemonsByDexNumber}"
+								  Style="{StaticResource CardBasedListStyle}">
+							<interactivity:Interaction.Behaviors>
+								<core:EventTriggerBehavior EventName="ItemClick">
+									<core:InvokeCommandAction Command="{Binding SelectPokemonCommand}" />
+								</core:EventTriggerBehavior>
+							</interactivity:Interaction.Behaviors>
+						</ListView>
+					</PivotItem>
+					<PivotItem>
+						<PivotItem.Header>
+							<Border Width="96"
+									Height="48">
+								<ctrl:TabHeader Label="BY NAME" />
+							</Border>
+						</PivotItem.Header>
+						<ListView Name="AllPokemonsByNameList"
+								  IsItemClickEnabled="True"
+								  ItemContainerStyle="{StaticResource CardBasedListItemStyle}"
+								  ItemTemplate="{StaticResource PokemonListItemTemplate}"
+								  ItemsSource="{Binding AllPokemonsByName}"
+								  Style="{StaticResource CardBasedListStyle}" />
+					</PivotItem>
+					<PivotItem>
+						<PivotItem.Header>
+							<Border Width="96"
+									Height="48">
+								<ctrl:TabHeader Label="BY TYPE" />
+							</Border>
+						</PivotItem.Header>
+						<ListView Name="AllPokemonsByTypeList"
+								  IsItemClickEnabled="True"
+								  ItemContainerStyle="{StaticResource CardBasedListItemStyle}"
+								  ItemTemplate="{StaticResource PokemonListItemTemplate}"
+								  ItemsSource="{Binding AllPokemonsByType}"
+								  Style="{StaticResource CardBasedListStyle}" />
+					</PivotItem>
 
-            <PivotItem>
-                <PivotItem.Header>
-                    <Border Width="96" Height="48">
-                        <ctrl:TabHeader Label="BY CP" />
-                    </Border>
-                </PivotItem.Header>
-                <ListView Name="AllPokemonsByCpList"
-                          IsItemClickEnabled="True"
-                          ItemContainerStyle="{StaticResource CardBasedListItemStyle}"
-                          ItemTemplate="{StaticResource PokemonListItemTemplate}"
-                          ItemsSource="{Binding AllPokemonsByCp}"
-                          Style="{StaticResource CardBasedListStyle}" />
-            </PivotItem>
-        </Pivot>
+					<PivotItem>
+						<PivotItem.Header>
+							<Border Width="96"
+									Height="48">
+								<ctrl:TabHeader Label="BY CP" />
+							</Border>
+						</PivotItem.Header>
+						<ListView Name="AllPokemonsByCpList"
+								  IsItemClickEnabled="True"
+								  ItemContainerStyle="{StaticResource CardBasedListItemStyle}"
+								  ItemTemplate="{StaticResource PokemonListItemTemplate}"
+								  ItemsSource="{Binding AllPokemonsByCp}"
+								  Style="{StaticResource CardBasedListStyle}" />
+					</PivotItem>
+				</Pivot>
+			</muxc:TwoPaneView.Pane1>
+			<muxc:TwoPaneView.Pane2>
+				<pages:PokemonDetailPage DataContext="{Binding PokemonDetailViewModel}"/>
+			</muxc:TwoPaneView.Pane2>
+		</muxc:TwoPaneView>
+		
     </Grid>
 </infra:PageBase>

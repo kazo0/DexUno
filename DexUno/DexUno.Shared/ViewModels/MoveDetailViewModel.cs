@@ -39,7 +39,12 @@ namespace Dex.Uwp.ViewModels
         public async override Task OnNavigatedTo(NavigationEventArgs e)
         {
             var moveId = (string)e.Parameter;
-            await SetNewMove(moveRepository.GetMoveById(moveId));
+            await SetNewMove(await moveRepository.GetMoveById(moveId));
+        }
+
+        public async Task SelectMove(string moveId)
+		{
+            await SetNewMove(await moveRepository.GetMoveById(moveId));
         }
 
         public void OnPokemonSelected(Pokemon selectedPokemon)

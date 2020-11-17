@@ -92,10 +92,17 @@ namespace Dex.Uwp.ViewModels
         public async override Task OnNavigatedTo(NavigationEventArgs e)
         {
             var dexId = (ushort)e.Parameter;
+            await SetPokemon(dexId);
+            _logger.LogDebug($"Got Pokemon {SelectedPokemon.Name}");
+        }
+
+        public async Task SetPokemon(ushort dexId)
+        {
             _logger.LogDebug($"Fetch pokemon for ID {dexId}");
             await SetNewPokemon(await _pokemonRepository.GetPokemonById(dexId));
             _logger.LogDebug($"Got Pokemon {SelectedPokemon.Name}");
         }
+
 
         private async Task InitCombatStats()
         {

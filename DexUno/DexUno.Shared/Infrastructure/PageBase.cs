@@ -35,7 +35,6 @@ namespace Dex.Uwp.Infrastructure
             viewModel.OnNavigatedTo(e);
 
             DataContext = viewModel;
-
             base.OnNavigatedTo(e);
         }
 

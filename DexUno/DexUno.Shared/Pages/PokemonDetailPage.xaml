@@ -37,19 +37,14 @@
         </TransitionCollection>
     </infra:PageBase.Transitions>-->
 
-    <Grid VerticalAlignment="Top">
-        <ListView ItemContainerStyle="{StaticResource CardBasedListItemStyle}" Style="{StaticResource CardBasedListStyle}">
-            <ListView.ItemContainerTransitions>
-                <TransitionCollection>
-                    <EntranceThemeTransition IsStaggeringEnabled="True" />
-                </TransitionCollection>
-            </ListView.ItemContainerTransitions>
-            <ListView.Items>
+	<Grid VerticalAlignment="Top">
+		<ScrollViewer>
+		    <StackPanel Margin="20">
                 <controls:PokemonCard DataContext="{Binding SelectedPokemon}" />
-                <controls:StatsCard DataContext="{Binding}" />
-                <controls:MovesCard x:Name="MovesCard" DataContext="{Binding Moves}" />
-                <controls:EvolutionLineCard DataContext="{Binding EvolutionLines}" />
-            </ListView.Items>
-        </ListView>
-    </Grid>
+                <!--<controls:StatsCard DataContext="{Binding}" />-->
+                <!--<controls:MovesCard x:Name="MovesCard" DataContext="{Binding Moves}" />-->
+		        <controls:EvolutionLineCard DataContext="{Binding EvolutionLines}" />
+		    </StackPanel>
+		</ScrollViewer>
+	</Grid>
 </infra:PageBase>

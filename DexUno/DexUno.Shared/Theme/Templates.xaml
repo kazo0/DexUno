@@ -25,21 +25,22 @@
     <local:ListItemTemplateSelector x:Key="ListItemTemplateSelector" />
 
     <DataTemplate x:Key="PokemonTypeTemplate">
-        <Border Width="{TemplateBinding Width}"
-                Height="{TemplateBinding Height}"
-                HorizontalAlignment="Right"
-                VerticalAlignment="Center"
-                Background="{Binding Type,
+	
+			<Border Width="{TemplateBinding Width}"
+					Height="{TemplateBinding Height}"
+					HorizontalAlignment="Right"
+					VerticalAlignment="Center"
+					Background="{Binding Type,
                                      Converter={StaticResource PokemonTypeToColorConverter}}"
-                CornerRadius="1">
-            <TextBlock HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       FontSize="10"
-                       Text="{Binding Type}">
-                <TextBlock.Foreground>
-                    <SolidColorBrush Color="{ThemeResource SystemAltHighColor}" />
-                </TextBlock.Foreground>
-            </TextBlock>
-        </Border>
-    </DataTemplate>
+					CornerRadius="1">
+				<TextBlock HorizontalAlignment="Center"
+						   VerticalAlignment="Center"
+						   FontSize="10"
+						   Text="{Binding Type}">
+					<TextBlock.Foreground>
+						<SolidColorBrush Color="{ThemeResource SystemAltHighColor}" />
+					</TextBlock.Foreground>
+				</TextBlock>
+			</Border>
+	</DataTemplate>
 </ResourceDictionary>

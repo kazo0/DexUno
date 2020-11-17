@@ -11,17 +11,10 @@ namespace Dex.Uwp.Pages
         public MovedexPage()
         {
             this.InitializeComponent();
-            QuickMovesList.ItemClick += MovesList_ItemClick;
-            ChargeMovesList.ItemClick += MovesList_ItemClick;
             DataContextChanged += (a, b) =>
             {
                 vm = b.NewValue as MovedexViewModel;
             };
-        }
-
-        private void MovesList_ItemClick(object sender, Windows.UI.Xaml.Controls.ItemClickEventArgs e)
-        {
-            vm.OnMoveSelected((Move)e.ClickedItem);
         }
     }
 }

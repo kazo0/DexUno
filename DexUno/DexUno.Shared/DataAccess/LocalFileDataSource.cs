@@ -15,7 +15,7 @@ namespace Dex.Uwp.DataAccess
 
         private const string EvolutionsDbFilePath = "Data/evolutions.db.json";
         private const string MovesDbFilePath = "Data/moves.db.json";
-        private const string PokemonsDbFilePath = "Data/Pokemons.db.json";
+        private const string PokemonsDbFilePath = "Data/pokemons.db.json";
         private const string TypesDbFilePath = "Data/types.db.json";
 
         private readonly IJsonService _jsonService;

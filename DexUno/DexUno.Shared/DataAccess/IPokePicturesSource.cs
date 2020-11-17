@@ -40,8 +40,8 @@ namespace Dex.Uwp.DataAccess
 
         public string GetPath(uint dexNumber)
         {
-            _log.LogDebug($"Getting image for path: {string.Format(pathTemplate, dexNumber.ToString("D3"))}");
-            return string.Format(pathTemplate, dexNumber.ToString("D3"));
+            _log.LogDebug($"Getting image for path: {string.Format(pathTemplate, dexNumber.ToString())}");
+            return string.Format(pathTemplate, dexNumber.ToString());
         }
     }
 }

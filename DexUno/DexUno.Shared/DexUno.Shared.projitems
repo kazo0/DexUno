@@ -479,4 +479,8 @@
     <Content Include="$(MSBuildThisFileDirectory)Data\types.db.json" />
     <Content Include="$(MSBuildThisFileDirectory)Properties\Default.rd.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Assets\Data\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Data\" />
+  </ItemGroup>
 </Project>

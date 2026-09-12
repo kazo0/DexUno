@@ -11,6 +11,10 @@
     <VisualStateManager.VisualStateGroups>
       <VisualStateGroup>
         <VisualState x:Name="Narrow">
+          <!-- Explicit trigger: without one this state is never entered, and the group falls back to base values. -->
+          <VisualState.StateTriggers>
+            <AdaptiveTrigger MinWindowWidth="0" />
+          </VisualState.StateTriggers>
           <VisualState.Setters>
             <Setter Target="BottomTabs.Visibility" Value="Visible" />
             <Setter Target="NavView.IsPaneToggleButtonVisible" Value="False" />

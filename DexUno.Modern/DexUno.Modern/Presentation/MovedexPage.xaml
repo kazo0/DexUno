@@ -1,0 +1,96 @@
+<Page x:Class="DexUno.Modern.Presentation.MovedexPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:DexUno.Modern.Presentation"
+      xmlns:mvux="using:Uno.Extensions.Reactive.UI"
+      xmlns:utu="using:Uno.Toolkit.UI"
+      NavigationCacheMode="Required"
+      Background="{ThemeResource BackgroundBrush}">
+
+  <Grid utu:SafeArea.Insets="VisibleBounds">
+    <VisualStateManager.VisualStateGroups>
+      <VisualStateGroup>
+        <VisualState x:Name="Narrow" />
+        <VisualState x:Name="Wide">
+          <VisualState.Setters>
+            <Setter Target="ListColumn.Width" Value="440" />
+            <Setter Target="DetailColumn.Width" Value="*" />
+            <Setter Target="DetailPane.Visibility" Value="Visible" />
+          </VisualState.Setters>
+        </VisualState>
+      </VisualStateGroup>
+    </VisualStateManager.VisualStateGroups>
+
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition x:Name="ListColumn" Width="*" />
+      <ColumnDefinition x:Name="DetailColumn" Width="0" />
+    </Grid.ColumnDefinitions>
+
+    <Grid Grid.Column="0">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="*" />
+      </Grid.RowDefinitions>
+
+      <utu:NavigationBar Content="{Binding Title}">
+        <utu:NavigationBar.PrimaryCommands>
+          <AppBarButton Label="Reverse order" Command="{Binding ToggleSortDirection}" Click="OnSortOrFilterChanged">
+            <AppBarButton.Icon>
+              <FontIcon Glyph="&#xE8CB;" />
+            </AppBarButton.Icon>
+          </AppBarButton>
+        </utu:NavigationBar.PrimaryCommands>
+      </utu:NavigationBar>
+
+      <TextBox Grid.Row="1"
+               Margin="16,8"
+               PlaceholderText="Search moves"
+               Style="{StaticResource OutlinedTextBoxStyle}"
+               Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+               TextChanged="OnSortOrFilterChanged" />
+
+      <utu:TabBar Grid.Row="2"
+                  Style="{StaticResource TopTabBarStyle}"
+                  SelectedIndex="{Binding TabIndex, Mode=TwoWay}"
+                  SelectionChanged="OnSortOrFilterChanged">
+        <utu:TabBarItem Content="Quick moves" />
+        <utu:TabBarItem Content="Charge moves" />
+      </utu:TabBar>
+
+      <mvux:FeedView Grid.Row="3" Source="{Binding Items}">
+        <DataTemplate>
+          <!-- Items is a paginated feed: the repeater asks for the next page as the scroller nears the end. -->
+          <ScrollViewer Style="{StaticResource DexListScrollViewerStyle}" Loaded="OnListScrollViewerLoaded">
+            <ItemsRepeater ItemsSource="{Binding Data}"
+                           ItemTemplate="{StaticResource MoveListItemTemplate}"
+                           utu:ItemsRepeaterExtensions.SelectionMode="Single"
+                           utu:ItemsRepeaterExtensions.SelectedItem="{Binding Parent.Selected, Mode=TwoWay}"
+                           utu:ItemsRepeaterExtensions.SupportsIncrementalLoading="True"
+                           utu:CommandExtensions.Command="{Binding Parent.SelectMove}" />
+          </ScrollViewer>
+        </DataTemplate>
+        <mvux:FeedView.NoneTemplate>
+          <DataTemplate>
+            <TextBlock Text="No moves match your search."
+                       Style="{StaticResource BodyLarge}"
+                       Foreground="{ThemeResource OnSurfaceVariantBrush}"
+                       HorizontalAlignment="Center"
+                       Margin="0,32,0,0" />
+          </DataTemplate>
+        </mvux:FeedView.NoneTemplate>
+      </mvux:FeedView>
+    </Grid>
+
+    <!-- Detail pane (wide layouts only); the view's own FeedView shows the placeholder until a move is selected -->
+    <Grid x:Name="DetailPane"
+          Grid.Column="1"
+          Visibility="Collapsed"
+          Background="{ThemeResource SurfaceBrush}"
+          BorderBrush="{ThemeResource OutlineVariantBrush}"
+          BorderThickness="1,0,0,0">
+      <local:MoveDetailView DataContext="{Binding Detail}" />
+    </Grid>
+  </Grid>
+</Page>

@@ -1,0 +1,20 @@
+<Application x:Class="DexUno.Modern.App"
+       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:um="using:Uno.Material">
+
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.MergedDictionaries>
+        <!-- Load WinUI resources -->
+        <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+        <utum:MaterialToolkitTheme
+          xmlns:utum="using:Uno.Toolkit.UI.Material"
+          ColorOverrideSource="ms-appx:///Styles/ColorPaletteOverride.xaml" />
+        <!-- App specific brushes, converters and shared templates -->
+        <ResourceDictionary Source="ms-appx:///Styles/AppResources.xaml" />
+      </ResourceDictionary.MergedDictionaries>
+    </ResourceDictionary>
+  </Application.Resources>
+
+</Application>

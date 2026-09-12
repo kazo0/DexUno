@@ -1,0 +1,67 @@
+<Page x:Class="DexUno.Modern.Presentation.TypesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mvux="using:Uno.Extensions.Reactive.UI"
+      xmlns:utu="using:Uno.Toolkit.UI"
+      NavigationCacheMode="Required"
+      Background="{ThemeResource BackgroundBrush}">
+
+  <Grid utu:SafeArea.Insets="VisibleBounds">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <utu:NavigationBar Content="{Binding Title}" />
+
+    <mvux:FeedView Grid.Row="1" Source="{Binding Items}">
+      <DataTemplate>
+        <!-- Only 18 types, so no pagination here; the repeater still virtualizes the cards. -->
+        <ScrollViewer Style="{StaticResource DexListScrollViewerStyle}" Padding="16,8,16,16">
+          <ItemsRepeater ItemsSource="{Binding Data}">
+            <ItemsRepeater.Layout>
+              <StackLayout Spacing="12" />
+            </ItemsRepeater.Layout>
+            <ItemsRepeater.ItemTemplate>
+              <DataTemplate>
+                <utu:CardContentControl Style="{StaticResource OutlinedCardContentControlStyle}"
+                                        HorizontalAlignment="Stretch"
+                                        MaxWidth="760"
+                                        Content="{Binding}">
+                  <utu:CardContentControl.ContentTemplate>
+                    <DataTemplate>
+                      <Grid ColumnSpacing="12">
+                        <Grid.ColumnDefinitions>
+                          <ColumnDefinition Width="6" />
+                          <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Border Background="{Binding ConcernedType, Converter={StaticResource TypeToBrush}}" />
+                        <StackPanel Grid.Column="1" Padding="8,16,16,16" Spacing="10">
+                          <ContentControl HorizontalAlignment="Left"
+                                          Content="{Binding ConcernedType}"
+                                          ContentTemplate="{StaticResource TypeBadgeTemplate}" />
+                          <TextBlock Text="Super effective ×1.25" Style="{StaticResource LabelMedium}" Foreground="{ThemeResource OnSurfaceVariantBrush}" />
+                          <ItemsRepeater ItemsSource="{Binding StrongAgainst}" ItemTemplate="{StaticResource TypeBadgeTemplate}">
+                            <ItemsRepeater.Layout>
+                              <FlowLayout Orientation="Horizontal" MinColumnSpacing="6" MinRowSpacing="6" />
+                            </ItemsRepeater.Layout>
+                          </ItemsRepeater>
+                          <TextBlock Text="Not very effective ×0.8" Style="{StaticResource LabelMedium}" Foreground="{ThemeResource OnSurfaceVariantBrush}" />
+                          <ItemsRepeater ItemsSource="{Binding WeakAgainst}" ItemTemplate="{StaticResource TypeBadgeTemplate}">
+                            <ItemsRepeater.Layout>
+                              <FlowLayout Orientation="Horizontal" MinColumnSpacing="6" MinRowSpacing="6" />
+                            </ItemsRepeater.Layout>
+                          </ItemsRepeater>
+                        </StackPanel>
+                      </Grid>
+                    </DataTemplate>
+                  </utu:CardContentControl.ContentTemplate>
+                </utu:CardContentControl>
+              </DataTemplate>
+            </ItemsRepeater.ItemTemplate>
+          </ItemsRepeater>
+        </ScrollViewer>
+      </DataTemplate>
+    </mvux:FeedView>
+  </Grid>
+</Page>

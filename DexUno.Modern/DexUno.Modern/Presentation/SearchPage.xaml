@@ -1,0 +1,54 @@
+<Page x:Class="DexUno.Modern.Presentation.SearchPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mvux="using:Uno.Extensions.Reactive.UI"
+      xmlns:utu="using:Uno.Toolkit.UI"
+      NavigationCacheMode="Required"
+      Background="{ThemeResource BackgroundBrush}">
+
+  <Grid x:Name="Root" utu:SafeArea.Insets="VisibleBounds">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+
+    <utu:NavigationBar Content="{Binding Title}" />
+
+    <TextBox Grid.Row="1"
+             Margin="16,8"
+             PlaceholderText="Pokémon or move name"
+             Style="{StaticResource OutlinedTextBoxStyle}"
+             Text="{Binding SearchText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+             TextChanged="OnSearchTextChanged" />
+
+    <!-- Results is None while the query is blank and when nothing matches, so the NoneTemplate covers both. -->
+    <mvux:FeedView Grid.Row="2" Source="{Binding Results}">
+      <DataTemplate>
+        <!-- Results is a paginated feed: the repeater asks for the next page as the scroller nears the end. -->
+        <ScrollViewer Style="{StaticResource DexListScrollViewerStyle}" Loaded="OnListScrollViewerLoaded">
+          <ItemsRepeater ItemsSource="{Binding Data}"
+                         ItemTemplate="{StaticResource SearchResultTemplateSelector}"
+                         utu:ItemsRepeaterExtensions.SupportsIncrementalLoading="True"
+                         utu:CommandExtensions.Command="{Binding Parent.SelectResult}" />
+        </ScrollViewer>
+      </DataTemplate>
+      <mvux:FeedView.NoneTemplate>
+        <DataTemplate>
+          <Grid Margin="0,32,0,0">
+            <TextBlock Text="Search Pokémon and moves by name or dex number."
+                       Style="{StaticResource BodyLarge}"
+                       Foreground="{ThemeResource OnSurfaceVariantBrush}"
+                       HorizontalAlignment="Center"
+                       Visibility="{Binding DataContext.SearchText, ElementName=Root, Converter={StaticResource Visibility}, ConverterParameter=Invert}" />
+            <TextBlock Text="Nothing matches your search."
+                       Style="{StaticResource BodyLarge}"
+                       Foreground="{ThemeResource OnSurfaceVariantBrush}"
+                       HorizontalAlignment="Center"
+                       Visibility="{Binding DataContext.SearchText, ElementName=Root, Converter={StaticResource Visibility}}" />
+          </Grid>
+        </DataTemplate>
+      </mvux:FeedView.NoneTemplate>
+    </mvux:FeedView>
+  </Grid>
+</Page>

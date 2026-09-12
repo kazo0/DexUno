@@ -1,0 +1,86 @@
+<UserControl x:Class="DexUno.Modern.Presentation.PokeballLoader"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Width="64"
+             Height="64"
+             IsHitTestVisible="False"
+             AutomationProperties.Name="Loading">
+
+  <!--
+    A vector version of Assets/Pokemon/unknown.png (same colours) that rocks like a ball
+    mid-catch, then flashes its button. The storyboard runs while the control is loaded.
+  -->
+  <UserControl.Resources>
+    <SolidColorBrush x:Key="PokeballRedBrush" Color="#BD3736" />
+    <SolidColorBrush x:Key="PokeballWhiteBrush" Color="#FCFCFC" />
+    <SolidColorBrush x:Key="PokeballBandBrush" Color="#373737" />
+    <SolidColorBrush x:Key="PokeballButtonBrush" Color="#F0F0F0" />
+
+    <Storyboard x:Name="WobbleStoryboard" RepeatBehavior="Forever">
+      <!-- Rock around the bottom of the ball: a big first swing that settles, then a pause -->
+      <DoubleAnimationUsingKeyFrames Storyboard.TargetName="BallRotation"
+                                     Storyboard.TargetProperty="Angle"
+                                     Duration="0:0:1.9">
+        <EasingDoubleKeyFrame KeyTime="0:0:0" Value="0" />
+        <EasingDoubleKeyFrame KeyTime="0:0:0.22" Value="-26">
+          <EasingDoubleKeyFrame.EasingFunction>
+            <CubicEase EasingMode="EaseOut" />
+          </EasingDoubleKeyFrame.EasingFunction>
+        </EasingDoubleKeyFrame>
+        <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="22">
+          <EasingDoubleKeyFrame.EasingFunction>
+            <CubicEase EasingMode="EaseInOut" />
+          </EasingDoubleKeyFrame.EasingFunction>
+        </EasingDoubleKeyFrame>
+        <EasingDoubleKeyFrame KeyTime="0:0:0.76" Value="-14">
+          <EasingDoubleKeyFrame.EasingFunction>
+            <CubicEase EasingMode="EaseInOut" />
+          </EasingDoubleKeyFrame.EasingFunction>
+        </EasingDoubleKeyFrame>
+        <EasingDoubleKeyFrame KeyTime="0:0:0.98" Value="7">
+          <EasingDoubleKeyFrame.EasingFunction>
+            <CubicEase EasingMode="EaseInOut" />
+          </EasingDoubleKeyFrame.EasingFunction>
+        </EasingDoubleKeyFrame>
+        <EasingDoubleKeyFrame KeyTime="0:0:1.16" Value="0">
+          <EasingDoubleKeyFrame.EasingFunction>
+            <CubicEase EasingMode="EaseOut" />
+          </EasingDoubleKeyFrame.EasingFunction>
+        </EasingDoubleKeyFrame>
+        <EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="0" />
+      </DoubleAnimationUsingKeyFrames>
+
+      <!-- The button flashes red once the ball has settled -->
+      <DoubleAnimationUsingKeyFrames Storyboard.TargetName="ButtonFlash"
+                                     Storyboard.TargetProperty="Opacity"
+                                     Duration="0:0:1.9">
+        <EasingDoubleKeyFrame KeyTime="0:0:0" Value="0" />
+        <EasingDoubleKeyFrame KeyTime="0:0:1.16" Value="0" />
+        <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="1" />
+        <EasingDoubleKeyFrame KeyTime="0:0:1.6" Value="0" />
+        <EasingDoubleKeyFrame KeyTime="0:0:1.9" Value="0" />
+      </DoubleAnimationUsingKeyFrames>
+    </Storyboard>
+  </UserControl.Resources>
+
+  <Viewbox Stretch="Uniform">
+    <Grid Width="100" Height="100" RenderTransformOrigin="0.5,0.92">
+      <Grid.RenderTransform>
+        <RotateTransform x:Name="BallRotation" />
+      </Grid.RenderTransform>
+
+      <!-- Top (red) and bottom (white) halves of a 96px ball centred at 50,50 -->
+      <Path Fill="{StaticResource PokeballRedBrush}" Data="M2,50 A48,48 0 0 1 98,50 Z" />
+      <Path Fill="{StaticResource PokeballWhiteBrush}" Data="M2,50 A48,48 0 0 0 98,50 Z" />
+
+      <!-- Band -->
+      <Rectangle Width="95.6" Height="8" Fill="{StaticResource PokeballBandBrush}" />
+
+      <!-- Button: dark ring, white face, lighter centre, red flash overlay -->
+      <Ellipse Width="30" Height="30" Fill="{StaticResource PokeballBandBrush}" />
+      <Ellipse Width="22" Height="22" Fill="{StaticResource PokeballWhiteBrush}" />
+      <Ellipse Width="14" Height="14" Fill="{StaticResource PokeballButtonBrush}" />
+      <Ellipse x:Name="ButtonFlash" Width="22" Height="22" Fill="{StaticResource PokeballRedBrush}" Opacity="0" />
+    </Grid>
+  </Viewbox>
+</UserControl>

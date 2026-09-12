@@ -1,0 +1,197 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="using:DexUno.Modern.Converters"
+                    xmlns:local="using:DexUno.Modern.Presentation"
+                    xmlns:mvux="using:Uno.Extensions.Reactive.UI"
+                    xmlns:utu="using:Uno.Toolkit.UI">
+
+  <!-- ===== Pokémon type palette (the canonical type colours) ===== -->
+  <SolidColorBrush x:Key="NormalTypeBrush" Color="#8A8A59" />
+  <SolidColorBrush x:Key="FireTypeBrush" Color="#F08030" />
+  <SolidColorBrush x:Key="FightingTypeBrush" Color="#C03028" />
+  <SolidColorBrush x:Key="WaterTypeBrush" Color="#6890F0" />
+  <SolidColorBrush x:Key="FlyingTypeBrush" Color="#A890F0" />
+  <SolidColorBrush x:Key="GrassTypeBrush" Color="#78C850" />
+  <SolidColorBrush x:Key="PoisonTypeBrush" Color="#A040A0" />
+  <SolidColorBrush x:Key="ElectricTypeBrush" Color="#F8D030" />
+  <SolidColorBrush x:Key="GroundTypeBrush" Color="#E0C068" />
+  <SolidColorBrush x:Key="PsychicTypeBrush" Color="#F85888" />
+  <SolidColorBrush x:Key="RockTypeBrush" Color="#B8A038" />
+  <SolidColorBrush x:Key="IceTypeBrush" Color="#98D8D8" />
+  <SolidColorBrush x:Key="BugTypeBrush" Color="#A8B820" />
+  <SolidColorBrush x:Key="DragonTypeBrush" Color="#7038F8" />
+  <SolidColorBrush x:Key="GhostTypeBrush" Color="#705898" />
+  <SolidColorBrush x:Key="DarkTypeBrush" Color="#705848" />
+  <SolidColorBrush x:Key="SteelTypeBrush" Color="#B8B8D0" />
+  <SolidColorBrush x:Key="FairyTypeBrush" Color="#E898E8" />
+  <SolidColorBrush x:Key="UnknownTypeBrush" Color="#8A8A59" />
+  <SolidColorBrush x:Key="TypeBadgeForegroundBrush" Color="#FFFFFF" />
+
+  <!-- Stat gauge colours -->
+  <SolidColorBrush x:Key="AttackStatBrush" Color="#F5A623" />
+  <SolidColorBrush x:Key="DefenseStatBrush" Color="#3D9BD9" />
+  <SolidColorBrush x:Key="StaminaStatBrush" Color="#E8574F" />
+
+  <!-- ===== Converters ===== -->
+  <converters:DexNumberToImageConverter x:Key="DexNumberToImage" />
+  <converters:PokemonTypeToBrushConverter x:Key="TypeToBrush" />
+  <converters:UpperCaseConverter x:Key="UpperCase" />
+  <converters:VisibilityConverter x:Key="Visibility" />
+
+  <!-- ===== Shared templates ===== -->
+
+  <!-- Small rounded pill showing a Pokémon type -->
+  <DataTemplate x:Key="TypeBadgeTemplate">
+    <Border Background="{Binding Converter={StaticResource TypeToBrush}}"
+            CornerRadius="10"
+            Padding="10,3"
+            MinWidth="64">
+      <TextBlock Text="{Binding Converter={StaticResource UpperCase}}"
+                 Style="{StaticResource LabelSmall}"
+                 Foreground="{StaticResource TypeBadgeForegroundBrush}"
+                 HorizontalAlignment="Center" />
+    </Border>
+  </DataTemplate>
+
+  <ItemsPanelTemplate x:Key="HorizontalBadgesPanel">
+    <StackPanel Orientation="Horizontal" Spacing="6" />
+  </ItemsPanelTemplate>
+
+  <!-- Row used by the Pokédex list, search results and "used by" lists.
+       The ListViewItem root is what gives an ItemsRepeater row its hover/selection visuals. -->
+  <DataTemplate x:Key="PokemonListItemTemplate">
+    <ListViewItem HorizontalContentAlignment="Stretch" Padding="0" MinHeight="0">
+      <Grid Padding="16,8" ColumnSpacing="12">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="Auto" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Image Width="56"
+               Height="56"
+               Stretch="Uniform"
+               Source="{Binding DexNumber, Converter={StaticResource DexNumberToImage}}" />
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
+          <TextBlock Text="{Binding DisplayName}"
+                     Style="{StaticResource TitleMedium}"
+                     Foreground="{ThemeResource OnSurfaceBrush}" />
+          <TextBlock Style="{StaticResource BodySmall}" Foreground="{ThemeResource OnSurfaceVariantBrush}">
+            <Run Text="#" /><Run Text="{Binding DexNumber}" />
+            <Run Text="  ·  Max CP" />
+            <Run Text="{Binding Cp.Max}" />
+          </TextBlock>
+        </StackPanel>
+        <ItemsControl Grid.Column="2"
+                      VerticalAlignment="Center"
+                      ItemsSource="{Binding Types}"
+                      ItemTemplate="{StaticResource TypeBadgeTemplate}"
+                      ItemsPanel="{StaticResource HorizontalBadgesPanel}" />
+      </Grid>
+    </ListViewItem>
+  </DataTemplate>
+
+  <!-- Row used by the Movedex list, search results and Pokémon move lists -->
+  <DataTemplate x:Key="MoveListItemTemplate">
+    <ListViewItem HorizontalContentAlignment="Stretch" Padding="0" MinHeight="0">
+      <Grid Padding="16,10" ColumnSpacing="12">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="4" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="Auto" />
+        </Grid.ColumnDefinitions>
+        <Border Background="{Binding Type, Converter={StaticResource TypeToBrush}}" CornerRadius="2" />
+        <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
+          <TextBlock Text="{Binding Name}"
+                     Style="{StaticResource TitleMedium}"
+                     Foreground="{ThemeResource OnSurfaceBrush}" />
+          <TextBlock Style="{StaticResource BodySmall}" Foreground="{ThemeResource OnSurfaceVariantBrush}">
+            <Run Text="{Binding MoveType}" />
+            <Run Text="  ·  " />
+            <Run Text="{Binding Damage}" />
+            <Run Text="dmg  ·  " />
+            <Run Text="{Binding CoolDown}" />
+            <Run Text="s" />
+          </TextBlock>
+        </StackPanel>
+        <ContentControl Grid.Column="2"
+                        VerticalAlignment="Center"
+                        Content="{Binding Type}"
+                        ContentTemplate="{StaticResource TypeBadgeTemplate}" />
+      </Grid>
+    </ListViewItem>
+  </DataTemplate>
+
+  <converters:SearchResultTemplateSelector x:Key="SearchResultTemplateSelector"
+                                           PokemonTemplate="{StaticResource PokemonListItemTemplate}"
+                                           MoveTemplate="{StaticResource MoveListItemTemplate}" />
+
+  <!-- Loading indicator: the animated pokeball, shown by every FeedView while its feed is loading -->
+  <DataTemplate x:Key="PokeballProgressTemplate">
+    <local:PokeballLoader Width="72"
+                          Height="72"
+                          Margin="16"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center" />
+  </DataTemplate>
+
+  <Style TargetType="mvux:FeedView">
+    <Setter Property="ProgressTemplate" Value="{StaticResource PokeballProgressTemplate}" />
+  </Style>
+
+  <!-- Scroll host for the app's lists: every list is an ItemsRepeater inside one of these -->
+  <Style x:Key="DexListScrollViewerStyle" TargetType="ScrollViewer">
+    <Setter Property="HorizontalScrollMode" Value="Disabled" />
+    <Setter Property="HorizontalScrollBarVisibility" Value="Disabled" />
+    <Setter Property="VerticalScrollBarVisibility" Value="Auto" />
+    <Setter Property="Padding" Value="0,0,0,16" />
+  </Style>
+
+  <!-- Section label inside cards -->
+  <Style x:Key="CardSectionTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource TitleSmall}">
+    <Setter Property="Foreground" Value="{ThemeResource PrimaryBrush}" />
+    <Setter Property="Margin" Value="0,0,0,8" />
+  </Style>
+  <!-- Base stat gauges (value vs. the highest base stat in the pokedex) -->
+  <DataTemplate x:Key="AttackGaugeTemplate">
+    <Grid ColumnSpacing="12">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="40" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <TextBlock Text="{Binding Label}" Style="{StaticResource LabelLarge}" Foreground="{StaticResource AttackStatBrush}" VerticalAlignment="Center" />
+      <ProgressBar Grid.Column="1" Value="{Binding Percent}" Maximum="100" Foreground="{StaticResource AttackStatBrush}" VerticalAlignment="Center" />
+      <TextBlock Grid.Column="2" Style="{StaticResource BodySmall}" Foreground="{ThemeResource OnSurfaceVariantBrush}" VerticalAlignment="Center" MinWidth="64" TextAlignment="Right">
+        <Run Text="{Binding Value}" /><Run Text=" / " /><Run Text="{Binding Max}" />
+      </TextBlock>
+    </Grid>
+  </DataTemplate>
+  <DataTemplate x:Key="DefenseGaugeTemplate">
+    <Grid ColumnSpacing="12">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="40" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <TextBlock Text="{Binding Label}" Style="{StaticResource LabelLarge}" Foreground="{StaticResource DefenseStatBrush}" VerticalAlignment="Center" />
+      <ProgressBar Grid.Column="1" Value="{Binding Percent}" Maximum="100" Foreground="{StaticResource DefenseStatBrush}" VerticalAlignment="Center" />
+      <TextBlock Grid.Column="2" Style="{StaticResource BodySmall}" Foreground="{ThemeResource OnSurfaceVariantBrush}" VerticalAlignment="Center" MinWidth="64" TextAlignment="Right">
+        <Run Text="{Binding Value}" /><Run Text=" / " /><Run Text="{Binding Max}" />
+      </TextBlock>
+    </Grid>
+  </DataTemplate>
+  <DataTemplate x:Key="StaminaGaugeTemplate">
+    <Grid ColumnSpacing="12">
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="40" />
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+      </Grid.ColumnDefinitions>
+      <TextBlock Text="{Binding Label}" Style="{StaticResource LabelLarge}" Foreground="{StaticResource StaminaStatBrush}" VerticalAlignment="Center" />
+      <ProgressBar Grid.Column="1" Value="{Binding Percent}" Maximum="100" Foreground="{StaticResource StaminaStatBrush}" VerticalAlignment="Center" />
+      <TextBlock Grid.Column="2" Style="{StaticResource BodySmall}" Foreground="{ThemeResource OnSurfaceVariantBrush}" VerticalAlignment="Center" MinWidth="64" TextAlignment="Right">
+        <Run Text="{Binding Value}" /><Run Text=" / " /><Run Text="{Binding Max}" />
+      </TextBlock>
+    </Grid>
+  </DataTemplate>
+</ResourceDictionary>

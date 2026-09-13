@@ -11,7 +11,7 @@
     mid-catch, then flashes its button. The storyboard runs while the control is loaded.
   -->
   <UserControl.Resources>
-    <SolidColorBrush x:Key="PokeballRedBrush" Color="#BD3736" />
+    <SolidColorBrush x:Key="PokeballRedBrush" Color="#DC0A2D" />
     <SolidColorBrush x:Key="PokeballWhiteBrush" Color="#FCFCFC" />
     <SolidColorBrush x:Key="PokeballBandBrush" Color="#373737" />
     <SolidColorBrush x:Key="PokeballButtonBrush" Color="#F0F0F0" />

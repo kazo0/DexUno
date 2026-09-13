@@ -76,7 +76,7 @@
                     <ColumnDefinition Width="*" />
                   </Grid.ColumnDefinitions>
                   <StackPanel Grid.Column="0" HorizontalAlignment="Center">
-                    <TextBlock Text="{Binding Data.Pokemon.Cp.Max}" Style="{StaticResource TitleLarge}" Foreground="{ThemeResource PrimaryBrush}" HorizontalAlignment="Center" />
+                    <TextBlock Text="{Binding Data.Pokemon.Cp.Max}" Style="{StaticResource TitleLarge}" Foreground="{ThemeResource DexAccentBrush}" HorizontalAlignment="Center" />
                     <TextBlock Text="MAX CP" Style="{StaticResource LabelSmall}" Foreground="{ThemeResource OnSurfaceVariantBrush}" HorizontalAlignment="Center" />
                   </StackPanel>
                   <StackPanel Grid.Column="1" HorizontalAlignment="Center">
@@ -134,6 +134,7 @@
                                         VerticalAlignment="Center"
                                         Visibility="{Binding IsFirst, Converter={StaticResource Visibility}, ConverterParameter=Invert}" />
                               <Button Style="{StaticResource TextButtonStyle}"
+                                      Foreground="{ThemeResource DexAccentBrush}"
                                       Command="{Binding DataContext.SelectEvolution, ElementName=DetailRoot}"
                                       CommandParameter="{Binding Pokemon}"
                                       Padding="8"

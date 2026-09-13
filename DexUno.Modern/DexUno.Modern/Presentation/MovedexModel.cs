@@ -19,8 +19,8 @@ public partial record MovedexModel(IMoveRepository Moves, IPokemonRepository Pok
 
     public IState<bool> IsDescending => State.Value(this, () => false);
 
-    /// <summary>Set by the page: when wide, selection shows the detail pane instead of navigating.</summary>
-    public IState<bool> IsWideLayout => State.Value(this, () => false);
+    /// <summary>Set by the page: when its TwoPaneView shows both panes, selection fills the detail pane instead of navigating.</summary>
+    public IState<bool> IsTwoPane => State.Value(this, () => false);
 
     /// <summary>The highlighted row, two-way bound to the list's `ItemsRepeaterExtensions.SelectedItem`.</summary>
     public IState<Move> Selected => State<Move>.Empty(this);
@@ -51,7 +51,7 @@ public partial record MovedexModel(IMoveRepository Moves, IPokemonRepository Pok
     {
         await Selected.UpdateAsync(_ => move, ct);
 
-        if (await IsWideLayout)
+        if (await IsTwoPane)
         {
             await DetailModel.Show(move, ct);
         }
@@ -61,12 +61,12 @@ public partial record MovedexModel(IMoveRepository Moves, IPokemonRepository Pok
         }
     }
 
-    /// <summary>Called by the page when its width crosses the master/detail breakpoint.</summary>
-    internal async ValueTask SetWideLayout(bool isWide, CancellationToken ct)
+    /// <summary>Called by the page when its TwoPaneView switches between one pane and two.</summary>
+    internal async ValueTask SetTwoPane(bool isTwoPane, CancellationToken ct)
     {
-        await IsWideLayout.SetAsync(isWide, ct);
+        await IsTwoPane.SetAsync(isTwoPane, ct);
 
-        if (isWide && !DetailModel.HasCurrent)
+        if (isTwoPane && !DetailModel.HasCurrent)
         {
             // Don't enumerate the paginated feed here: it would start a second, independent pagination.
             var matches = await MatchesAsync(await SearchText, await TabIndex, await IsDescending, ct);

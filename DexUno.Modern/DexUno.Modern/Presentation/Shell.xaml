@@ -8,7 +8,14 @@
       mc:Ignorable="d"
       d:DesignHeight="300"
       d:DesignWidth="400">
-  <Border Background="{ThemeResource BackgroundBrush}">
+  <!--
+    One SafeArea for the whole app: the shell sections and the detail pages pushed over them all live under this root.
+    The root is the Pokédex red, so the status-bar and gesture-bar strips the insets leave around the pages read as the
+    red body around the screen (on desktop the insets are zero and it never shows).
+  -->
+  <Border x:Name="Root"
+          Background="{StaticResource PokedexRedBrush}"
+          utu:SafeArea.Insets="VisibleBounds">
     <!--
       Platforms="None" keeps the toolkit from replicating the native splash image and colour here,
       so while the first page loads the only thing on screen is the pokeball, centred on the app background.
@@ -21,10 +28,13 @@
                               VerticalContentAlignment="Stretch">
       <utu:ExtendedSplashScreen.LoadingContentTemplate>
         <DataTemplate>
-          <local:PokeballLoader Width="120"
-                                Height="120"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center" />
+          <!-- The splash's own Background is not painted, so the screen colour comes from this grid. -->
+          <Grid Background="{ThemeResource BackgroundBrush}">
+            <local:PokeballLoader Width="120"
+                                  Height="120"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center" />
+          </Grid>
         </DataTemplate>
       </utu:ExtendedSplashScreen.LoadingContentTemplate>
     </utu:ExtendedSplashScreen>

@@ -5,6 +5,26 @@
                     xmlns:mvux="using:Uno.Extensions.Reactive.UI"
                     xmlns:utu="using:Uno.Toolkit.UI">
 
+  <!--
+    Theme-dependent app brushes. DexAccentBrush is the red used for small text (section titles, key numbers):
+    the body red itself is Primary in both themes, but at ~3:1 on the dark screen it is too faint for text, so
+    the dark theme lightens it. The stat gauges are the Pokédex's three indicator lights: yellow, lens blue, green.
+  -->
+  <ResourceDictionary.ThemeDictionaries>
+    <ResourceDictionary x:Key="Light">
+      <SolidColorBrush x:Key="DexAccentBrush" Color="#DC0A2D" />
+      <SolidColorBrush x:Key="AttackStatBrush" Color="#C98A00" />
+      <SolidColorBrush x:Key="DefenseStatBrush" Color="#196A9E" />
+      <SolidColorBrush x:Key="StaminaStatBrush" Color="#2F7D3D" />
+    </ResourceDictionary>
+    <ResourceDictionary x:Key="Dark">
+      <SolidColorBrush x:Key="DexAccentBrush" Color="#FF6B7A" />
+      <SolidColorBrush x:Key="AttackStatBrush" Color="#F5B301" />
+      <SolidColorBrush x:Key="DefenseStatBrush" Color="#28AAFD" />
+      <SolidColorBrush x:Key="StaminaStatBrush" Color="#51AE5F" />
+    </ResourceDictionary>
+  </ResourceDictionary.ThemeDictionaries>
+
   <!-- ===== Pokémon type palette (the canonical type colours) ===== -->
   <SolidColorBrush x:Key="NormalTypeBrush" Color="#8A8A59" />
   <SolidColorBrush x:Key="FireTypeBrush" Color="#F08030" />
@@ -27,10 +47,25 @@
   <SolidColorBrush x:Key="UnknownTypeBrush" Color="#8A8A59" />
   <SolidColorBrush x:Key="TypeBadgeForegroundBrush" Color="#FFFFFF" />
 
-  <!-- Stat gauge colours -->
-  <SolidColorBrush x:Key="AttackStatBrush" Color="#F5A623" />
-  <SolidColorBrush x:Key="DefenseStatBrush" Color="#3D9BD9" />
-  <SolidColorBrush x:Key="StaminaStatBrush" Color="#E8574F" />
+  <!--
+    The Pokédex body red, for chrome that must be that exact red in both themes (see ColorPaletteOverride.xaml):
+    the Shell root, the NavigationView pane and the bottom TabBar. PokedexRedDark is the body's shadow red from the
+    reference art, used as the selected pill on the red pane/tab bar; the OnPokedexRed* brushes are white at the
+    Material state-layer opacities for text, hover and pressed overlays on that red.
+  -->
+  <Color x:Key="PokedexRedColor">#DC0A2D</Color>
+  <SolidColorBrush x:Key="PokedexRedBrush" Color="{StaticResource PokedexRedColor}" />
+  <SolidColorBrush x:Key="PokedexRedDarkBrush" Color="#89061C" />
+  <SolidColorBrush x:Key="PokedexRedDarkHoverBrush" Color="#A30B22" />
+  <SolidColorBrush x:Key="PokedexRedDarkPressedBrush" Color="#B50C26" />
+  <SolidColorBrush x:Key="OnPokedexRedBrush" Color="#FFFFFF" />
+  <SolidColorBrush x:Key="OnPokedexRedMediumBrush" Color="#D9FFFFFF" />
+  <SolidColorBrush x:Key="OnPokedexRedHoverBrush" Color="#1FFFFFFF" />
+  <SolidColorBrush x:Key="OnPokedexRedPressedBrush" Color="#33FFFFFF" />
+  <!-- The grey plate around the screen and its outline (the display bezel on the reference art). -->
+  <SolidColorBrush x:Key="PokedexBezelBrush" Color="#DEDEDE" />
+  <SolidColorBrush x:Key="PokedexBezelOutlineBrush" Color="#2B2B2B" />
+
 
   <!-- ===== Converters ===== -->
   <converters:DexNumberToImageConverter x:Key="DexNumberToImage" />
@@ -45,7 +80,7 @@
     <Border Background="{Binding Converter={StaticResource TypeToBrush}}"
             CornerRadius="10"
             Padding="10,3"
-            MinWidth="64">
+            MinWidth="56">
       <TextBlock Text="{Binding Converter={StaticResource UpperCase}}"
                  Style="{StaticResource LabelSmall}"
                  Foreground="{StaticResource TypeBadgeForegroundBrush}"
@@ -74,8 +109,10 @@
         <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
           <TextBlock Text="{Binding DisplayName}"
                      Style="{StaticResource TitleMedium}"
-                     Foreground="{ThemeResource OnSurfaceBrush}" />
-          <TextBlock Style="{StaticResource BodySmall}" Foreground="{ThemeResource OnSurfaceVariantBrush}">
+                     Foreground="{ThemeResource OnSurfaceBrush}"
+                     TextWrapping="NoWrap"
+                     TextTrimming="CharacterEllipsis" />
+          <TextBlock Style="{StaticResource BodySmall}" Foreground="{ThemeResource OnSurfaceVariantBrush}" TextWrapping="NoWrap" TextTrimming="CharacterEllipsis">
             <Run Text="#" /><Run Text="{Binding DexNumber}" />
             <Run Text="  ·  Max CP" />
             <Run Text="{Binding Cp.Max}" />
@@ -103,7 +140,9 @@
         <StackPanel Grid.Column="1" VerticalAlignment="Center" Spacing="2">
           <TextBlock Text="{Binding Name}"
                      Style="{StaticResource TitleMedium}"
-                     Foreground="{ThemeResource OnSurfaceBrush}" />
+                     Foreground="{ThemeResource OnSurfaceBrush}"
+                     TextWrapping="NoWrap"
+                     TextTrimming="CharacterEllipsis" />
           <TextBlock Style="{StaticResource BodySmall}" Foreground="{ThemeResource OnSurfaceVariantBrush}">
             <Run Text="{Binding MoveType}" />
             <Run Text="  ·  " />
@@ -148,7 +187,7 @@
 
   <!-- Section label inside cards -->
   <Style x:Key="CardSectionTitleStyle" TargetType="TextBlock" BasedOn="{StaticResource TitleSmall}">
-    <Setter Property="Foreground" Value="{ThemeResource PrimaryBrush}" />
+    <Setter Property="Foreground" Value="{ThemeResource DexAccentBrush}" />
     <Setter Property="Margin" Value="0,0,0,8" />
   </Style>
   <!-- Base stat gauges (value vs. the highest base stat in the pokedex) -->
@@ -159,8 +198,8 @@
         <ColumnDefinition Width="*" />
         <ColumnDefinition Width="Auto" />
       </Grid.ColumnDefinitions>
-      <TextBlock Text="{Binding Label}" Style="{StaticResource LabelLarge}" Foreground="{StaticResource AttackStatBrush}" VerticalAlignment="Center" />
-      <ProgressBar Grid.Column="1" Value="{Binding Percent}" Maximum="100" Foreground="{StaticResource AttackStatBrush}" VerticalAlignment="Center" />
+      <TextBlock Text="{Binding Label}" Style="{StaticResource LabelLarge}" Foreground="{ThemeResource AttackStatBrush}" VerticalAlignment="Center" />
+      <ProgressBar Grid.Column="1" Value="{Binding Percent}" Maximum="100" Foreground="{ThemeResource AttackStatBrush}" VerticalAlignment="Center" />
       <TextBlock Grid.Column="2" Style="{StaticResource BodySmall}" Foreground="{ThemeResource OnSurfaceVariantBrush}" VerticalAlignment="Center" MinWidth="64" TextAlignment="Right">
         <Run Text="{Binding Value}" /><Run Text=" / " /><Run Text="{Binding Max}" />
       </TextBlock>
@@ -173,8 +212,8 @@
         <ColumnDefinition Width="*" />
         <ColumnDefinition Width="Auto" />
       </Grid.ColumnDefinitions>
-      <TextBlock Text="{Binding Label}" Style="{StaticResource LabelLarge}" Foreground="{StaticResource DefenseStatBrush}" VerticalAlignment="Center" />
-      <ProgressBar Grid.Column="1" Value="{Binding Percent}" Maximum="100" Foreground="{StaticResource DefenseStatBrush}" VerticalAlignment="Center" />
+      <TextBlock Text="{Binding Label}" Style="{StaticResource LabelLarge}" Foreground="{ThemeResource DefenseStatBrush}" VerticalAlignment="Center" />
+      <ProgressBar Grid.Column="1" Value="{Binding Percent}" Maximum="100" Foreground="{ThemeResource DefenseStatBrush}" VerticalAlignment="Center" />
       <TextBlock Grid.Column="2" Style="{StaticResource BodySmall}" Foreground="{ThemeResource OnSurfaceVariantBrush}" VerticalAlignment="Center" MinWidth="64" TextAlignment="Right">
         <Run Text="{Binding Value}" /><Run Text=" / " /><Run Text="{Binding Max}" />
       </TextBlock>
@@ -187,8 +226,8 @@
         <ColumnDefinition Width="*" />
         <ColumnDefinition Width="Auto" />
       </Grid.ColumnDefinitions>
-      <TextBlock Text="{Binding Label}" Style="{StaticResource LabelLarge}" Foreground="{StaticResource StaminaStatBrush}" VerticalAlignment="Center" />
-      <ProgressBar Grid.Column="1" Value="{Binding Percent}" Maximum="100" Foreground="{StaticResource StaminaStatBrush}" VerticalAlignment="Center" />
+      <TextBlock Text="{Binding Label}" Style="{StaticResource LabelLarge}" Foreground="{ThemeResource StaminaStatBrush}" VerticalAlignment="Center" />
+      <ProgressBar Grid.Column="1" Value="{Binding Percent}" Maximum="100" Foreground="{ThemeResource StaminaStatBrush}" VerticalAlignment="Center" />
       <TextBlock Grid.Column="2" Style="{StaticResource BodySmall}" Foreground="{ThemeResource OnSurfaceVariantBrush}" VerticalAlignment="Center" MinWidth="64" TextAlignment="Right">
         <Run Text="{Binding Value}" /><Run Text=" / " /><Run Text="{Binding Max}" />
       </TextBlock>

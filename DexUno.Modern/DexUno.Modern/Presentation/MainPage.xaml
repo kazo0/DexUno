@@ -3,11 +3,17 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:uen="using:Uno.Extensions.Navigation.UI"
       xmlns:utu="using:Uno.Toolkit.UI"
+      xmlns:local="using:DexUno.Modern.Presentation"
       NavigationCacheMode="Required"
-      Background="{ThemeResource BackgroundBrush}">
+      Background="{ThemeResource BackgroundBrush}"
+      utu:StatusBar.Foreground="Light">
 
   <!-- Responsive shell: bottom TabBar on phones, NavigationView sidebar on tablets and desktops. -->
   <Grid uen:Region.Attached="True">
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
     <VisualStateManager.VisualStateGroups>
       <VisualStateGroup>
         <VisualState x:Name="Narrow">
@@ -20,6 +26,17 @@
             <Setter Target="NavView.IsPaneToggleButtonVisible" Value="False" />
             <Setter Target="NavView.PaneDisplayMode" Value="LeftMinimal" />
             <Setter Target="NavView.IsPaneOpen" Value="False" />
+            <!-- no bezel on phones: the display fills the width -->
+            <Setter Target="Hinge.Visibility" Value="Collapsed" />
+            <Setter Target="Bezel.Margin" Value="0" />
+            <Setter Target="Bezel.Padding" Value="0" />
+            <Setter Target="Bezel.BorderThickness" Value="0" />
+            <Setter Target="Bezel.CornerRadius" Value="0" />
+            <Setter Target="Screen.CornerRadius" Value="0" />
+            <Setter Target="Screen.BorderThickness" Value="0" />
+            <Setter Target="BezelDots.Visibility" Value="Collapsed" />
+            <Setter Target="BezelButton.Visibility" Value="Collapsed" />
+            <Setter Target="BezelGrille.Visibility" Value="Collapsed" />
           </VisualState.Setters>
         </VisualState>
         <VisualState x:Name="Normal">
@@ -31,6 +48,10 @@
             <Setter Target="NavView.IsPaneToggleButtonVisible" Value="True" />
             <Setter Target="NavView.IsPaneVisible" Value="True" />
             <Setter Target="NavView.PaneDisplayMode" Value="LeftCompact" />
+            <Setter Target="Hinge.Visibility" Value="Visible" />
+            <!-- slimmer bezel: a foldable's inner screen has no width to spare next to the rail -->
+            <Setter Target="Bezel.Margin" Value="2,6,6,6" />
+            <Setter Target="Bezel.Padding" Value="6,14,6,14" />
           </VisualState.Setters>
         </VisualState>
         <VisualState x:Name="Wide">
@@ -42,39 +63,68 @@
             <Setter Target="NavView.IsPaneToggleButtonVisible" Value="True" />
             <Setter Target="NavView.IsPaneVisible" Value="True" />
             <Setter Target="NavView.PaneDisplayMode" Value="Left" />
+            <Setter Target="Hinge.Visibility" Value="Visible" />
           </VisualState.Setters>
         </VisualState>
       </VisualStateGroup>
     </VisualStateManager.VisualStateGroups>
 
+    <!-- The device's top plate: lens and lights; the shell's title lives there instead of the pane. -->
+    <local:PokedexTopStrip Grid.Row="0" />
+
     <NavigationView x:Name="NavView"
+                    Grid.Row="1"
                     uen:Region.Attached="True"
                     IsSettingsVisible="False"
                     IsBackButtonVisible="Collapsed"
-                    PaneTitle="DexUno"
                     OpenPaneLength="240">
+      <!--
+        Lightweight styling: the pane is the Pokédex body red like the NavigationBar, with white items, a shadow-red
+        pill for the selected section and white state layers. Item text is a style setter, so each item also carries
+        an explicit Foreground below.
+      -->
+      <NavigationView.Resources>
+        <StaticResource x:Key="NavigationViewDefaultPaneBackground" ResourceKey="PokedexRedBrush" />
+        <StaticResource x:Key="NavigationViewPaneBackground" ResourceKey="PokedexRedBrush" />
+        <StaticResource x:Key="NavigationViewDefaultPaneBorderBrush" ResourceKey="PokedexRedBrush" />
+        <StaticResource x:Key="NavigationViewItemForeground" ResourceKey="OnPokedexRedBrush" />
+        <StaticResource x:Key="NavigationViewItemForegroundDisabled" ResourceKey="OnPokedexRedMediumBrush" />
+        <StaticResource x:Key="NavigationViewItemHeaderForeground" ResourceKey="OnPokedexRedMediumBrush" />
+        <StaticResource x:Key="NavigationViewItemBackgroundPointerOver" ResourceKey="OnPokedexRedHoverBrush" />
+        <StaticResource x:Key="NavigationViewItemBackgroundPressed" ResourceKey="OnPokedexRedPressedBrush" />
+        <StaticResource x:Key="NavigationViewItemBackgroundSelected" ResourceKey="PokedexRedDarkBrush" />
+        <StaticResource x:Key="NavigationViewItemBackgroundSelectedPointerOver" ResourceKey="PokedexRedDarkHoverBrush" />
+        <StaticResource x:Key="NavigationViewItemBackgroundSelectedPressed" ResourceKey="PokedexRedDarkPressedBrush" />
+        <StaticResource x:Key="NavigationViewItemRippleFeedback" ResourceKey="OnPokedexRedPressedBrush" />
+        <StaticResource x:Key="NavigationViewButtonForeground" ResourceKey="OnPokedexRedBrush" />
+        <StaticResource x:Key="NavigationViewButtonForegroundPointerOver" ResourceKey="OnPokedexRedBrush" />
+        <StaticResource x:Key="NavigationViewButtonForegroundPressed" ResourceKey="OnPokedexRedBrush" />
+        <StaticResource x:Key="NavigationViewButtonBackgroundPointerOver" ResourceKey="OnPokedexRedHoverBrush" />
+        <StaticResource x:Key="NavigationViewButtonBackgroundPressed" ResourceKey="OnPokedexRedPressedBrush" />
+        <StaticResource x:Key="NavigationViewButtonRippleFeedback" ResourceKey="OnPokedexRedPressedBrush" />
+      </NavigationView.Resources>
       <NavigationView.MenuItems>
-        <NavigationViewItem uen:Region.Name="Pokedex" Content="Pokédex">
+        <NavigationViewItem uen:Region.Name="Pokedex" Content="Pokédex" Foreground="{StaticResource OnPokedexRedBrush}">
           <NavigationViewItem.Icon>
             <FontIcon Glyph="&#xE8FD;" />
           </NavigationViewItem.Icon>
         </NavigationViewItem>
-        <NavigationViewItem uen:Region.Name="Movedex" Content="Moves">
+        <NavigationViewItem uen:Region.Name="Movedex" Content="Moves" Foreground="{StaticResource OnPokedexRedBrush}">
           <NavigationViewItem.Icon>
             <FontIcon Glyph="&#xE945;" />
           </NavigationViewItem.Icon>
         </NavigationViewItem>
-        <NavigationViewItem uen:Region.Name="Types" Content="Type chart">
+        <NavigationViewItem uen:Region.Name="Types" Content="Type chart" Foreground="{StaticResource OnPokedexRedBrush}">
           <NavigationViewItem.Icon>
             <FontIcon Glyph="&#xE790;" />
           </NavigationViewItem.Icon>
         </NavigationViewItem>
-        <NavigationViewItem uen:Region.Name="Search" Content="Search">
+        <NavigationViewItem uen:Region.Name="Search" Content="Search" Foreground="{StaticResource OnPokedexRedBrush}">
           <NavigationViewItem.Icon>
             <FontIcon Glyph="&#xE721;" />
           </NavigationViewItem.Icon>
         </NavigationViewItem>
-        <NavigationViewItem uen:Region.Name="About" Content="About">
+        <NavigationViewItem uen:Region.Name="About" Content="About" Foreground="{StaticResource OnPokedexRedBrush}">
           <NavigationViewItem.Icon>
             <FontIcon Glyph="&#xE946;" />
           </NavigationViewItem.Icon>
@@ -87,38 +137,131 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
           </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
 
-          <!-- Shared content region (kept empty: the navigation framework injects the section pages) -->
-          <Grid Grid.Row="0"
-                uen:Region.Attached="True"
-                uen:Region.Navigator="Visibility" />
+          <!-- Hinge between the red pane and the screen (tablet/desktop only) -->
+          <Border x:Name="Hinge"
+                  Grid.Row="0"
+                  Grid.RowSpan="2"
+                  Width="12"
+                  Visibility="Collapsed">
+            <Border.Background>
+              <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                <GradientStop Color="#89061C" Offset="0" />
+                <GradientStop Color="#F04A5C" Offset="0.45" />
+                <GradientStop Color="#DC0A2D" Offset="0.7" />
+                <GradientStop Color="#89061C" Offset="1" />
+              </LinearGradientBrush>
+            </Border.Background>
+          </Border>
+
+          <!--
+            The screen: a grey bezel with the two indicator dots above and the speaker grille below, around the
+            dark display where the section pages render. Phones drop the bezel (see the Narrow state) — the
+            display fills the width and the red body only shows as the status/tab strips.
+          -->
+          <Grid x:Name="Bezel"
+                Grid.Row="0"
+                Grid.Column="1"
+                Margin="4,8,12,12"
+                Background="{StaticResource PokedexBezelBrush}"
+                BorderBrush="{StaticResource PokedexBezelOutlineBrush}"
+                BorderThickness="1"
+                CornerRadius="14"
+                Padding="10,18,10,18">
+            <Grid.RowDefinitions>
+              <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!-- two red dots above the display -->
+            <StackPanel x:Name="BezelDots"
+                        Orientation="Horizontal"
+                        Spacing="8"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Margin="0,-12,0,0">
+              <Ellipse Width="6" Height="6" Fill="{StaticResource PokedexRedBrush}" />
+              <Ellipse Width="6" Height="6" Fill="{StaticResource PokedexRedBrush}" />
+            </StackPanel>
+            <!-- red button and speaker grille below it -->
+            <Ellipse x:Name="BezelButton"
+                     Width="8" Height="8"
+                     Fill="{StaticResource PokedexRedBrush}"
+                     HorizontalAlignment="Left"
+                     VerticalAlignment="Bottom"
+                     Margin="4,0,0,-13" />
+            <StackPanel x:Name="BezelGrille"
+                        Spacing="2"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Bottom"
+                        Margin="0,0,4,-13">
+              <Rectangle Width="18" Height="1.5" Fill="{StaticResource PokedexBezelOutlineBrush}" />
+              <Rectangle Width="18" Height="1.5" Fill="{StaticResource PokedexBezelOutlineBrush}" />
+              <Rectangle Width="18" Height="1.5" Fill="{StaticResource PokedexBezelOutlineBrush}" />
+              <Rectangle Width="18" Height="1.5" Fill="{StaticResource PokedexBezelOutlineBrush}" />
+            </StackPanel>
+
+            <!-- Shared content region (kept empty: the navigation framework injects the section pages) -->
+            <Border x:Name="Screen"
+                    CornerRadius="6"
+                    BorderBrush="{StaticResource PokedexBezelOutlineBrush}"
+                    BorderThickness="1"
+                    Background="{ThemeResource BackgroundBrush}">
+              <Grid uen:Region.Attached="True"
+                    uen:Region.Navigator="Visibility" />
+            </Border>
+          </Grid>
 
           <utu:TabBar x:Name="BottomTabs"
                       Grid.Row="1"
+                      Grid.Column="1"
                       uen:Region.Attached="True"
                       Style="{StaticResource BottomTabBarStyle}"
+                      Background="{StaticResource PokedexRedBrush}"
                       Visibility="Collapsed">
-            <utu:TabBarItem uen:Region.Name="Pokedex" Content="Pokédex">
+            <!-- Same treatment as the NavigationView pane: body red, white items, shadow-red pill when selected. -->
+            <utu:TabBar.Resources>
+              <StaticResource x:Key="NavigationTabBarForeground" ResourceKey="OnPokedexRedMediumBrush" />
+              <StaticResource x:Key="NavigationTabBarForegroundPointerOver" ResourceKey="OnPokedexRedBrush" />
+              <StaticResource x:Key="NavigationTabBarForegroundPressed" ResourceKey="OnPokedexRedBrush" />
+              <StaticResource x:Key="NavigationTabBarForegroundSelected" ResourceKey="OnPokedexRedBrush" />
+              <StaticResource x:Key="NavigationTabBarForegroundSelectedPointerOver" ResourceKey="OnPokedexRedBrush" />
+              <StaticResource x:Key="NavigationTabBarForegroundSelectedPressed" ResourceKey="OnPokedexRedBrush" />
+              <StaticResource x:Key="NavigationTabBarItemIconForegroundPointerOver" ResourceKey="OnPokedexRedBrush" />
+              <StaticResource x:Key="NavigationTabBarItemIconForegroundPressed" ResourceKey="OnPokedexRedBrush" />
+              <StaticResource x:Key="NavigationTabBarItemIconForegroundSelected" ResourceKey="OnPokedexRedBrush" />
+              <StaticResource x:Key="NavigationTabBarItemIconForegroundSelectedPointerOver" ResourceKey="OnPokedexRedBrush" />
+              <StaticResource x:Key="NavigationTabBarItemIconForegroundSelectedPressed" ResourceKey="OnPokedexRedBrush" />
+              <StaticResource x:Key="NavigationTabBarItemActiveIndicatorBackgroundPointerOver" ResourceKey="OnPokedexRedHoverBrush" />
+              <StaticResource x:Key="NavigationTabBarItemActiveIndicatorBackgroundPressed" ResourceKey="OnPokedexRedPressedBrush" />
+              <StaticResource x:Key="NavigationTabBarItemActiveIndicatorBackgroundSelected" ResourceKey="PokedexRedDarkBrush" />
+              <StaticResource x:Key="NavigationTabBarItemActiveIndicatorBackgroundSelectedPointerOver" ResourceKey="PokedexRedDarkHoverBrush" />
+              <StaticResource x:Key="NavigationTabBarItemActiveIndicatorBackgroundSelectedPressed" ResourceKey="PokedexRedDarkPressedBrush" />
+              <StaticResource x:Key="NavigationTabBarItemRippleFeedback" ResourceKey="OnPokedexRedPressedBrush" />
+            </utu:TabBar.Resources>
+            <utu:TabBarItem uen:Region.Name="Pokedex" Content="Pokédex" Foreground="{StaticResource OnPokedexRedMediumBrush}">
               <utu:TabBarItem.Icon>
                 <FontIcon Glyph="&#xE8FD;" />
               </utu:TabBarItem.Icon>
             </utu:TabBarItem>
-            <utu:TabBarItem uen:Region.Name="Movedex" Content="Moves">
+            <utu:TabBarItem uen:Region.Name="Movedex" Content="Moves" Foreground="{StaticResource OnPokedexRedMediumBrush}">
               <utu:TabBarItem.Icon>
                 <FontIcon Glyph="&#xE945;" />
               </utu:TabBarItem.Icon>
             </utu:TabBarItem>
-            <utu:TabBarItem uen:Region.Name="Types" Content="Types">
+            <utu:TabBarItem uen:Region.Name="Types" Content="Types" Foreground="{StaticResource OnPokedexRedMediumBrush}">
               <utu:TabBarItem.Icon>
                 <FontIcon Glyph="&#xE790;" />
               </utu:TabBarItem.Icon>
             </utu:TabBarItem>
-            <utu:TabBarItem uen:Region.Name="Search" Content="Search">
+            <utu:TabBarItem uen:Region.Name="Search" Content="Search" Foreground="{StaticResource OnPokedexRedMediumBrush}">
               <utu:TabBarItem.Icon>
                 <FontIcon Glyph="&#xE721;" />
               </utu:TabBarItem.Icon>
             </utu:TabBarItem>
-            <utu:TabBarItem uen:Region.Name="About" Content="About">
+            <utu:TabBarItem uen:Region.Name="About" Content="About" Foreground="{StaticResource OnPokedexRedMediumBrush}">
               <utu:TabBarItem.Icon>
                 <FontIcon Glyph="&#xE946;" />
               </utu:TabBarItem.Icon>

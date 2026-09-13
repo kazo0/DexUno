@@ -38,7 +38,7 @@
                   <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <StackPanel Grid.Column="0" HorizontalAlignment="Center">
-                  <TextBlock Text="{Binding Data.Move.Damage}" Style="{StaticResource TitleLarge}" Foreground="{ThemeResource PrimaryBrush}" HorizontalAlignment="Center" />
+                  <TextBlock Text="{Binding Data.Move.Damage}" Style="{StaticResource TitleLarge}" Foreground="{ThemeResource DexAccentBrush}" HorizontalAlignment="Center" />
                   <TextBlock Text="DAMAGE" Style="{StaticResource LabelSmall}" Foreground="{ThemeResource OnSurfaceVariantBrush}" HorizontalAlignment="Center" />
                 </StackPanel>
                 <StackPanel Grid.Column="1" HorizontalAlignment="Center">

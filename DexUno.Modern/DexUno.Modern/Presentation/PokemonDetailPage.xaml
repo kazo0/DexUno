@@ -4,15 +4,19 @@
       xmlns:local="using:DexUno.Modern.Presentation"
       xmlns:uen="using:Uno.Extensions.Navigation.UI"
       xmlns:utu="using:Uno.Toolkit.UI"
-      Background="{ThemeResource BackgroundBrush}">
+      Background="{ThemeResource BackgroundBrush}"
+      utu:StatusBar.Foreground="Light">
 
   <Grid utu:SafeArea.Insets="VisibleBounds">
     <Grid.RowDefinitions>
       <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
       <RowDefinition Height="*" />
     </Grid.RowDefinitions>
 
-    <utu:NavigationBar Content="{Binding Title}">
+    <local:PokedexTopStrip />
+
+    <utu:NavigationBar Grid.Row="1" Content="{Binding Title}" Style="{StaticResource PrimaryNavigationBarStyle}">
       <utu:NavigationBar.MainCommand>
         <AppBarButton Label="Back" uen:Navigation.Request="-">
           <AppBarButton.Icon>
@@ -22,6 +26,6 @@
       </utu:NavigationBar.MainCommand>
     </utu:NavigationBar>
 
-    <local:PokemonDetailView Grid.Row="1" />
+    <local:PokemonDetailView Grid.Row="2" />
   </Grid>
 </Page>

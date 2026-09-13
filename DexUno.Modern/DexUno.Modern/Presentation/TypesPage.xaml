@@ -12,7 +12,7 @@
       <RowDefinition Height="*" />
     </Grid.RowDefinitions>
 
-    <utu:NavigationBar Content="{Binding Title}" />
+    <utu:NavigationBar Content="{Binding Title}" Style="{StaticResource PrimaryNavigationBarStyle}" />
 
     <mvux:FeedView Grid.Row="1" Source="{Binding Items}">
       <DataTemplate>

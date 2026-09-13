@@ -8,9 +8,21 @@
       <ResourceDictionary.MergedDictionaries>
         <!-- Load WinUI resources -->
         <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-        <utum:MaterialToolkitTheme
-          xmlns:utum="using:Uno.Toolkit.UI.Material"
-          ColorOverrideSource="ms-appx:///Styles/ColorPaletteOverride.xaml" />
+        <!--
+          Material 3 palette generated from the classic Kanto Pokédex's three colours (sampled from the reference art):
+          body red, lens blue and the green button. Light Primary is the seed itself; every other role — containers,
+          surfaces, outlines, the dark variants — is derived by the theme's HCT generator. The override file pins the
+          handful of colours that must differ from the generated ones.
+        -->
+        <utum:MaterialToolkitTheme xmlns:utum="using:Uno.Toolkit.UI.Material"
+                                   xmlns:ut="using:Uno.Themes">
+          <utum:MaterialToolkitTheme.Colors>
+            <ut:ThemeColors PrimarySeed="#DC0A2D"
+                            SecondarySeed="#28AAFD"
+                            TertiarySeed="#51AE5F"
+                            OverrideSource="ms-appx:///Styles/ColorPaletteOverride.xaml" />
+          </utum:MaterialToolkitTheme.Colors>
+        </utum:MaterialToolkitTheme>
         <!-- App specific brushes, converters and shared templates -->
         <ResourceDictionary Source="ms-appx:///Styles/AppResources.xaml" />
       </ResourceDictionary.MergedDictionaries>

@@ -1,0 +1,110 @@
+<UserControl x:Class="Dexter.Presentation.MoveDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mvux="using:Uno.Extensions.Reactive.UI"
+             xmlns:utu="using:Uno.Toolkit.UI">
+
+  <mvux:FeedView Source="{Binding Details}">
+    <DataTemplate>
+      <ScrollViewer>
+        <StackPanel Padding="16" Spacing="16" MaxWidth="760" HorizontalAlignment="Stretch">
+
+          <utu:CardContentControl Style="{StaticResource ElevatedCardContentControlStyle}" HorizontalAlignment="Stretch">
+            <StackPanel Padding="16" Spacing="12">
+              <Grid ColumnSpacing="12">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Spacing="2">
+                  <TextBlock Text="{Binding Data.Move.Name}"
+                             Style="{StaticResource HeadlineSmall}"
+                             Foreground="{ThemeResource OnSurfaceBrush}" />
+                  <TextBlock Text="{Binding Data.Move.MoveType, Converter={StaticResource UpperCase}}"
+                             Style="{StaticResource LabelMedium}"
+                             Foreground="{ThemeResource OnSurfaceVariantBrush}" />
+                </StackPanel>
+                <ContentControl Grid.Column="1"
+                                VerticalAlignment="Top"
+                                Content="{Binding Data.Move.Type}"
+                                ContentTemplate="{StaticResource TypeBadgeTemplate}" />
+              </Grid>
+
+              <Grid ColumnSpacing="8">
+                <Grid.ColumnDefinitions>
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="*" />
+                  <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                  <TextBlock Text="{Binding Data.Move.Damage}" Style="{StaticResource TitleLarge}" Foreground="{ThemeResource DexAccentBrush}" HorizontalAlignment="Center" />
+                  <TextBlock Text="DAMAGE" Style="{StaticResource LabelSmall}" Foreground="{ThemeResource OnSurfaceVariantBrush}" HorizontalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                  <TextBlock Text="{Binding Data.DamagePerSecond}" Style="{StaticResource TitleLarge}" Foreground="{ThemeResource OnSurfaceBrush}" HorizontalAlignment="Center" />
+                  <TextBlock Text="DPS" Style="{StaticResource LabelSmall}" Foreground="{ThemeResource OnSurfaceVariantBrush}" HorizontalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+                  <TextBlock Style="{StaticResource TitleLarge}" Foreground="{ThemeResource OnSurfaceBrush}" HorizontalAlignment="Center">
+                    <Run Text="{Binding Data.Move.CoolDown}" /><Run Text="s" />
+                  </TextBlock>
+                  <TextBlock Text="COOLDOWN" Style="{StaticResource LabelSmall}" Foreground="{ThemeResource OnSurfaceVariantBrush}" HorizontalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Grid.Column="3" HorizontalAlignment="Center" Visibility="{Binding Data.QuickMove, Converter={StaticResource Visibility}}">
+                  <TextBlock Text="{Binding Data.QuickMove.EnergyGenerated}" Style="{StaticResource TitleLarge}" Foreground="{ThemeResource OnSurfaceBrush}" HorizontalAlignment="Center" />
+                  <TextBlock Text="ENERGY" Style="{StaticResource LabelSmall}" Foreground="{ThemeResource OnSurfaceVariantBrush}" HorizontalAlignment="Center" />
+                </StackPanel>
+                <StackPanel Grid.Column="3" HorizontalAlignment="Center" Visibility="{Binding Data.ChargeMove, Converter={StaticResource Visibility}}">
+                  <TextBlock Text="{Binding Data.ChargeMove.EnergyBars}" Style="{StaticResource TitleLarge}" Foreground="{ThemeResource OnSurfaceBrush}" HorizontalAlignment="Center" />
+                  <TextBlock Text="BARS" Style="{StaticResource LabelSmall}" Foreground="{ThemeResource OnSurfaceVariantBrush}" HorizontalAlignment="Center" />
+                </StackPanel>
+              </Grid>
+
+              <TextBlock Style="{StaticResource BodyMedium}"
+                         Foreground="{ThemeResource OnSurfaceVariantBrush}"
+                         Visibility="{Binding Data.ChargeMove, Converter={StaticResource Visibility}}">
+                <Run Text="{Binding Data.ChargeMove.Critical}" /><Run Text="% critical hit chance  ·  " />
+                <Run Text="{Binding Data.ChargeMove.Dodge}" /><Run Text="s dodge window" />
+              </TextBlock>
+            </StackPanel>
+          </utu:CardContentControl>
+
+          <utu:CardContentControl Style="{StaticResource OutlinedCardContentControlStyle}" HorizontalAlignment="Stretch">
+            <StackPanel Padding="0,16">
+              <TextBlock Text="Used by" Style="{StaticResource CardSectionTitleStyle}" Margin="16,0,16,8" />
+              <!-- A common move is known by a hundred Pokémon: UsedBy is paginated and fills in as the page is scrolled. -->
+              <mvux:FeedView Source="{Binding Parent.UsedBy}">
+                <DataTemplate>
+                  <ItemsRepeater ItemsSource="{Binding Data}"
+                                 ItemTemplate="{StaticResource PokemonListItemTemplate}"
+                                 utu:ItemsRepeaterExtensions.SupportsIncrementalLoading="True"
+                                 utu:CommandExtensions.Command="{Binding Parent.SelectPokemon}" />
+                </DataTemplate>
+                <mvux:FeedView.NoneTemplate>
+                  <DataTemplate>
+                    <TextBlock Text="No Pokémon learns this move."
+                               Margin="16,0"
+                               Style="{StaticResource BodyMedium}"
+                               Foreground="{ThemeResource OnSurfaceVariantBrush}" />
+                  </DataTemplate>
+                </mvux:FeedView.NoneTemplate>
+              </mvux:FeedView>
+            </StackPanel>
+          </utu:CardContentControl>
+        </StackPanel>
+      </ScrollViewer>
+    </DataTemplate>
+
+    <!-- Shown in the master/detail pane until a move is selected -->
+    <mvux:FeedView.NoneTemplate>
+      <DataTemplate>
+        <TextBlock Text="Select a move to see its details"
+                   Style="{StaticResource BodyLarge}"
+                   Foreground="{ThemeResource OnSurfaceVariantBrush}"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center" />
+      </DataTemplate>
+    </mvux:FeedView.NoneTemplate>
+  </mvux:FeedView>
+</UserControl>

@@ -1,0 +1,66 @@
+<UserControl x:Class="Dexter.Presentation.PokedexTopStrip"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Height="60">
+  <!--
+    The Pokédex's top plate: the big blue lens, the three LEDs and the raised plate whose lower edge steps down
+    diagonally into the body (the "notch" on the reference art). Drawn with an outline in the body's shadow red;
+    the fill is the same red as the body so the plate reads as a relief, not a second colour.
+  -->
+  <UserControl.Resources>
+    <SolidColorBrush x:Key="PlateOutlineBrush" Color="#89061C" />
+    <SolidColorBrush x:Key="LedOutlineBrush" Color="#1B1B1B" />
+    <SolidColorBrush x:Key="LensRingBrush" Color="#DEDEDE" />
+    <RadialGradientBrush x:Key="LensBrush" Center="0.38,0.35" GradientOrigin="0.3,0.28" RadiusX="0.65" RadiusY="0.65">
+      <GradientStop Color="#8AD4FF" Offset="0" />
+      <GradientStop Color="#28AAFD" Offset="0.45" />
+      <GradientStop Color="#0F4F86" Offset="1" />
+    </RadialGradientBrush>
+  </UserControl.Resources>
+
+  <!-- Background goes on the Grid: a UserControl's own Background is not painted. -->
+  <Grid Background="{StaticResource PokedexRedBrush}">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="Auto" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+
+    <!-- Raised plate: full height on the left, lower edge outlined -->
+    <Border Grid.Column="0"
+            BorderBrush="{StaticResource PlateOutlineBrush}"
+            BorderThickness="0,0,0,2"
+            Padding="16,0,12,0">
+      <StackPanel Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
+        <!-- Lens: dark ring, light ring, blue glass, highlight -->
+        <Grid Width="38" Height="38">
+          <Ellipse Fill="{StaticResource LensRingBrush}" Stroke="{StaticResource LedOutlineBrush}" StrokeThickness="1.5" />
+          <Ellipse Fill="{StaticResource LensBrush}" Stroke="{StaticResource LedOutlineBrush}" StrokeThickness="1" Margin="5" />
+          <Ellipse Width="8" Height="5" Fill="#CCFFFFFF" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="11,10,0,0" />
+        </Grid>
+        <!-- The three indicator lights -->
+        <StackPanel Orientation="Horizontal" Spacing="6" VerticalAlignment="Top" Margin="0,8,0,0">
+          <Ellipse Width="9" Height="9" Fill="#F03A3A" Stroke="{StaticResource LedOutlineBrush}" StrokeThickness="1" />
+          <Ellipse Width="9" Height="9" Fill="#F5C400" Stroke="{StaticResource LedOutlineBrush}" StrokeThickness="1" />
+          <Ellipse Width="9" Height="9" Fill="#51AE5F" Stroke="{StaticResource LedOutlineBrush}" StrokeThickness="1" />
+        </StackPanel>
+        <TextBlock Text="Dexter"
+                   Style="{StaticResource TitleMedium}"
+                   Foreground="{StaticResource OnPokedexRedBrush}"
+                   VerticalAlignment="Center"
+                   Margin="4,0,0,0" />
+      </StackPanel>
+    </Border>
+
+    <!-- The diagonal step from the plate down to the body line -->
+    <Line Grid.Column="1" X1="0" Y1="59" X2="22" Y2="33" Width="22"
+          Stroke="{StaticResource PlateOutlineBrush}" StrokeThickness="2" />
+
+    <!-- Body line to the right -->
+    <Border Grid.Column="2"
+            Height="34"
+            VerticalAlignment="Top"
+            BorderBrush="{StaticResource PlateOutlineBrush}"
+            BorderThickness="0,0,0,2" />
+  </Grid>
+</UserControl>

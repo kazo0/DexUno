@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="Dexter.Presentation.Shell"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:local="using:Dexter.Presentation"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:utu="using:Uno.Toolkit.UI"
+      mc:Ignorable="d"
+      d:DesignHeight="300"
+      d:DesignWidth="400">
+  <!--
+    One SafeArea for the whole app: the shell sections and the detail pages pushed over them all live under this root.
+    The root is the Pokédex red, so the status-bar and gesture-bar strips the insets leave around the pages read as the
+    red body around the screen (on desktop the insets are zero and it never shows).
+  -->
+  <Border x:Name="Root"
+          Background="{StaticResource PokedexRedBrush}"
+          utu:SafeArea.Insets="VisibleBounds">
+    <!--
+      Platforms="None" keeps the toolkit from replicating the native splash image and colour here,
+      so while the first page loads the only thing on screen is the pokeball, centred on the app background.
+    -->
+    <utu:ExtendedSplashScreen x:Name="Splash"
+                              Platforms="None"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch"
+                              HorizontalContentAlignment="Stretch"
+                              VerticalContentAlignment="Stretch">
+      <utu:ExtendedSplashScreen.LoadingContentTemplate>
+        <DataTemplate>
+          <!-- The splash's own Background is not painted, so the screen colour comes from this grid. -->
+          <Grid Background="{ThemeResource BackgroundBrush}">
+            <local:PokeballLoader Width="120"
+                                  Height="120"
+                                  HorizontalAlignment="Center"
+                                  VerticalAlignment="Center" />
+          </Grid>
+        </DataTemplate>
+      </utu:ExtendedSplashScreen.LoadingContentTemplate>
+    </utu:ExtendedSplashScreen>
+  </Border>
+</UserControl>

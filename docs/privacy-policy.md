@@ -1,6 +1,6 @@
 # Privacy Policy
 
-**DexUno** (the "Application") is an open-source Pokémon GO pokédex developed by
+**Dexter** (the "Application") is an open-source Pokémon GO pokédex developed by
 Steve Bilogan (the "Developer") for Android, iOS, Windows, macOS, Linux and the
 web. This service is provided "AS IS".
 

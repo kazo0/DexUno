@@ -1,0 +1,10 @@
+{
+  "background_color": "#DC0A2D",
+  "description": "A Pokémon GO pokédex — Pokémon, moves and type match-ups, entirely offline.",
+  "display": "standalone",
+  "name": "Dexter",
+  "short_name": "Dexter",
+  "start_url": "./index.html",
+  "theme_color": "#DC0A2D",
+  "scope": "./"
+}

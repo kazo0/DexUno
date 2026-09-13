@@ -140,7 +140,7 @@ Use **rulesets** (*Settings → Rules → Rulesets*). Inspect them with
   an author approve their own PR, so this is how the owner's own PRs land —
   the merge is recorded as "Bypassed rule violations". That bypass is for the
   owner only and is forbidden to agents (see `AGENTS.md`).
-- **`release branches`** (not created yet): block **deletion** and **force-push** on
+- **`release branches`** (id 23183967, **done 2026-09-13**): blocks **deletion** and **force-push** on
   `refs/heads/release/**`, with **no bypass actors** — the source of shipped
   builds. Ordinary pushes are unaffected, so the hotfix flow (commit straight
   to `release/v1.0`) still works.

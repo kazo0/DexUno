@@ -13,7 +13,7 @@ There are no tests in either. The modern app has CI and a release pipeline (GitH
 
 ## Hard rules
 
-**Never use the owner's admin rights to bypass branch protection.** The `master` ruleset (`docs/RELEASE-SETUP.md` §4) requires a pull request with the five CI checks green and one approving review, and blocks deletion and force-push; a `release branches` ruleset for `release/**` is documented there too. Repository admins have a pull-request bypass (the owner cannot approve their own PRs), so `gh pr merge --admin` succeeds for the owner; treat that as forbidden, not as permitted-because-it-worked. The path is always branch → pull request → checks go green → the owner merges. If that path is blocked, stop and say so.
+**Never use the owner's admin rights to bypass branch protection.** The `master` ruleset (`docs/RELEASE-SETUP.md` §4) requires a pull request with the five CI checks green and one approving review, and blocks deletion and force-push; the `release branches` ruleset blocks deletion and force-push on `release/**` with no bypass actors at all, so it binds the owner too. Repository admins have a pull-request bypass (the owner cannot approve their own PRs), so `gh pr merge --admin` succeeds for the owner; treat that as forbidden, not as permitted-because-it-worked. The path is always branch → pull request → checks go green → the owner merges. If that path is blocked, stop and say so.
 
 ## Modern app (`DexUno.Modern/`)
 

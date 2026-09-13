@@ -5,18 +5,18 @@
     CI sets it per job; locally it comes from crosstargeting_override.props next to
     the solution (see AGENTS.md, "Building a single platform").
 
-    Values are platform suffixes, semicolon-separated: android, ios, windows, wasm, desktop.
+    Values are platform suffixes, semicolon-separated: android, ios, wasm, desktop.
+    Windows is served by the Skia desktop head; there is no WinAppSDK target.
   -->
   <PropertyGroup Condition="'$(TargetFrameworkOverride)'!=''">
     <TargetFrameworks Condition="$(TargetFrameworkOverride.Contains('android'))">$(TargetFrameworks);net10.0-android</TargetFrameworks>
     <TargetFrameworks Condition="$(TargetFrameworkOverride.Contains('ios'))">$(TargetFrameworks);net10.0-ios</TargetFrameworks>
-    <TargetFrameworks Condition="$(TargetFrameworkOverride.Contains('windows'))">$(TargetFrameworks);net10.0-windows10.0.26100</TargetFrameworks>
     <TargetFrameworks Condition="$(TargetFrameworkOverride.Contains('wasm'))">$(TargetFrameworks);net10.0-browserwasm</TargetFrameworks>
     <TargetFrameworks Condition="$(TargetFrameworkOverride.Contains('desktop'))">$(TargetFrameworks);net10.0-desktop</TargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(TargetFrameworkOverride)'==''">
-    <TargetFrameworks>net10.0-android;net10.0-ios;net10.0-windows10.0.26100;net10.0-browserwasm;net10.0-desktop</TargetFrameworks>
+    <TargetFrameworks>net10.0-android;net10.0-ios;net10.0-browserwasm;net10.0-desktop</TargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -36,18 +36,6 @@
     <ApplicationPublisher>O=Steve Bilogan</ApplicationPublisher>
     <!-- Package Description -->
     <Description>A Pokémon GO pokedex built with Uno Platform.</Description>
-    <!--
-      If you encounter this error message:
-
-        error NETSDK1148: A referenced assembly was compiled using a newer version of Microsoft.Windows.SDK.NET.dll.
-        Please update to a newer .NET SDK in order to reference this assembly.
-
-      This means that the two packages below must be aligned with the "build" version number of
-      the "Microsoft.Windows.SDK.BuildTools" package above, and the "revision" version number
-      must be the highest found in https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref.
-    -->
-    <!-- <WindowsSdkPackageVersion>10.0.22621.28</WindowsSdkPackageVersion> -->
-
     <!--
       UnoFeatures are used to quickly add and manage features enabled for your app.
       https://aka.platform.uno/singleproject-features

@@ -132,8 +132,8 @@ Use **rulesets** (*Settings → Rules → Rulesets*):
 - **`master`**: pull request required with **1 approving review**,
   review-thread resolution required, squash/rebase merges only, and the CI
   job names as required status checks — **Formatting**, **Build desktop
-  (Skia)**, **Build WebAssembly**, **Build Windows (WinAppSDK)**, **Build
-  Android (unsigned)**, **Build iOS (simulator)**. Status checks must exist
+  (Skia)**, **Build WebAssembly**, **Build Android (unsigned)**, **Build iOS
+  (simulator)**. Status checks must exist
   before they can be required, so add them after the first CI run has
   reported them. Keep repository-admin bypass in mind: a bypassed push is
   possible for the owner and is forbidden to agents (see `AGENTS.md`).
@@ -316,9 +316,8 @@ store publish — so after the approval gate — and can be skipped on a dispatc
 run with `deploy_web=false`. `Platforms/WebAssembly/manifest.webmanifest`
 uses relative `start_url`/`scope` so the PWA manifest is valid at either path.
 
-The Windows head (`net10.0-windows10.0.26100`) is built by CI on
-`windows-latest` but is not packaged or published; Microsoft Store (MSIX)
-publishing is a follow-up.
+Windows is covered by the desktop zip (Skia); there is no WinAppSDK head and
+no Microsoft Store publishing.
 
 ## Reference: what lives where
 
@@ -327,7 +326,7 @@ publishing is a follow-up.
 | Version source of truth | `version.json` (repo root, Nerdbank.GitVersioning) |
 | versionCode scheme | NBGV built-in: `major<<24 \| minor<<16 \| height` (1.0.x ⇒ 16777216+x) |
 | Store version mapping | NBGV targets `NBGV_SetVersionForMauiAndroid` / `NBGV_SetVersionForMauiIOS` (see comment in `DexUno.Modern/Directory.Build.props`) |
-| Merge gate | `.github/workflows/ci.yml` + the `master` ruleset (6 required checks, 1 approval) |
+| Merge gate | `.github/workflows/ci.yml` + the `master` ruleset (5 required checks, 1 approval) |
 | Release-branch guard | The `release branches` ruleset (no deletion, no force-push, no bypass) |
 | Release pipeline | `.github/workflows/release.yml` (trigger: push to `release/**`) |
 | Alpha pipeline | `.github/workflows/alpha.yml` (trigger: push to `master` touching the modern app) |

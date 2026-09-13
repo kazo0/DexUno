@@ -138,10 +138,10 @@ dotnet build -f net10.0-ios              # needs the iOS workload
 dotnet build -f net10.0-android          # needs the Android workload
 ```
 
-`net10.0-windows10.0.26100` only builds on Windows; the SDK skips it elsewhere. The first restore of a `-dev`
-`Uno.Sdk` version can take several minutes.
+Windows is served by the same Skia desktop head as macOS and Linux; there is no WinAppSDK target. The first restore
+of a `-dev` `Uno.Sdk` version can take several minutes.
 
-Use `-p:TargetFrameworkOverride=<android|ios|windows|wasm|desktop>` (or a local `crosstargeting_override.props`,
+Use `-p:TargetFrameworkOverride=<android|ios|wasm|desktop>` (or a local `crosstargeting_override.props`,
 see the `.sample` next to the solution) to keep restore off the platforms you are not building.
 
 See [AGENTS.md](AGENTS.md) for the architecture in detail.

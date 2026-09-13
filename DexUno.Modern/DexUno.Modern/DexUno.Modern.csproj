@@ -1,17 +1,37 @@
 <Project Sdk="Uno.Sdk">
-  <PropertyGroup>
-    <TargetFrameworks>net10.0-android;net10.0-ios;net10.0-windows10.0.26100;net10.0-browserwasm;net10.0-desktop</TargetFrameworks>
+  <!--
+    TargetFrameworkOverride restricts the head to a subset of platforms, so a build
+    only restores (and only needs the workloads for) the TFMs it actually compiles.
+    CI sets it per job; locally it comes from crosstargeting_override.props next to
+    the solution (see AGENTS.md, "Building a single platform").
 
+    Values are platform suffixes, semicolon-separated: android, ios, windows, wasm, desktop.
+  -->
+  <PropertyGroup Condition="'$(TargetFrameworkOverride)'!=''">
+    <TargetFrameworks Condition="$(TargetFrameworkOverride.Contains('android'))">$(TargetFrameworks);net10.0-android</TargetFrameworks>
+    <TargetFrameworks Condition="$(TargetFrameworkOverride.Contains('ios'))">$(TargetFrameworks);net10.0-ios</TargetFrameworks>
+    <TargetFrameworks Condition="$(TargetFrameworkOverride.Contains('windows'))">$(TargetFrameworks);net10.0-windows10.0.26100</TargetFrameworks>
+    <TargetFrameworks Condition="$(TargetFrameworkOverride.Contains('wasm'))">$(TargetFrameworks);net10.0-browserwasm</TargetFrameworks>
+    <TargetFrameworks Condition="$(TargetFrameworkOverride.Contains('desktop'))">$(TargetFrameworks);net10.0-desktop</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(TargetFrameworkOverride)'==''">
+    <TargetFrameworks>net10.0-android;net10.0-ios;net10.0-windows10.0.26100;net10.0-browserwasm;net10.0-desktop</TargetFrameworks>
+  </PropertyGroup>
+
+  <PropertyGroup>
     <OutputType>Exe</OutputType>
     <UnoSingleProject>true</UnoSingleProject>
 
     <!-- Display name -->
     <ApplicationTitle>DexUno</ApplicationTitle>
-    <!-- App Identifier -->
+    <!-- App Identifier — the Play package name and iOS bundle id; the workflows
+         under .github/workflows publish to this exact id, keep them in sync. -->
     <ApplicationId>com.kazo0.dexuno</ApplicationId>
-    <!-- Versions -->
-    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
-    <ApplicationVersion>1</ApplicationVersion>
+    <!-- Versions — computed from git by Nerdbank.GitVersioning (version.json at
+         the repo root; see the comment in Directory.Build.props), never hardcoded
+         here: a hardcoded ApplicationVersion would ship the same store build
+         number on every release and the stores reject a reused one. -->
     <!-- Package Publisher -->
     <ApplicationPublisher>O=Steve Bilogan</ApplicationPublisher>
     <!-- Package Description -->
@@ -43,6 +63,56 @@
       Foldable;
     </UnoFeatures>
   </PropertyGroup>
+
+  <!-- iOS minimum OS: the iOS 27 SDK (Xcode 27) rejects the Uno.Sdk default of 14.2. -->
+  <PropertyGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">
+    <SupportedOSPlatformVersion>15.0</SupportedOSPlatformVersion>
+  </PropertyGroup>
+
+  <!--
+    Native AOT for the store packages (Android + iOS) — Uno Platform 6.6+:
+    https://platform.uno/docs/articles/features/native-aot.html
+
+    Gated on _IsPublishing, which the CLI sets for 'dotnet publish' (release.yml,
+    alpha.yml, and ci.yml only for builds targeting a release/* branch). A plain
+    'dotnet build' — Debug deploys, hot reload, the IDE, everyday CI — keeps the
+    regular Mono/CoreCLR runtime. The iOS SDK already gates PublishAot on
+    _IsPublishing itself; the Android SDK does not (it would flip every Debug
+    build to NativeAOT and demand an NDK), hence the explicit check.
+
+    Desktop and WebAssembly stay as they are: Native AOT cannot cross-compile
+    (release.yml publishes the win-x64 / linux-x64 / osx-arm64 zips from one
+    Linux runner), and the wasm head uses the .NET WebAssembly SDK's own pipeline.
+
+    Opt out per invocation with '-p:PublishNativeAot=false' (release.yml exposes
+    that as the 'native_aot' dispatch input); the package then falls back to the
+    runtime's own AOT (Mono profiled AOT on Android, Mono AOT+LLVM on iOS).
+    PublishNativeAot is the "intermediate property" the Uno doc recommends — never
+    pass PublishAot itself on the command line: as a global property it also
+    reaches the net10.0 class library, which fails with NETSDK1203 for a mobile
+    RuntimeIdentifier. Prerequisites: Android needs NDK r27+ (AndroidNdkDirectory,
+    or the SDK's ndk/ folder; the .NET SDK flags Android Native AOT as
+    experimental via warning XA1040); iOS needs '-r ios-arm64'.
+  -->
+  <PropertyGroup Condition="'$(PublishAot)' == '' And '$(_IsPublishing)' == 'true' And '$(PublishNativeAot)' != 'false' And ($([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android' Or $([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios')">
+    <PublishAot>true</PublishAot>
+  </PropertyGroup>
+
+  <!--
+    Multi-RID Android publish (no -r, i.e. the SDK default android-arm64;android-x64 that
+    alpha.yml and release.yml rely on): the Android SDK compiles each RID in an inner build
+    and packs both native libraries into the .aab, but ILCompiler's CopyNativeBinary
+    (AfterTargets="Publish") also runs on the RID-less outer publish, where $(NativeBinary)
+    resolves to bin/.../net10.0-android/native/DexUno.Modern.so — a file only the
+    per-RID inner builds produce — and fails with MSB3030 (dotnet/android#10587). Blanking
+    the source there turns that Copy into a no-op; the .aab is already complete by then.
+    Per-RID publishes (-r android-arm64) never hit this: the outer build *is* the RID build.
+  -->
+  <Target Name="_SkipOuterNativeBinaryCopy" BeforeTargets="CopyNativeBinary" Condition="'$(PublishAot)' == 'true' And '$(RuntimeIdentifier)' == ''">
+    <PropertyGroup>
+      <NativeBinary />
+    </PropertyGroup>
+  </Target>
 
   <ItemGroup>
     <ProjectReference Include="..\DexUno.Modern.Core\DexUno.Modern.Core.csproj" />

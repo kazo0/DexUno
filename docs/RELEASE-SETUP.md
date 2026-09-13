@@ -127,17 +127,20 @@ GitHub Pages deploy).
 
 ## 4. Branch rules (the merge gate)
 
-Use **rulesets** (*Settings → Rules → Rulesets*):
+Use **rulesets** (*Settings → Rules → Rulesets*). Inspect them with
+`gh api repos/kazo0/DexUno/rulesets`.
 
-- **`master`**: pull request required with **1 approving review**,
-  review-thread resolution required, squash/rebase merges only, and the CI
-  job names as required status checks — **Formatting**, **Build desktop
-  (Skia)**, **Build WebAssembly**, **Build Android (unsigned)**, **Build iOS
-  (simulator)**. Status checks must exist
-  before they can be required, so add them after the first CI run has
-  reported them. Keep repository-admin bypass in mind: a bypassed push is
-  possible for the owner and is forbidden to agents (see `AGENTS.md`).
-- **`release branches`**: block **deletion** and **force-push** on
+- **`master`** (id 23183373, **done 2026-09-13**): pull request required with
+  **1 approving review** (stale reviews dismissed on push), review-thread
+  resolution required, squash/rebase merges only, no deletion, no force-push,
+  and the five CI job names as required status checks — **Formatting**,
+  **Build desktop (Skia)**, **Build WebAssembly**, **Build Android
+  (unsigned)**, **Build iOS (simulator)** (restricted to the GitHub Actions
+  app). Repository admins have a **pull-request bypass**: GitHub does not let
+  an author approve their own PR, so this is how the owner's own PRs land —
+  the merge is recorded as "Bypassed rule violations". That bypass is for the
+  owner only and is forbidden to agents (see `AGENTS.md`).
+- **`release branches`** (id 23183967, **done 2026-09-13**): blocks **deletion** and **force-push** on
   `refs/heads/release/**`, with **no bypass actors** — the source of shipped
   builds. Ordinary pushes are unaffected, so the hotfix flow (commit straight
   to `release/v1.0`) still works.

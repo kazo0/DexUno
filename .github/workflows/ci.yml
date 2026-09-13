@@ -1,0 +1,245 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master, 'release/**']
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  DOTNET_NOLOGO: true
+  DOTNET_CLI_TELEMETRY_OPTOUT: true
+  HEAD_PROJECT: DexUno.Modern/DexUno.Modern/DexUno.Modern.csproj
+  SOLUTION: DexUno.Modern/DexUno.Modern.sln
+  # Builds *for* a release/* branch (a PR into one, or a push to one if that is
+  # ever added here) run the same Native AOT / wasm publish release.yml ships, so
+  # a trimming or AOT break is caught before the release branch is cut or
+  # hot-fixed. Those publishes are slow (ILLink + ILCompiler + native link), so
+  # everything else — PRs into master and pushes to master — keeps the fast
+  # plain builds.
+  RELEASE_BUILD: ${{ startsWith(github.base_ref, 'release/') || startsWith(github.ref, 'refs/heads/release/') }}
+
+jobs:
+  format:
+    name: Formatting
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      # dotnet format loads the head like a build does; keep it on the desktop TFM.
+      TargetFrameworkOverride: desktop
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # Nerdbank.GitVersioning runs in the design-time build and needs full history
+          fetch-depth: 0
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+
+      - uses: actions/cache@v6
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj', '**/Directory.Packages.props', '**/global.json') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      # whitespace + style only. Plain `dotnet format` also applies every referenced
+      # analyzer's code fixes, and the Android platform-compat analyzers (CA1416/CA1422)
+      # report diagnostics their fixers cannot apply, which would fail the check forever.
+      # CpMultipliersMap.cs is a lookup table laid out several entries per line on
+      # purpose; the whitespace formatter would put every entry on its own line.
+      - name: C# (dotnet format, .editorconfig)
+        run: |
+          dotnet format whitespace "$SOLUTION" --verify-no-changes --exclude DexUno.Modern/DexUno.Modern.Core/Entities/CpMultipliersMap.cs
+          dotnet format style "$SOLUTION" --verify-no-changes
+
+  build-desktop:
+    name: Build desktop (Skia)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      # Restricts the head project to this platform, so restore never pulls in the
+      # other TFMs (and their workloads). MSBuild reads it as a property.
+      TargetFrameworkOverride: desktop
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+
+      - uses: actions/cache@v6
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj', '**/Directory.Packages.props', '**/global.json') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      - name: Build head for desktop
+        run: dotnet build "$HEAD_PROJECT" -f net10.0-desktop -c Release
+
+  build-wasm:
+    name: Build WebAssembly
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      TargetFrameworkOverride: wasm
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+
+      - uses: actions/cache@v6
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj', '**/Directory.Packages.props', '**/global.json') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      - name: Install WebAssembly workload
+        run: dotnet workload install wasm-tools
+
+      - name: Build head for WebAssembly
+        if: env.RELEASE_BUILD != 'true'
+        run: dotnet build "$HEAD_PROJECT" -f net10.0-browserwasm -c Release
+
+      # Release-branch builds only (see RELEASE_BUILD): the same publish release.yml
+      # deploys to GitHub Pages — the .NET WebAssembly SDK's trimming + native relink.
+      - name: Publish head for WebAssembly
+        if: env.RELEASE_BUILD == 'true'
+        run: dotnet publish "$HEAD_PROJECT" -f net10.0-browserwasm -c Release -p:WasmShellWebAppBasePath=/DexUno/ -o artifacts/wasm
+
+      # dotnet format only sees the files compiled for the TFM it loads; the Formatting
+      # job runs on desktop, so wasm-only sources (*.wasm.cs, Platforms/WebAssembly) are checked here.
+      - name: Check formatting of WebAssembly-only sources
+        run: |
+          dotnet format whitespace "$HEAD_PROJECT" --verify-no-changes
+          dotnet format style "$HEAD_PROJECT" --verify-no-changes
+
+  build-android:
+    name: Build Android (unsigned)
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      TargetFrameworkOverride: android
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+
+      - uses: actions/cache@v6
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj', '**/Directory.Packages.props', '**/global.json') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      - name: Use JDK 21
+        run: echo "JAVA_HOME=$JAVA_HOME_21_X64" >> "$GITHUB_ENV"
+
+      - name: Install Android workload
+        run: dotnet workload install android
+
+      - name: Install missing Android SDK components
+        run: dotnet build "$HEAD_PROJECT" -f net10.0-android -c Release -t:InstallAndroidDependencies -p:AcceptAndroidSDKLicenses=true
+
+      - name: Build head for Android
+        if: env.RELEASE_BUILD != 'true'
+        run: dotnet build "$HEAD_PROJECT" -f net10.0-android -c Release
+
+      # Release-branch builds only (see RELEASE_BUILD): 'publish' runs the Native
+      # AOT pipeline (ILLink + ILCompiler + NDK link, see the PublishAot block in
+      # the csproj). One ABI keeps the job short — release.yml builds arm64 + x64.
+      - name: Publish head for Android (Native AOT, unsigned)
+        if: env.RELEASE_BUILD == 'true'
+        run: dotnet publish "$HEAD_PROJECT" -f net10.0-android -c Release -r android-arm64 -p:AndroidNdkDirectory="$ANDROID_NDK_HOME"
+
+      # dotnet format only sees the files compiled for the TFM it loads; the Formatting
+      # job runs on desktop, so Android-only sources (*.Android.cs, Platforms/) are checked here.
+      - name: Check formatting of Android-only sources
+        run: |
+          dotnet format whitespace "$HEAD_PROJECT" --verify-no-changes
+          dotnet format style "$HEAD_PROJECT" --verify-no-changes
+
+  build-ios:
+    name: Build iOS (simulator)
+    runs-on: macos-latest
+    timeout-minutes: 60
+    env:
+      TargetFrameworkOverride: ios
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+
+      - uses: actions/cache@v6
+        with:
+          path: ~/.nuget/packages
+          key: nuget-${{ runner.os }}-${{ hashFiles('**/*.csproj', '**/Directory.Packages.props', '**/global.json') }}
+          restore-keys: nuget-${{ runner.os }}-
+
+      # 'dotnet workload install ios' below takes the newest iOS workload, which
+      # requires the newest Xcode — but the runner image's default selection lags
+      # behind it (.NET for iOS 26.5.10301 needs Xcode 26.6; macos-26 defaults to
+      # 26.5 with 26.6 also installed). Select the newest to keep the two in step.
+      #
+      # '-type d' matters: the image ships each Xcode as a real bundle plus version
+      # alias symlinks (Xcode_26.6.app + Xcode_26.6.0.app), and selecting the symlink
+      # breaks SDK resolution — actool then fails with "MacOSX.sdk cannot be located"
+      # (actions/runner-images#13743). Version-sorting also ranks the alias first.
+      - name: Select the newest installed Xcode
+        run: |
+          set -euo pipefail
+          for xcode in $(find /Applications -maxdepth 1 -type d -name 'Xcode_*.app' | sort -Vr); do
+            if [ -d "$xcode/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk" ]; then
+              echo "Selecting $xcode"
+              sudo xcode-select -s "$xcode"
+              xcodebuild -version
+              xcrun --find actool
+              exit 0
+            fi
+            echo "Skipping $xcode (no macOS SDK)"
+          done
+          echo "::error::No Xcode with a usable macOS SDK found"
+          exit 1
+
+      - name: Install iOS workload
+        run: dotnet workload install ios
+
+      - name: Build head for iOS simulator
+        if: env.RELEASE_BUILD != 'true'
+        run: dotnet build "$HEAD_PROJECT" -f net10.0-ios -c Release -p:RuntimeIdentifier=iossimulator-arm64
+
+      # Release-branch builds only (see RELEASE_BUILD): 'publish' for the device
+      # RID runs the Native AOT pipeline release.yml ships (ILLink + ILCompiler +
+      # native link + .ipa). The iOS SDK refuses 'dotnet publish' for simulator
+      # RIDs, and EnableCodeSigning=false skips signing-identity detection, so no
+      # certificate or profile is needed.
+      - name: Publish head for iOS device (Native AOT, unsigned)
+        if: env.RELEASE_BUILD == 'true'
+        run: dotnet publish "$HEAD_PROJECT" -f net10.0-ios -c Release -p:RuntimeIdentifier=ios-arm64 -p:EnableCodeSigning=false
+
+      # dotnet format only sees the files compiled for the TFM it loads; the Formatting
+      # job runs on desktop, so iOS-only sources (*.iOS.cs, Platforms/) are checked here.
+      - name: Check formatting of iOS-only sources
+        run: |
+          dotnet format whitespace "$HEAD_PROJECT" --verify-no-changes
+          dotnet format style "$HEAD_PROJECT" --verify-no-changes

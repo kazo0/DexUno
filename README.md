@@ -1,5 +1,8 @@
 # DexUno
 
+[![CI](https://github.com/kazo0/DexUno/actions/workflows/ci.yml/badge.svg)](https://github.com/kazo0/DexUno/actions/workflows/ci.yml)
+[![Release](https://github.com/kazo0/DexUno/actions/workflows/release.yml/badge.svg)](https://github.com/kazo0/DexUno/actions/workflows/release.yml)
+
 A Pokémon GO pokédex — browse every Pokémon, compare moves, and check type match-ups, entirely offline.
 
 DexUno is a modernization of **[Dexr](https://github.com/disklosr/Dexr)** by [disklosr](https://github.com/disklosr), a UWP
@@ -135,10 +138,26 @@ dotnet build -f net10.0-ios              # needs the iOS workload
 dotnet build -f net10.0-android          # needs the Android workload
 ```
 
-`net10.0-windows10.0.26100` only builds on Windows; the SDK skips it elsewhere. The first restore of a `-dev`
-`Uno.Sdk` version can take several minutes.
+Windows is served by the same Skia desktop head as macOS and Linux; there is no WinAppSDK target. The first restore
+of a `-dev` `Uno.Sdk` version can take several minutes.
+
+Use `-p:TargetFrameworkOverride=<android|ios|wasm|desktop>` (or a local `crosstargeting_override.props`,
+see the `.sample` next to the solution) to keep restore off the platforms you are not building.
 
 See [AGENTS.md](AGENTS.md) for the architecture in detail.
+
+## Releases
+
+- **Web**: the WebAssembly build is deployed to GitHub Pages at <https://kazo0.github.io/DexUno/> with every release.
+- **Android / iOS**: published to Google Play and the App Store from the release pipeline; every merge to `master`
+  also ships to the Play internal track and TestFlight.
+- **Desktop**: self-contained zips for Windows (x64), Linux (x64) and macOS (Apple silicon) are attached to each
+  [GitHub release](https://github.com/kazo0/DexUno/releases). They are unsigned, so Gatekeeper / SmartScreen will warn.
+
+Versions come from [Nerdbank.GitVersioning](https://github.com/dotnet/Nerdbank.GitVersioning) (`version.json`);
+release branches are cut with `nbgv prepare-release`. The pipeline and its one-time setup are described in
+[docs/RELEASE-SETUP.md](docs/RELEASE-SETUP.md). The app collects no data — see the
+[privacy policy](docs/privacy-policy.md).
 
 ## Credits
 

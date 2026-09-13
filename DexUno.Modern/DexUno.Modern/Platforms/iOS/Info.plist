@@ -35,9 +35,11 @@
 		<true/>
 
 		<!--
-		Adjust this to your application's encryption usage.
+			The app is fully offline (embedded JSON data, no network calls) and uses no
+			non-exempt encryption. Declaring it here lets automated App Store Connect
+			uploads skip the manual "Missing Compliance" prompt.
+		-->
 		<key>ITSAppUsesNonExemptEncryption</key>
 		<false/>
-		-->
 	</dict>
 </plist>

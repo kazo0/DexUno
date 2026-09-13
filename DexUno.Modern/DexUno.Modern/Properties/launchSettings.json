@@ -27,15 +27,6 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    // Note: In order to select this profile, you'll need to comment the `Packaged` profile below until this is fixed: https://aka.platform.uno/wasdk-maui-debug-profile-issue
-    "DexUno.Modern (WinAppSDK Unpackaged)": {
-      "commandName": "Project",
-      "compatibleTargetFramework": "windows"
-    },
-    "DexUno.Modern (WinAppSDK Packaged)": {
-      "commandName": "MsixPackage",
-      "compatibleTargetFramework": "windows"
-    },
     "DexUno.Modern (Desktop)": {
       "commandName": "Project",
       "compatibleTargetFramework": "desktop"

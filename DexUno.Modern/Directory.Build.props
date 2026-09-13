@@ -1,4 +1,13 @@
 <Project>
+  <!--
+    Optional, git-ignored local override that restricts the platforms built by the head
+    project via TargetFrameworkOverride. Copy crosstargeting_override.props.sample (next to
+    this file) to crosstargeting_override.props to use it. Imported here (rather than read
+    by the csproj) so the property is set before the csproj body is evaluated.
+  -->
+  <Import Project="$(MSBuildThisFileDirectory)crosstargeting_override.props"
+          Condition="Exists('$(MSBuildThisFileDirectory)crosstargeting_override.props')" />
+
   <PropertyGroup>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
@@ -12,4 +21,19 @@
     -->
     <NoWarn>$(NoWarn);NU1507;NETSDK1201;PRI257</NoWarn>
   </PropertyGroup>
+
+  <ItemGroup>
+    <!--
+      Nerdbank.GitVersioning computes versions from the repo-root version.json
+      (master carries "X.Y-alpha"; 'nbgv prepare-release' cuts release/vX.Y with
+      the stable version). Its built-in mobile targets (NBGV_SetVersionForMauiAndroid
+      / NBGV_SetVersionForMauiIOS — they only test TargetPlatformIdentifier, so they
+      apply to this Uno app too) set ApplicationVersion / ApplicationDisplayVersion
+      for the stores: Android versionCode = major<<24 | minor<<16 | git height
+      (1.0.x => 16777216+x) and versionName = the semantic version; iOS uses the
+      three-part version for CFBundleVersion and CFBundleShortVersionString.
+      Never hardcode those two properties in the csproj.
+    -->
+    <PackageReference Include="Nerdbank.GitVersioning" PrivateAssets="all" />
+  </ItemGroup>
 </Project>

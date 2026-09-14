@@ -16,8 +16,8 @@ permissions:
 env:
   DOTNET_NOLOGO: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
-  HEAD_PROJECT: DexUno.Modern/DexUno.Modern/DexUno.Modern.csproj
-  SOLUTION: DexUno.Modern/DexUno.Modern.sln
+  HEAD_PROJECT: Dexter/Dexter/Dexter.csproj
+  SOLUTION: Dexter/Dexter.sln
   # Builds *for* a release/* branch (a PR into one, or a push to one if that is
   # ever added here) run the same Native AOT / wasm publish release.yml ships, so
   # a trimming or AOT break is caught before the release branch is cut or
@@ -57,7 +57,7 @@ jobs:
       # purpose; the whitespace formatter would put every entry on its own line.
       - name: C# (dotnet format, .editorconfig)
         run: |
-          dotnet format whitespace "$SOLUTION" --verify-no-changes --exclude DexUno.Modern/DexUno.Modern.Core/Entities/CpMultipliersMap.cs
+          dotnet format whitespace "$SOLUTION" --verify-no-changes --exclude Dexter/Dexter.Core/Entities/CpMultipliersMap.cs
           dotnet format style "$SOLUTION" --verify-no-changes
 
   build-desktop:

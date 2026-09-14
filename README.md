@@ -1,11 +1,11 @@
-# DexUno
+# Dexter
 
 [![CI](https://github.com/kazo0/DexUno/actions/workflows/ci.yml/badge.svg)](https://github.com/kazo0/DexUno/actions/workflows/ci.yml)
 [![Release](https://github.com/kazo0/DexUno/actions/workflows/release.yml/badge.svg)](https://github.com/kazo0/DexUno/actions/workflows/release.yml)
 
 A Pokémon GO pokédex — browse every Pokémon, compare moves, and check type match-ups, entirely offline.
 
-DexUno is a modernization of **[Dexr](https://github.com/disklosr/Dexr)** by [disklosr](https://github.com/disklosr), a UWP
+Dexter is a modernization of **[Dexr](https://github.com/disklosr/Dexr)** by [disklosr](https://github.com/disklosr), a UWP
 Pokédex for Pokémon GO that shipped on the Microsoft Store for Windows 10. The original's data set, domain model and
 overall information architecture are carried forward here; the app around them has been rebuilt on
 [Uno Platform](https://platform.uno) and .NET 10 so the same code base runs on Windows, macOS, Linux, iOS, Android
@@ -95,7 +95,7 @@ Skia desktop head on macOS, dark theme. The shell is styled after the classic Ka
 
 ## What the modernization changed
 
-| | Dexr / legacy DexUno | DexUno.Modern |
+| | Dexr / legacy DexUno | Dexter |
 | :-- | :-- | :-- |
 | Platforms | Windows 10 only (UWP) | Windows, macOS, Linux, iOS, Android, WebAssembly |
 | Framework | UWP, later Uno 3.x | Uno Platform 7 (`Uno.Sdk`), single project |
@@ -118,17 +118,17 @@ section of the shell.
 
 | Path | |
 | :-- | :-- |
-| `DexUno.Modern/` | **The current app.** Uno Platform single project, .NET 10, MVUX. |
-| `DexUno.Modern/DexUno.Modern.Core/` | Domain library — entities, repositories, CP calculator, type service. No UI dependencies. |
-| `DexUno.Modern/DexUno.Modern/` | The Uno app — pages, models, converters, styles, embedded data and artwork. |
+| `Dexter/` | **The current app.** Uno Platform single project, .NET 10, MVUX. |
+| `Dexter/Dexter.Core/` | Domain library — entities, repositories, CP calculator, type service. No UI dependencies. |
+| `Dexter/Dexter/` | The Uno app — pages, models, converters, styles, embedded data and artwork. |
 | `DexUno.sln`, `DexUno/`, `DexUno.Core/` | The legacy 2020-era Uno 3.x port, kept for reference. Does not build on current tooling. |
 | `AGENTS.md` | Architecture and conventions, the source of truth for contributors and coding agents. |
 
 ## Building and running
 
-Requires the .NET 10 SDK. The `Uno.Sdk` version is pinned in `DexUno.Modern/global.json`.
+Requires the .NET 10 SDK. The `Uno.Sdk` version is pinned in `Dexter/global.json`.
 
-From `DexUno.Modern/DexUno.Modern/`:
+From `Dexter/Dexter/`:
 
 ```bash
 dotnet build -f net10.0-desktop          # Skia desktop (macOS/Linux/Windows) — the fast inner loop

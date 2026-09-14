@@ -13,7 +13,7 @@ name: Release
 # the GitHub Pages deployment, and/or turn Native AOT off for the mobile packages.
 #
 # The Android and iOS packages are Native AOT (see the PublishAot block in
-# DexUno.Modern.csproj): the csproj turns it on for 'dotnet publish'; the jobs
+# Dexter.csproj): the csproj turns it on for 'dotnet publish'; the jobs
 # below pass the PublishNativeAot switch so a dispatch run can flip it off
 # (never PublishAot itself — see the csproj comment).
 
@@ -51,8 +51,8 @@ permissions:
 env:
   DOTNET_NOLOGO: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
-  HEAD_PROJECT: DexUno.Modern/DexUno.Modern/DexUno.Modern.csproj
-  APP_ID: com.kazo0.dexuno
+  HEAD_PROJECT: Dexter/Dexter/Dexter.csproj
+  APP_ID: com.kazo0.dexter
 
 jobs:
   version:
@@ -260,7 +260,7 @@ jobs:
           set -euo pipefail
           for rid in win-x64 linux-x64 osx-arm64; do
             dotnet publish "$HEAD_PROJECT" -f net10.0-desktop -c Release -r "$rid" --self-contained true -o "artifacts/desktop/$rid"
-            (cd "artifacts/desktop/$rid" && zip -qr "../DexUno-$VERSION-$rid.zip" .)
+            (cd "artifacts/desktop/$rid" && zip -qr "../Dexter-$VERSION-$rid.zip" .)
           done
 
       - uses: actions/upload-artifact@v7
@@ -306,7 +306,7 @@ jobs:
         run: |
           set -euo pipefail
           touch artifacts/wasm/wwwroot/.nojekyll
-          (cd artifacts/wasm/wwwroot && zip -qr "../DexUno-$VERSION-web.zip" .)
+          (cd artifacts/wasm/wwwroot && zip -qr "../Dexter-$VERSION-web.zip" .)
 
       - uses: actions/upload-pages-artifact@v5
         with:
@@ -389,7 +389,7 @@ jobs:
         run: |
           gh release create "v$VERSION" \
             --target "$GITHUB_SHA" \
-            --title "DexUno v$VERSION" \
+            --title "Dexter v$VERSION" \
             --generate-notes \
             --notes "Desktop zips are unsigned; macOS builds are not notarized. The web build is live at https://kazo0.github.io/DexUno/." \
             dist/android/*.aab dist/android/*.apk dist/ios/*.ipa dist/desktop/*.zip dist/web/*.zip

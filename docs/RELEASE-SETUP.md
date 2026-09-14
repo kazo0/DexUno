@@ -7,7 +7,7 @@ internal track + TestFlight) and `release.yml` (release branches → approval
 gate → Google Play + App Store + GitHub Pages + GitHub release/tag).
 
 > ⚠️ **Identifier check before the first release**: the workflows publish to
-> `com.kazo0.dexuno` (the `APP_ID` env at the top of `release.yml` and
+> `com.kazo0.dexter` (the `APP_ID` env at the top of `release.yml` and
 > `alpha.yml`: Play `packageName`, iOS `bundle-id`, fastlane `app_identifier`).
 > The csproj's `ApplicationId` must match it — if you change one, change the
 > other. Store identifiers cannot be changed once an app is published.
@@ -21,16 +21,16 @@ somewhere safe — Play App Signing lets you reset a lost *upload* key through
 Play Console support, but only after the app exists):
 
 ```bash
-keytool -genkeypair -v -keystore dexuno-upload.keystore -alias dexuno \
+keytool -genkeypair -v -keystore dexter-upload.keystore -alias dexter \
         -keyalg RSA -keysize 2048 -validity 10000
 ```
 
-Note the store password, key alias (`dexuno`) and key password.
+Note the store password, key alias (`dexter`) and key password.
 
 ### Google Play
 
 1. **Play Console**: create the app (*All apps → Create app*), package name
-   `com.kazo0.dexuno`, and complete the store listing / content-rating /
+   `com.kazo0.dexter`, and complete the store listing / content-rating /
    data-safety questionnaires (the app collects nothing — see
    `docs/privacy-policy.md`, which is also the privacy-policy URL to enter:
    `https://github.com/kazo0/DexUno/blob/master/docs/privacy-policy.md`).
@@ -46,11 +46,11 @@ Note the store password, key alias (`dexuno`) and key password.
    Service Accounts → Create service account* (e.g. `github-actions-play`),
    no cloud roles needed. Create a **JSON key** and download it. Then in Play
    Console: *Users and permissions → Invite new users* → the service account's
-   email → grant **Release to production** (or scope it to DexUno).
+   email → grant **Release to production** (or scope it to Dexter).
 
 ### Apple
 
-1. **App Store Connect**: register the bundle id `com.kazo0.dexuno` at
+1. **App Store Connect**: register the bundle id `com.kazo0.dexter` at
    developer.apple.com → *Identifiers*, then create the app record in App
    Store Connect (*My Apps → +*). `fastlane deliver` uploads to an existing
    record; it does not create one. Fill in the privacy questionnaire (no data
@@ -84,9 +84,9 @@ without `--body`/`<` prompt for the value interactively.
 
 ```bash
 # Android
-gh secret set ANDROID_KEYSTORE_BASE64 --body "$(base64 -i ~/path/to/dexuno-upload.keystore)"
+gh secret set ANDROID_KEYSTORE_BASE64 --body "$(base64 -i ~/path/to/dexter-upload.keystore)"
 gh secret set ANDROID_KEYSTORE_PASSWORD
-gh secret set ANDROID_KEY_ALIAS --body dexuno
+gh secret set ANDROID_KEY_ALIAS --body dexter
 gh secret set ANDROID_KEY_PASSWORD
 
 # Google Play
@@ -217,7 +217,7 @@ version input.
 To see what a commit would ship as, run `nbgv get-version` locally, or
 
 ```bash
-dotnet msbuild DexUno.Modern/DexUno.Modern/DexUno.Modern.csproj -restore -t:_GetAndroidPackageName \
+dotnet msbuild Dexter/Dexter/Dexter.csproj -restore -t:_GetAndroidPackageName \
   -p:TargetFramework=net10.0-android -p:TargetFrameworkOverride=android -p:PublicRelease=true \
   -getProperty:ApplicationVersion -getProperty:ApplicationDisplayVersion
 ```
@@ -232,7 +232,7 @@ Hotfixes: commit to the same `release/v1.0` branch — each push builds a new
 The `.aab`/`.apk` and `.ipa` that `alpha.yml` and `release.yml` ship are
 **Native AOT** (<https://platform.uno/docs/articles/features/native-aot.html>)
 — faster startup at the cost of a larger package. Nothing to set up: the
-`PublishAot` block in `DexUno.Modern/DexUno.Modern/DexUno.Modern.csproj`
+`PublishAot` block in `Dexter/Dexter/Dexter.csproj`
 turns it on for `dotnet publish` of the mobile TFMs, the workflows pass the
 `PublishNativeAot` switch, and the Android job points the SDK at the runner's
 NDK r27.3 (`ANDROID_NDK_HOME`). Desktop zips (CoreCLR, self-contained) and the
@@ -314,7 +314,7 @@ Things to know:
 under `/<repo>/`; local builds keep `/`), drops a `.nojekyll` marker into the
 site (Pages would otherwise run Jekyll and discard the `_framework/` folder the
 runtime lives in) and uploads it as the Pages artifact plus a
-`DexUno-<version>-web.zip` for the GitHub release. `deploy-web` runs after the
+`Dexter-<version>-web.zip` for the GitHub release. `deploy-web` runs after the
 store publish — so after the approval gate — and can be skipped on a dispatch
 run with `deploy_web=false`. `Platforms/WebAssembly/manifest.webmanifest`
 uses relative `start_url`/`scope` so the PWA manifest is valid at either path.
@@ -328,12 +328,12 @@ no Microsoft Store publishing.
 |---|---|
 | Version source of truth | `version.json` (repo root, Nerdbank.GitVersioning) |
 | versionCode scheme | NBGV built-in: `major<<24 \| minor<<16 \| height` (1.0.x ⇒ 16777216+x) |
-| Store version mapping | NBGV targets `NBGV_SetVersionForMauiAndroid` / `NBGV_SetVersionForMauiIOS` (see comment in `DexUno.Modern/Directory.Build.props`) |
+| Store version mapping | NBGV targets `NBGV_SetVersionForMauiAndroid` / `NBGV_SetVersionForMauiIOS` (see comment in `Dexter/Directory.Build.props`) |
 | Merge gate | `.github/workflows/ci.yml` + the `master` ruleset (5 required checks, 1 approval) |
 | Release-branch guard | The `release branches` ruleset (no deletion, no force-push, no bypass) |
 | Release pipeline | `.github/workflows/release.yml` (trigger: push to `release/**`) |
 | Alpha pipeline | `.github/workflows/alpha.yml` (trigger: push to `master` touching the modern app) |
-| Native AOT switch | `PublishAot` block in `DexUno.Modern/DexUno.Modern/DexUno.Modern.csproj`; per-run override via the `native_aot` dispatch input (or `-p:PublishNativeAot=false` locally) |
+| Native AOT switch | `PublishAot` block in `Dexter/Dexter/Dexter.csproj`; per-run override via the `native_aot` dispatch input (or `-p:PublishNativeAot=false` locally) |
 | Approval gate | GitHub Environment `production` |
 | Web app | GitHub Pages, `github-pages` environment, https://kazo0.github.io/DexUno/ |
 | Privacy policy (store listings) | `docs/privacy-policy.md` |

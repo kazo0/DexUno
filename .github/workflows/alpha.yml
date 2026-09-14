@@ -45,8 +45,8 @@ permissions:
 env:
   DOTNET_NOLOGO: true
   DOTNET_CLI_TELEMETRY_OPTOUT: true
-  HEAD_PROJECT: DexUno.Modern/DexUno.Modern/DexUno.Modern.csproj
-  APP_ID: com.kazo0.dexuno
+  HEAD_PROJECT: Dexter/Dexter/Dexter.csproj
+  APP_ID: com.kazo0.dexter
 
 jobs:
   build-android:

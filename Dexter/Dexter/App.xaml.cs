@@ -14,7 +14,17 @@ public partial class App : Application
 
     protected IHost? Host { get; private set; }
 
-    [SuppressMessage("Trimming", "IL2026:Members annotated with 'RequiresUnreferencedCodeAttribute' require dynamic access otherwise can break functionality when trimming application code", Justification = "Uno.Extensions APIs are used in a way that is safe for trimming in this template context.")]
+    // UseNavigation / NavigateAsync below are annotated RequiresUnreferencedCode by
+    // Uno.Extensions Navigation itself, which raises IL2026 now that the head sets
+    // IsAotCompatible. The annotation cannot be propagated to this method instead:
+    // Application.OnLaunched is not annotated, and marking an override that its base
+    // does not mark is IL2046. Suppressing is safe here because the types Navigation
+    // resolves reflectively - the pages, the models and their generated view-models -
+    // are all rooted at head compile time by Uno's BindableTypeProvidersSourceGenerator.
+    // SuppressMessage would not do: it is [Conditional("CODE_ANALYSIS")], so ILLink and
+    // ILCompiler never see it at publish time; UnconditionalSuppressMessage is kept.
+    [UnconditionalSuppressMessage("Trimming", "IL2026",
+        Justification = "Navigation's reflected types are rooted by Uno's BindableTypeProvidersSourceGenerator.")]
     protected async override void OnLaunched(LaunchActivatedEventArgs args)
     {
         var builder = this.CreateBuilder(args)

@@ -244,11 +244,10 @@ What to know before the first Native AOT release:
   §6) is the moment to install the internal-track build and the TestFlight
   build on real devices and click through every section — Native AOT removes
   code the trimmer cannot see, and a binding to a property that was trimmed
-  shows up as an empty control, not a crash. Everyday CI (PRs into `master`,
-  pushes to `master`) does **not** run the AOT compile — it is slow — so the
-  AOT build of a change happens in `alpha.yml` after the merge, on the release
-  branch itself (push → `release.yml`), or in a PR *into* a `release/*`
-  branch, where `ci.yml` switches to the same unsigned AOT publish.
+  shows up as an empty control, not a crash. `ci.yml` runs the same unsigned
+  Native AOT publishes on every PR, so an AOT *build* break cannot reach
+  `master`; what CI cannot see is a trimmed binding at runtime, which is what
+  the device check is for.
 - **Falling back.** Run the workflow manually with `native_aot=false` to ship
   the same commit with the runtime's own Mono AOT instead. Do this rather than
   editing the csproj on the release branch.

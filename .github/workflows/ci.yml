@@ -18,13 +18,13 @@ env:
   DOTNET_CLI_TELEMETRY_OPTOUT: true
   HEAD_PROJECT: Dexter/Dexter/Dexter.csproj
   SOLUTION: Dexter/Dexter.sln
-  # Builds *for* a release/* branch (a PR into one, or a push to one if that is
-  # ever added here) run the same Native AOT / wasm publish release.yml ships, so
-  # a trimming or AOT break is caught before the release branch is cut or
-  # hot-fixed. Those publishes are slow (ILLink + ILCompiler + native link), so
-  # everything else — PRs into master and pushes to master — keeps the fast
-  # plain builds.
-  RELEASE_BUILD: ${{ startsWith(github.base_ref, 'release/') || startsWith(github.ref, 'refs/heads/release/') }}
+  # The wasm, Android and iOS jobs run the same *publish* alpha.yml and release.yml
+  # ship (Native AOT for the mobile heads, the .NET WebAssembly SDK's trimming +
+  # relink for wasm), unsigned. A plain 'dotnet build' only proves the code
+  # compiles; the trimmer, ILCompiler and the native toolchains first run in the
+  # publish, so this is what makes a green PR mean "the store build works". It is
+  # also no slower: the Release simulator build took 21-31 min per run, the
+  # Native AOT device publish takes ~6.
 
 jobs:
   format:
@@ -110,14 +110,9 @@ jobs:
       - name: Install WebAssembly workload
         run: dotnet workload install wasm-tools
 
-      - name: Build head for WebAssembly
-        if: env.RELEASE_BUILD != 'true'
-        run: dotnet build "$HEAD_PROJECT" -f net10.0-browserwasm -c Release
-
-      # Release-branch builds only (see RELEASE_BUILD): the same publish release.yml
-      # deploys to GitHub Pages — the .NET WebAssembly SDK's trimming + native relink.
+      # The same publish release.yml deploys to GitHub Pages — the .NET WebAssembly
+      # SDK's trimming + native relink.
       - name: Publish head for WebAssembly
-        if: env.RELEASE_BUILD == 'true'
         run: dotnet publish "$HEAD_PROJECT" -f net10.0-browserwasm -c Release -p:WasmShellWebAppBasePath=/DexUno/ -o artifacts/wasm
 
       # dotnet format only sees the files compiled for the TFM it loads; the Formatting
@@ -157,15 +152,11 @@ jobs:
       - name: Install missing Android SDK components
         run: dotnet build "$HEAD_PROJECT" -f net10.0-android -c Release -t:InstallAndroidDependencies -p:AcceptAndroidSDKLicenses=true
 
-      - name: Build head for Android
-        if: env.RELEASE_BUILD != 'true'
-        run: dotnet build "$HEAD_PROJECT" -f net10.0-android -c Release
-
-      # Release-branch builds only (see RELEASE_BUILD): 'publish' runs the Native
-      # AOT pipeline (ILLink + ILCompiler + NDK link, see the PublishAot block in
-      # the csproj). One ABI keeps the job short — release.yml builds arm64 + x64.
+      # 'publish' runs the Native AOT pipeline (ILLink + ILCompiler + NDK link, see
+      # the PublishAot block in the csproj). One ABI keeps the job short —
+      # alpha.yml / release.yml build arm64 + x64, and the second ABI only adds
+      # time, not failure modes.
       - name: Publish head for Android (Native AOT, unsigned)
-        if: env.RELEASE_BUILD == 'true'
         run: dotnet publish "$HEAD_PROJECT" -f net10.0-android -c Release -r android-arm64 -p:AndroidNdkDirectory="$ANDROID_NDK_HOME"
 
       # dotnet format only sees the files compiled for the TFM it loads; the Formatting
@@ -224,17 +215,12 @@ jobs:
       - name: Install iOS workload
         run: dotnet workload install ios
 
-      - name: Build head for iOS simulator
-        if: env.RELEASE_BUILD != 'true'
-        run: dotnet build "$HEAD_PROJECT" -f net10.0-ios -c Release -p:RuntimeIdentifier=iossimulator-arm64
-
-      # Release-branch builds only (see RELEASE_BUILD): 'publish' for the device
-      # RID runs the Native AOT pipeline release.yml ships (ILLink + ILCompiler +
-      # native link + .ipa). The iOS SDK refuses 'dotnet publish' for simulator
-      # RIDs, and EnableCodeSigning=false skips signing-identity detection, so no
-      # certificate or profile is needed.
+      # 'publish' for the device RID runs the Native AOT pipeline alpha.yml and
+      # release.yml ship (ILLink + ILCompiler + native link + .ipa). The iOS SDK
+      # refuses 'dotnet publish' for simulator RIDs, and EnableCodeSigning=false
+      # skips signing-identity detection, so no certificate or profile is needed.
+      # The job keeps its historical name: it is a required status check on master.
       - name: Publish head for iOS device (Native AOT, unsigned)
-        if: env.RELEASE_BUILD == 'true'
         run: dotnet publish "$HEAD_PROJECT" -f net10.0-ios -c Release -p:RuntimeIdentifier=ios-arm64 -p:EnableCodeSigning=false
 
       # dotnet format only sees the files compiled for the TFM it loads; the Formatting
